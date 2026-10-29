@@ -20,8 +20,10 @@ Nació para resolver un caso concreto: el Tacx Neo 1 no es compatible con los ca
 - **Otras plataformas.** Zwift es la plataforma principal, pero el rodillo se publica con estándares (FTMS por Bluetooth y por wifi con DirCon), así que otras como Rouvy o MyWhoosh deberían poder usarlo como cualquier rodillo inteligente. El controlador y el modo solo wifi son propios de Zwift.
 - **Controlador de Zwift.** Los botones del Square llegan a Zwift como los de un controlador oficial (menús, dirección, freno y Ride On), sin emparejar el Square en Zwift.
 - **Pulso y ventilador.** Reenvía a Zwift el pulso de una banda Bluetooth y controla un ventilador Wahoo KICKR Headwind, de forma manual o según el pulso.
-- **Sin Zwift.** También funciona sola: marchas virtuales y modo ERG manual.
-- **Pantalla de rodaje** pensada para verse a 1 metro o menos y manejarse con los botones del Square, con gestos y acciones configurables y tema claro y oscuro.
+- **Sin Zwift.** También funciona sola: en modo Libre (terreno llano, la dureza la da la marcha virtual) o en ERG manual.
+- **Pantalla de rodaje** pensada para verse a 1 metro o menos y manejarse con los botones del Square, con gestos y acciones configurables y tema claro y oscuro. Sin el Square también se rueda: la pantalla muestra botones − y + para cambiar de marcha y, si se activa en Ajustes, el modo se cambia tocando su indicador.
+- **Guía de inicio.** En el primer uso, una guía explica qué hace la app, los pasos para empezar con su estado, las formas de rodar y cómo conectarla a la app de entrenamiento. Se puede volver a abrir desde Ajustes.
+- **Español e inglés.** La interfaz está en los dos idiomas: la app elige uno en el primer arranque según el idioma del móvil y se cambia en Ajustes.
 - **Ajustes y diagnóstico.** Copia de seguridad de la configuración, una pantalla de diagnóstico con el tráfico de los dispositivos y, opcionalmente, la grabación de cada sesión en un archivo de texto para revisarla o compartirla después.
 
 ## Estado y límites
@@ -29,7 +31,7 @@ Nació para resolver un caso concreto: el Tacx Neo 1 no es compatible con los ca
 - Está hecho **para mi equipo**: Tacx Neo 1, Elite Square, Zwift en un PC y un móvil Android 13. Con otros rodillos, controladores o versiones de Android puede no funcionar. Con plataformas distintas de Zwift (Rouvy, MyWhoosh…) aún no se ha probado.
 - Algunas partes están validadas con el equipo real y otras se anotan como «a validar». El detalle de cada change, con lo que está probado y lo que falta, está en [`docs/planificacion.md`](docs/planificacion.md).
 - ¿Otro rodillo, controlador o plataforma? Aunque es un proyecto de uso personal, si [abres un issue](https://github.com/indoor-cycling-lab/smart-bike/issues/new?template=compatibilidad.yml) contando tu equipo, se puede estudiar añadir su compatibilidad.
-- Solo Android (`minSdk 28`). No hay versión para iOS ni publicación en tiendas: se compila e instala desde el código.
+- Solo Android (`minSdk 28`). No hay versión para iOS ni publicación en tiendas: el APK firmado de cada versión se descarga de [Releases](https://github.com/indoor-cycling-lab/smart-bike/releases/latest), con su SHA-256 y la huella del certificado para comprobarlo, o se compila desde el código.
 - Es software hecho a medida y en evolución, **sin garantías**. Algunos protocolos (el de DirCon y el del controlador de Zwift, por ejemplo) no son oficiales y se han reconstruido por observación, así que Zwift puede cambiar su comportamiento en cualquier momento.
 
 Tacx, Elite, Zwift, Wahoo y el resto de marcas citadas pertenecen a sus propietarios. Este proyecto es independiente y no está afiliado ni respaldado por ninguno de ellos.
@@ -47,23 +49,6 @@ cd smart-bike
 ```
 
 El id de la app es `app.smartbike` (`app.smartbike.debug` en depuración). Los tests de interfaz (`connectedDebugAndroidTest`) necesitan un móvil real, y Bluetooth y wifi solo se pueden probar con el equipo físico: el emulador de Android no tiene Bluetooth real. Los comandos, el entorno de pruebas y los problemas conocidos están en [`docs/desarrollo.md`](docs/desarrollo.md).
-
-## Ver el diseño
-
-El sistema de diseño y las maquetas son HTML estático. Sírvelos desde la raíz del repositorio:
-
-```sh
-python3 -m http.server 8000
-```
-
-- Guía de estilo: <http://localhost:8000/design-system/styleguide/>
-- Maquetas: <http://localhost:8000/maquetas/>
-
-Cada maqueta tiene un selector de estado y de tema. Los cambios de interfaz se validan en la maqueta antes de implementarse en la app. Tras cambiar `design-system/tokens.json` o un componente, hay que regenerar los ficheros derivados:
-
-```sh
-python3 scripts/design-system/generar.py
-```
 
 ## Estructura
 
@@ -86,11 +71,11 @@ AGENTS.md        reglas de trabajo para agentes de IA
 
 ## Cómo se ha desarrollado
 
-El proyecto se ha construido con ayuda de un agente de IA (Claude Code), siguiendo un flujo de especificaciones con OpenSpec: cada cambio parte de una propuesta, un diseño y unas tareas que se validan con el equipo real antes de darse por buenos. Las reglas de trabajo están en [`AGENTS.md`](AGENTS.md) y el historial de cambios, en `openspec/changes/archive/`.
+El proyecto se ha construido con ayuda de un agente de IA (Claude Code), siguiendo un flujo de especificaciones con OpenSpec: cada cambio parte de una propuesta, un diseño y unas tareas que se validan con el equipo real antes de darse por buenos. Los cambios de interfaz se validan antes en una maqueta HTML (`maquetas/`), construida con el sistema de diseño (`design-system/`), y después se implementan en la app. Las reglas de trabajo están en [`AGENTS.md`](AGENTS.md) y el historial de cambios, en `openspec/changes/archive/`.
 
 Los protocolos de los dispositivos se han **reimplementado a partir de documentación y de observar su comportamiento**. No se ha copiado código de otras aplicaciones: en particular, ni de qdomyos-zwift (GPL-3.0) ni de BikeControl (no comercial).
 
-La app se escribe y se documenta en español.
+El código, las especificaciones y la documentación están en español; la interfaz de la app y la web, en español e inglés.
 
 ## Invitar a un café
 

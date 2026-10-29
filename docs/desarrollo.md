@@ -128,6 +128,12 @@ adb shell am start -n app.smartbike.debug/app.smartbike.ui.tema.MuestraTemaActiv
 
 La skill `desplegar-movil` (`.claude/skills/desplegar-movil/`) encadena conexión, instalación, apertura y lectura del registro para que todos los agentes lo hagan igual.
 
+### Sistema de diseño y maquetas
+
+Son HTML estático. Se sirven desde la raíz del repositorio con `python3 -m http.server 8000` y se abren en <http://localhost:8000/design-system/styleguide/> (guía de estilo) y <http://localhost:8000/maquetas/> (maquetas, con selector de estado y de tema). Para revisarlas en el móvil, misma red e IP del Mac.
+
+Tras cambiar `design-system/tokens.json`, un componente, `icons.svg` o `identidad/`, se regeneran los derivados (guía, `tokens.css`, `Tokens.kt`, fuentes, iconos y recursos de identidad de la app) con `python3 scripts/design-system/generar.py`, que falla si algún par de colores no llega a su contraste mínimo.
+
 ### La web pública (`site/`)
 
 La web de GitHub Pages se genera; no se edita a mano `site/es/`, `site/en/`, `site/assets/` ni `site/img/`.
