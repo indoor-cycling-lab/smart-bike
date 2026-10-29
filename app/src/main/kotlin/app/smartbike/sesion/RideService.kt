@@ -45,6 +45,12 @@ class RideService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         if (intent?.action == ACCION_TERMINAR) {
             graph.terminarSesion()
+            // Sin sesión (una notificación que se quedó atrás), se retira y se para el servicio que este «Terminar» ha
+            // arrancado: nada más lo detendría.
+            if (graph.sesion.value == null) {
+                getSystemService(NotificationManager::class.java).cancel(ID_NOTIFICACION)
+                stopSelf()
+            }
             return START_NOT_STICKY
         }
         crearCanal()
@@ -67,7 +73,7 @@ class RideService : Service() {
         val gestor = getSystemService(NotificationManager::class.java)
         observando = ambito.launch(graph.hiloControl) {
             val sesion = graph.sesion.filterNotNull().first()
-            launch {
+            val actualizando = launch {
                 // Solo lo que cambia el texto: la marcha o la potencia en ERG y las conexiones.
                 // El idioma también: al cambiarlo en Ajustes, el canal y la notificación pasan al nuevo sin reiniciar la sesión.
                 combine(sesion.estado, graph.idioma) { e, idioma ->
@@ -79,6 +85,10 @@ class RideService : Service() {
                     }
             }
             graph.sesion.first { it == null }
+            // Al terminar, la sesión fija su estado final («sin conexión») y `combine` lo entrega unos saltos después:
+            // sin parar antes al colector, volvería a publicar la notificación ya retirada y quedaría huérfana, fija y
+            // sin servicio detrás. En el hilo de control, de uno en uno, cancelarlo aquí basta.
+            actualizando.cancel()
             ServiceCompat.stopForeground(this@RideService, ServiceCompat.STOP_FOREGROUND_REMOVE)
             stopSelf()
         }
