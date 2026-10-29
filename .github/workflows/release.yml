@@ -1,8 +1,7 @@
 # Publica una versión de la app al empujar una etiqueta vX.Y.Z sobre main (change preparar-release, decisión 4):
 # comprueba la etiqueta, pasa los tests y los linters, compila la release firmada y crea la Release de GitHub con el
-# APK, su SHA-256 y la huella del certificado. Mientras el repositorio sea privado (plan gratuito, sin entornos), los
-# secrets son del repositorio; en el repositorio público irán en el entorno «release», limitado a etiquetas v*, y el job
-# llevará `environment: release` (docs/desarrollo.md § 7).
+# APK, su SHA-256 y la huella del certificado. Los secrets de firma están en el entorno «release», limitado a etiquetas
+# v* (docs/desarrollo.md § 7).
 name: Publicar una versión
 
 on:
@@ -19,6 +18,7 @@ concurrency:
 jobs:
   publicar:
     runs-on: ubuntu-latest
+    environment: release
     env:
       ETIQUETA: ${{ github.ref_name }}
     steps:

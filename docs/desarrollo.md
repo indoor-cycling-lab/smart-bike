@@ -17,6 +17,7 @@ Todo el desarrollo se hace en el Mac del usuario. Los agentes compilan, instalan
 | API de Android | `minSdk 28`, `targetSdk 36` y `compileSdk 37`: Compose 1.12 exige compilar contra la API 37, y AGP descarga la plataforma al SDK la primera vez |
 | Móvil de pruebas | OnePlus 8 del usuario (IN2013), con Android 13 (SDK 33), comprobado el 25-10-2026. **Es su móvil personal** (§ 4) |
 | Zwift | PC del usuario, en la misma red wifi que el móvil |
+| Repositorio | [`indoor-cycling-lab/smart-bike`](https://github.com/indoor-cycling-lab/smart-bike), público desde el 29-10-2026; se trabaja en un clon suyo en el Mac. El historial anterior a la publicación está en una copia privada (`planificacion.md`) |
 
 Descartados:
 
@@ -256,20 +257,20 @@ La release usa R8 sin ofuscar (`app/proguard-rules.pro`): si algo funciona en de
 
 ### GitHub: secrets y variable
 
-Una vez por repositorio (lo hace el usuario). Mientras el repositorio sea privado, la organización está en el plan gratuito, que no ofrece entornos en repositorios privados: los secrets son del repositorio. En el repositorio público (`publicar-repo-publico`) se vuelve a hacer todo, esta vez con entorno:
+Una vez por repositorio. El job de `.github/workflows/release.yml` declara `environment: release`, así que los secrets van en ese entorno y solo los ve un workflow lanzado por una etiqueta `v*`:
 
-1. Solo en el repositorio público: crear el entorno `release` en *Settings › Environments*, con *Deployment branches and tags* limitado a etiquetas `v*`, y añadir `environment: release` al job de `.github/workflows/release.yml`. En los comandos siguientes, añadir `--env release` a cada `gh secret set`.
-2. Dar de alta los secrets, sin escribir las contraseñas en la línea de comandos (`gh` las pide):
+1. Crear el entorno `release` en *Settings › Environments*, con *Deployment branches and tags* limitado a etiquetas `v*`.
+2. Dar de alta los secrets en el entorno (lo hace el usuario), sin escribir las contraseñas en la línea de comandos (`gh` las pide):
 
    ```bash
-   base64 -i ~/claves/smart-bike.jks | gh secret set RELEASE_KEYSTORE_BASE64
-   gh secret set RELEASE_KEYSTORE_PASSWORD
-   gh secret set RELEASE_KEY_PASSWORD
-   gh secret set RELEASE_KEY_ALIAS --body smart-bike
+   base64 -i ~/claves/smart-bike.jks | gh secret set RELEASE_KEYSTORE_BASE64 --env release
+   gh secret set RELEASE_KEYSTORE_PASSWORD --env release
+   gh secret set RELEASE_KEY_PASSWORD --env release
+   gh secret set RELEASE_KEY_ALIAS --env release --body smart-bike
    ```
 
 3. Guardar la huella como variable del repositorio (es pública): `gh variable set HUELLA_CERTIFICADO --body "<huella SHA-256>"`. El workflow no publica si el APK no tiene esa huella.
-4. Comprobar: `gh secret list` (o `gh secret list --env release`) y `gh variable list` muestran los nombres, sin los valores.
+4. Comprobar: `gh secret list --env release` y `gh variable list` muestran los nombres, sin los valores.
 
 ### Publicar
 
