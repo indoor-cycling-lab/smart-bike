@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generado por scripts/design-system/generar.py a partir de icons.svg (i-botones). No editar a mano. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="960"
+    android:viewportHeight="960">
+    <group android:translateY="960">
+        <path
+            android:fillColor="#FF000000"
+            android:pathData="M310.3 -837.5L460.3 -577.5A35 35 0 0 1 430 -525L130 -525A35 35 0 0 1 99.7 -577.5L249.7 -837.5A35 35 0 0 1 310.3 -837.5ZM190.6 -595L369.4 -595L280 -750ZM115 -280A165 165 0 1 1 445 -280A165 165 0 1 1 115 -280ZM185 -280A95 95 0 1 0 375 -280A95 95 0 1 0 185 -280ZM590 -800L770 -800A30 30 0 0 1 800 -770L800 -590A30 30 0 0 1 770 -560L590 -560A30 30 0 0 1 560 -590L560 -770A30 30 0 0 1 590 -800ZM584.7 -424.7L824.7 -184.7A35 35 0 0 1 775.3 -135.3L535.3 -375.3A35 35 0 0 1 584.7 -424.7ZM824.7 -375.3L584.7 -135.3A35 35 0 0 1 535.3 -184.7L775.3 -424.7A35 35 0 0 1 824.7 -375.3Z" />
+    </group>
+</vector>

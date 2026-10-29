@@ -1,0 +1,39 @@
+<!-- @dsCard group="Rodaje" height=420 subtitle="Una flecha a cada lado de la marcha mientras se mantiene el giro: sin giro, a la izquierda, a la derecha y los dos" -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../../components.css"><title>TurnIndicator</title></head>
+<body>
+<!-- Sin giro: el sitio de las flechas está reservado, no se ven -->
+<div class="sq-pad">
+  <div class="sq-turn">
+    <span class="sq-turn__a" aria-hidden="true"><svg class="sq-icon"><use href="../../icons.svg#i-arrow_back"/></svg></span>
+    <div class="sq-gear"><div class="sq-gear-num" aria-label="Marcha 14 de 24">14</div><div class="sq-gear-meta"><span class="sq-label">Marcha</span><span class="sq-gear-ratio">de 24</span></div></div>
+    <span class="sq-turn__a is-right" aria-hidden="true"><svg class="sq-icon"><use href="../../icons.svg#i-arrow_back"/></svg></span>
+  </div>
+</div>
+<!-- Girando a la izquierda -->
+<div class="sq-pad">
+  <div class="sq-turn" role="status" aria-label="Girando a la izquierda">
+    <span class="sq-turn__a is-on" aria-hidden="true"><svg class="sq-icon"><use href="../../icons.svg#i-arrow_back"/></svg></span>
+    <div class="sq-gear"><div class="sq-gear-num" aria-label="Marcha 14 de 24">14</div><div class="sq-gear-meta"><span class="sq-label">Marcha</span><span class="sq-gear-ratio">de 24</span></div></div>
+    <span class="sq-turn__a is-right" aria-hidden="true"><svg class="sq-icon"><use href="../../icons.svg#i-arrow_back"/></svg></span>
+  </div>
+</div>
+<!-- Girando a la derecha, con los platos y el piñón -->
+<div class="sq-pad">
+  <div class="sq-turn" role="status" aria-label="Girando a la derecha">
+    <span class="sq-turn__a" aria-hidden="true"><svg class="sq-icon"><use href="../../icons.svg#i-arrow_back"/></svg></span>
+    <div class="sq-ratio-hero" aria-label="Plato 52, piñón 17">52<span class="x">×</span>17</div>
+    <span class="sq-turn__a is-right is-on" aria-hidden="true"><svg class="sq-icon"><use href="../../icons.svg#i-arrow_back"/></svg></span>
+  </div>
+</div>
+<!-- Los dos giros -->
+<div class="sq-pad">
+  <div class="sq-turn" role="status" aria-label="Girando a la izquierda y a la derecha">
+    <span class="sq-turn__a is-on" aria-hidden="true"><svg class="sq-icon"><use href="../../icons.svg#i-arrow_back"/></svg></span>
+    <div class="sq-gear"><div class="sq-gear-num" aria-label="Marcha 14 de 24">14</div><div class="sq-gear-meta"><span class="sq-label">Marcha</span><span class="sq-gear-ratio">de 24</span></div></div>
+    <span class="sq-turn__a is-right is-on" aria-hidden="true"><svg class="sq-icon"><use href="../../icons.svg#i-arrow_back"/></svg></span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Bike · Make your trainer a smart bike</title>
+<meta name="description" content="An Android app that brings the trainer, shifters, heart rate monitor, fan and Zwift of an indoor setup together and runs them from one place, without touching the screen.">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://indoor-cycling-lab.github.io/smart-bike/en/">
+<link rel="alternate" hreflang="es" href="https://indoor-cycling-lab.github.io/smart-bike/es/"><link rel="alternate" hreflang="en" href="https://indoor-cycling-lab.github.io/smart-bike/en/"><link rel="alternate" hreflang="x-default" href="https://indoor-cycling-lab.github.io/smart-bike/">
+<meta property="og:title" content="Smart Bike · Make your trainer a smart bike">
+<meta property="og:description" content="An Android app that brings the trainer, shifters, heart rate monitor, fan and Zwift of an indoor setup together and runs them from one place, without touching the screen.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://indoor-cycling-lab.github.io/smart-bike/en/">
+<link rel="icon" href="../assets/icono.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../sitio.css">
+<script>
+(function () {
+  var d = document.documentElement;
+  try { var t = localStorage.getItem("sb-tema"); if (t === "claro" || t === "rodaje") d.setAttribute("data-theme", t); } catch (e) {}
+})();
+</script>
+</head>
+<body>
+<header class="cabecera">
+  <a class="saltar" href="#principal">Skip to content</a>
+  <div class="cabecera__fila">
+    <a class="marca" href="./" aria-label="Smart Bike, home"><svg class="logo" viewBox="18 29 72 50" aria-hidden="true" focusable="false"><rect class="tambor" x="30" y="68.5" width="12" height="6" rx="3"/><circle class="rueda-delantera" cx="72" cy="55" r="12" fill="none" stroke-width="4"/><circle class="rueda-trasera" cx="36" cy="55" r="12" fill="none" stroke-width="5"/><path class="radio" d="M38.6 56.5 L44.66 60" stroke-width="1.5" stroke-linecap="round"/><path class="radio" d="M36 58 L36 65" stroke-width="1.5" stroke-linecap="round"/><path class="radio" d="M33.4 56.5 L27.34 60" stroke-width="1.5" stroke-linecap="round"/><path class="radio" d="M33.4 53.5 L27.34 50" stroke-width="1.5" stroke-linecap="round"/><path class="radio" d="M36 52 L36 45" stroke-width="1.5" stroke-linecap="round"/><path class="radio" d="M38.6 53.5 L44.66 50" stroke-width="1.5" stroke-linecap="round"/><circle class="buje" cx="36" cy="55" r="2.5"/><path class="cuadro" d="M44.37 40.78 L46 38 L64 38 L72 55 M46 38 L54 55 M54 55 L52.5 55 M54 55 L64 38 M64 38 L62 33 L68 33 M46 38 L46 34 M41 34 L50 34" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Smart Bike</span></a>
+    <nav class="nav" aria-label="Sections"><ul><li><a href="#setup">The setup</a></li><li><a href="#pasos">How to use it</a></li><li><a href="#funciones">Features</a></li><li><a href="#pantallas">Screens</a></li><li><a href="#limites">Limits</a></li></ul></nav>
+    <div class="herramientas">
+      <a class="boton boton--discreto" id="enlace-idioma" href="../es/" hreflang="es" lang="es" aria-label="Leer esta página en español">Español</a>
+      <button class="boton boton--discreto" id="tema" type="button" hidden aria-label="Switch between light and dark theme" data-oscuro="Dark" data-claro="Light"><span class="visible-solo-oscuro">Light</span><span class="visible-solo-claro">Dark</span></button>
+    </div>
+  </div>
+</header>
+<main id="principal">
+<section class="hero" aria-labelledby="titulo-hero">
+  <div class="hero__texto">
+    <p class="eyebrow">Personal project · Android</p>
+    <h1 id="titulo-hero">Make your trainer a smart bike</h1>
+    <p class="hero__lema">With the phone mounted on the bike, the trainer, shifters, heart rate monitor, fan and Zwift are all run from one place, without touching the screen while you ride.</p>
+    <p class="hero__acciones"><a class="boton boton--principal" href="https://github.com/indoor-cycling-lab/smart-bike">See the code</a><a class="boton" href="#funciones">What it does</a></p>
+    <p class="hero__nota">It started so a Tacx Neo 1 could use the virtual gears of an Elite Square frame.</p>
+  </div>
+  <div class="hero__imagen"><figure class="marco marco--horizontal"><img class="img-oscuro" src="../img/rodaje-en-oscuro.png" width="1688" height="780" alt="Ride screen in landscape: gear 52×17 on a Shimano drivetrain, 247 W power and 91 rpm cadence"><img class="img-claro" src="../img/rodaje-en-claro.png" width="1688" height="780" alt="Ride screen in landscape: gear 52×17 on a Shimano drivetrain, 247 W power and 91 rpm cadence"></figure></div>
+</section>
+<section class="cifras" aria-label="Smart Bike in numbers">
+  <ul class="cifras__lista"><li><span class="cifra__valor">0</span><span class="cifra__texto">taps on the screen while you ride</span></li><li><span class="cifra__valor">1</span><span class="cifra__texto">phone for the trainer, shifters, sensors and Zwift</span></li><li><span class="cifra__valor">2×12</span><span class="cifra__texto">a real bike&#x27;s drivetrain, or 24 linear gears</span></li><li><span class="cifra__valor">&lt;100 ms</span><span class="cifra__texto">target from lever to trainer resistance</span></li></ul>
+</section>
+<section class="seccion" id="setup" aria-labelledby="titulo-setup">
+  <h2 id="titulo-setup">One place for the whole setup</h2>
+  <p class="seccion__intro">The phone acts as the hub: it talks to each device over Bluetooth and presents itself to Zwift as a smart trainer, over wifi or Bluetooth.</p>
+  <div class="esquema" role="group" aria-label="Elite Square, Tacx Neo 1, heart rate monitor and Wahoo KICKR Headwind fan connect over Bluetooth to the phone running Smart Bike, which connects to Zwift over wifi or Bluetooth.">
+    <div class="esquema__col"><h3 class="etiqueta">Devices</h3><ul class="esquema__lista" aria-hidden="true"><li class="nodo"><span class="nodo__nombre">Elite Square</span><span class="nodo__detalle">Shifters</span><span class="enlace">Bluetooth</span></li><li class="nodo"><span class="nodo__nombre">Tacx Neo 1</span><span class="nodo__detalle">Trainer</span><span class="enlace">Bluetooth</span></li><li class="nodo"><span class="nodo__nombre">Heart rate monitor</span><span class="nodo__detalle">Chest strap</span><span class="enlace">Bluetooth</span></li><li class="nodo"><span class="nodo__nombre">Wahoo KICKR Headwind</span><span class="nodo__detalle">Fan</span><span class="enlace">Bluetooth</span></li></ul></div>
+    <div class="esquema__flecha" aria-hidden="true"></div>
+    <div class="esquema__col esquema__col--central" aria-hidden="true"><h3 class="etiqueta">Android phone</h3><div class="nodo nodo--central"><span class="nodo__nombre">Smart Bike</span><span class="nodo__detalle">The app, on the phone mounted on the bike</span></div></div>
+    <div class="esquema__flecha esquema__flecha--wifi" aria-hidden="true"><span class="enlace">wifi (DirCon) or Bluetooth</span></div>
+    <div class="esquema__col" aria-hidden="true"><h3 class="etiqueta">PC</h3><div class="nodo nodo--destino"><span class="nodo__nombre">Zwift</span><span class="nodo__detalle">Smart trainer and controller, with power, cadence and grade</span></div></div>
+  </div>
+</section>
+<section class="seccion" id="pasos" aria-labelledby="titulo-pasos">
+  <h2 id="titulo-pasos">How to use it</h2>
+  <p class="seccion__intro">You set it up once, phone in hand, and the first time a getting started guide walks you through it. After that, opening the app connects everything on its own.</p>
+  <ol class="pasos"><li class="paso"><h3>Connect your devices</h3><p>In Devices, each one has its own “Search”: the trainer, the controller and, if you use them, the heart rate monitor and the fan.</p></li><li class="paso"><h3>Choose how it connects</h3><p>In Connection you see what the app publishes (trainer, controller and heart rate) and whether your training app is using it, and you choose the mode: wifi + Bluetooth, Bluetooth only or wifi only.</p></li><li class="paso"><h3>Pair in Zwift and ride</h3><p>In Zwift, pick Smart Bike as trainer, power and cadence. From then on, gears, menus and Ride On are on the Square&#x27;s buttons. You can also ride without a training app, in Free mode or manual ERG.</p></li></ol>
+</section>
+<section class="seccion" id="funciones" aria-labelledby="titulo-funciones">
+  <h2 id="titulo-funciones">What it does</h2>
+  <article class="funcion" id="marchas" aria-labelledby="t-marchas">
+  <div class="funcion__texto">
+    <p class="eyebrow">Virtual gears</p>
+    <h3 id="t-marchas">Gear shifting on a trainer that has none</h3>
+    <p>The Square&#x27;s buttons change gear on the Neo. The app turns each gear into more or less resistance, with a simple model or a physical one.</p>
+    <ul class="puntos"><li>A linear 24-gear drivetrain or a real bike&#x27;s (for now, only mine: Shimano 105 2×12).</li><li>Automatic or manual chainring shifts, with the drivetrain&#x27;s limits.</li><li>The levers can behave like those of a wireless groupset (tested with Shimano Di2).</li></ul>
+  </div>
+  <div class="funcion__imagenes funcion__imagenes--2"><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/marchas-en-oscuro.png" width="780" height="1688" alt="Gears screen with a Shimano 105 2×12 drivetrain in automatic mode" loading="lazy" decoding="async"><img class="img-claro" src="../img/marchas-en-claro.png" width="780" height="1688" alt="Gears screen with a Shimano 105 2×12 drivetrain in automatic mode" loading="lazy" decoding="async"></figure><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/rodaje-vertical-plato-en-oscuro.png" width="780" height="1688" alt="Ride screen in portrait during a chainring shift: gear 52×19 and a “Plato 52” notice" loading="lazy" decoding="async"><img class="img-claro" src="../img/rodaje-vertical-plato-en-claro.png" width="780" height="1688" alt="Ride screen in portrait during a chainring shift: gear 52×19 and a “Plato 52” notice" loading="lazy" decoding="async"></figure></div>
+</article><article class="funcion funcion--inversa" id="zwift" aria-labelledby="t-zwift">
+  <div class="funcion__texto">
+    <p class="eyebrow">Zwift and platforms</p>
+    <h3 id="t-zwift">Trainer and controller for Zwift, without pairing the Square</h3>
+    <p>The app publishes a smart trainer with power and cadence, a controller and your heart rate, and your training app connects to them. Tested with Zwift: it receives what the Neo measures and sends back the grade.</p>
+    <ul class="puntos"><li>Three modes: wifi + Bluetooth (the trainer over DirCon and the controller separately), Bluetooth only, or wifi only as a single device, like a Zwift Ride.</li><li>Over Bluetooth, Zwift can see “Smart Bike” instead of the phone&#x27;s name: if you turn it on, the app renames the phone while it publishes and gives its name back when it&#x27;s done.</li><li>The Square&#x27;s buttons reach Zwift like those of an official controller: menus, steering, braking and Ride On.</li><li>It speaks the smart trainer standards (FTMS, over Bluetooth and over wifi with DirCon), so other platforms such as Rouvy or MyWhoosh should be able to use it like any trainer. So far it has only been tested with Zwift, and the controller and the wifi only mode are specific to Zwift.</li><li>Gears are always the app&#x27;s own. It also works without Zwift: in Free mode (flat terrain, your gear sets the effort) or in manual ERG, at the power you set.</li></ul>
+  </div>
+  <div class="funcion__imagenes funcion__imagenes--2"><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/conexion-en-oscuro.png" width="780" height="1688" alt="Connection screen with the trainer and controller connected, heart rate being sent and the “Wifi + Bluetooth” mode selected" loading="lazy" decoding="async"><img class="img-claro" src="../img/conexion-en-claro.png" width="780" height="1688" alt="Connection screen with the trainer and controller connected, heart rate being sent and the “Wifi + Bluetooth” mode selected" loading="lazy" decoding="async"></figure><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/botones-en-oscuro.png" width="780" height="1688" alt="Buttons screen, inside Settings, with the app&#x27;s actions assigned to the Square&#x27;s buttons" loading="lazy" decoding="async"><img class="img-claro" src="../img/botones-en-claro.png" width="780" height="1688" alt="Buttons screen, inside Settings, with the app&#x27;s actions assigned to the Square&#x27;s buttons" loading="lazy" decoding="async"></figure></div>
+</article><article class="funcion" id="sensores" aria-labelledby="t-sensores">
+  <div class="funcion__texto">
+    <p class="eyebrow">Heart rate and fan</p>
+    <h3 id="t-sensores">Heart rate to Zwift, and a fan that follows you</h3>
+    <p>It forwards the heart rate from a Bluetooth strap to Zwift and controls a Wahoo KICKR Headwind fan, manually or based on your heart rate.</p>
+    <ul class="puntos"><li>Fan speed goes up and down in 10 % steps with the Square&#x27;s buttons, and the heart rate threshold of each zone is set in the app.</li><li>The ride screen&#x27;s bar shows each device&#x27;s state at a glance; Zwift&#x27;s goes apart, in words.</li></ul>
+  </div>
+  <div class="funcion__imagenes funcion__imagenes--1"><figure class="marco marco--horizontal"><img class="img-oscuro" src="../img/pulso-ventilador-en-oscuro.png" width="1688" height="780" alt="Ride screen with the trainer, Square and fan icons, and a “Ventilador: 50 %” notice after raising its speed with a button" loading="lazy" decoding="async"><img class="img-claro" src="../img/pulso-ventilador-en-claro.png" width="1688" height="780" alt="Ride screen with the trainer, Square and fan icons, and a “Ventilador: 50 %” notice after raising its speed with a button" loading="lazy" decoding="async"></figure></div>
+</article><article class="funcion funcion--ancha" id="rodaje" aria-labelledby="t-rodaje">
+  <div class="funcion__texto">
+    <p class="eyebrow">Ride screen</p>
+    <h3 id="t-rodaje">Made to read from a metre away and use without touching it</h3>
+    <p>Big numbers, the gear always in view and the Square&#x27;s buttons for everything. You touch the phone to set things up before or after riding.</p>
+    <ul class="puntos"><li>Configurable buttons, gestures and actions, in Settings → Buttons.</li><li>The mode always in view: FREE, SIM with Zwift&#x27;s gradient, ERG MANUAL or a workout&#x27;s ERG, with the power the levers adjust in 10 W steps.</li><li>One to six readings of your choice, including the gradient Zwift sends.</li><li>You can ride without the Square too: the − and + buttons appear to shift gears and, if you turn it on, you change mode by tapping its badge.</li><li>Light and dark theme, in landscape or portrait.</li></ul>
+  </div>
+  <div class="funcion__imagenes funcion__imagenes--2"><figure class="marco marco--horizontal"><img class="img-oscuro" src="../img/rodaje-erg-en-oscuro.png" width="1688" height="780" alt="Ride screen during a Zwift ERG workout, with the target power and cadence" loading="lazy" decoding="async"><img class="img-claro" src="../img/rodaje-erg-en-claro.png" width="1688" height="780" alt="Ride screen during a Zwift ERG workout, with the target power and cadence" loading="lazy" decoding="async"></figure><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/rodaje-vertical-datos-en-oscuro.png" width="780" height="1688" alt="Ride screen in portrait with five readings and the − and + buttons to shift by touching the phone" loading="lazy" decoding="async"><img class="img-claro" src="../img/rodaje-vertical-datos-en-claro.png" width="780" height="1688" alt="Ride screen in portrait with five readings and the − and + buttons to shift by touching the phone" loading="lazy" decoding="async"></figure></div>
+</article>
+  <p class="pie-captura">Screenshot of the app&#x27;s mockup, with illustrative data.</p>
+</section>
+<section class="seccion" id="pantallas" aria-labelledby="titulo-pantallas">
+  <h2 id="titulo-pantallas">Guide, devices, settings and diagnostics</h2>
+  <p class="seccion__intro">What you don&#x27;t need while riding is one tap away: a getting started guide that explains the steps and the ways to ride the first time, finding and forgetting devices, setting up the drivetrain and buttons, choosing the language (Spanish or English), backing up the configuration, watching each device&#x27;s traffic when something doesn&#x27;t add up and recording sessions to text files, keeping the last 20, to review or share later.</p>
+  <div class="galeria"><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/guia-inicio-en-oscuro.png" width="780" height="1688" alt="Getting started guide over the ride screen, on the “How you can use the app” page, with the FREE, SIM and ERG modes" loading="lazy" decoding="async"><img class="img-claro" src="../img/guia-inicio-en-claro.png" width="780" height="1688" alt="Getting started guide over the ride screen, on the “How you can use the app” page, with the FREE, SIM and ERG modes" loading="lazy" decoding="async"></figure><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/dispositivos-en-oscuro.png" width="780" height="1688" alt="Devices screen with the trainer and the Square connected, and the heart rate monitor and fan sections" loading="lazy" decoding="async"><img class="img-claro" src="../img/dispositivos-en-claro.png" width="780" height="1688" alt="Devices screen with the trainer and the Square connected, and the heart rate monitor and fan sections" loading="lazy" decoding="async"></figure><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/ajustes-en-oscuro.png" width="780" height="1688" alt="Settings screen with the entries for Gears, Buttons and Diagnostics, the riding options and the theme" loading="lazy" decoding="async"><img class="img-claro" src="../img/ajustes-en-claro.png" width="780" height="1688" alt="Settings screen with the entries for Gears, Buttons and Diagnostics, the riding options and the theme" loading="lazy" decoding="async"></figure><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/diagnostico-en-oscuro.png" width="780" height="1688" alt="Diagnostics screen with the connection data and the Square&#x27;s buttons, which light up when pressed" loading="lazy" decoding="async"><img class="img-claro" src="../img/diagnostico-en-claro.png" width="780" height="1688" alt="Diagnostics screen with the connection data and the Square&#x27;s buttons, which light up when pressed" loading="lazy" decoding="async"></figure></div>
+</section>
+<section class="seccion" id="limites" aria-labelledby="titulo-limites">
+  <h2 id="titulo-limites">Good to know</h2>
+  <p class="seccion__intro">Smart Bike is a personal project, published in case it helps someone as a reference or a starting point. It is not a finished product.</p>
+  <ul class="limites"><li><h3>Made for my gear</h3><p>Tacx Neo 1, Elite Square, Zwift on a PC and an Android 13 phone. With other trainers, controllers or Android versions it may not work.</p></li><li><h3>Partly tested</h3><p>Some parts are validated with the real equipment and others are listed as “to be validated” in the project plan. Other platforms, such as Rouvy or MyWhoosh, have not been tested yet.</p></li><li><h3>Android only</h3><p>Android 9 or later. There is no iOS version or app store release: you download the signed APK from GitHub Releases, or build it from the source code.</p></li><li><h3>No warranty</h3><p>Some protocols, such as DirCon and Zwift&#x27;s controller, are unofficial and were rebuilt by observation: Zwift may change its behaviour at any time.</p></li></ul>
+  <p class="limites__peticion">Using a different trainer, controller or platform? Smart Bike is a personal project, but if you open an issue on GitHub describing your setup, adding support for it can be considered. Issues in English are welcome.</p>
+  <p class="acciones"><a class="boton boton--principal" href="https://github.com/indoor-cycling-lab/smart-bike/issues/new?template=compatibilidad.yml">Request support</a><a class="boton" href="https://github.com/indoor-cycling-lab/smart-bike/blob/main/docs/planificacion.md">See the plan and the state of each part (in Spanish)</a></p>
+</section>
+</main>
+<footer class="pie">
+  <p class="pie__cafe">Find Smart Bike useful, or just like the project? <a class="boton boton--discreto" href="https://ko-fi.com/jmlopezdona">Buy me a coffee</a></p>
+  <p>Tacx, Elite, Zwift, Wahoo and the other brands mentioned belong to their owners. This project is independent and is not affiliated with or endorsed by any of them.</p>
+  <p>Free software under the GPL-3.0 license. <a href="https://github.com/indoor-cycling-lab/smart-bike/blob/main/LICENSE">Read the license</a> · <a href="https://github.com/indoor-cycling-lab/smart-bike">Source code on GitHub</a></p>
+</footer>
+<script>
+(function () {
+  var d = document.documentElement;
+  var boton = document.getElementById("tema");
+  function claro() {
+    var t = d.getAttribute("data-theme");
+    return t ? t === "claro" : matchMedia("(prefers-color-scheme: light)").matches;
+  }
+  if (boton) {
+    boton.hidden = false;
+    boton.addEventListener("click", function () {
+      var nuevo = claro() ? "rodaje" : "claro";
+      d.setAttribute("data-theme", nuevo);
+      try { localStorage.setItem("sb-tema", nuevo); } catch (e) {}
+    });
+  }
+  var idioma = document.getElementById("enlace-idioma");
+  if (idioma) {
+    var base = idioma.getAttribute("href").split("#")[0];
+    var sincronizar = function () { idioma.setAttribute("href", base + location.hash); };
+    window.addEventListener("hashchange", sincronizar);
+    sincronizar();
+  }
+})();
+</script>
+</body>
+</html>

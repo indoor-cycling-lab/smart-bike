@@ -1,0 +1,550 @@
+/* Fuentes locales (subconjunto latino, licencia OFL en fonts/): sin peticiones externas. */
+@font-face { font-family: "Barlow"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/Barlow-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Barlow"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/Barlow-SemiBold.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/BarlowCondensed-Medium.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/BarlowCondensed-SemiBold.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/BarlowCondensed-Bold.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/JetBrainsMono-Regular.woff2") format("woff2"); }
+
+/* Smart Bike — estilos de referencia de los componentes (prefijo sq-). En la app, cada clase corresponde a un composable. */
+
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-sans); font-size: 16px; line-height: 24px; }
+.sq-pad { padding: var(--space-4); }
+.sq-row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+.sq-col { display: flex; flex-direction: column; gap: var(--space-3); }
+.sq-num { font-family: var(--font-numeric); font-variant-numeric: tabular-nums; }
+.sq-label { font-family: var(--font-sans); font-size: 13px; line-height: 16px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-muted); }
+.sq-caption { margin: 0; font-size: 13px; line-height: 18px; color: var(--ink-muted); }
+.sq-mono { font-family: var(--font-mono); font-size: 13px; }
+
+/* Marcha */
+.sq-gear { display: grid; grid-template-columns: auto 1fr; align-items: end; column-gap: var(--space-6); }
+.sq-gear-num { font-family: var(--font-numeric); font-variant-numeric: tabular-nums; font-size: 168px; line-height: 152px; font-weight: 700; letter-spacing: -.02em; color: var(--gear); }
+.sq-gear-meta { display: flex; flex-direction: column; gap: var(--space-2); padding-bottom: var(--space-3); }
+.sq-gear-ratio { font-family: var(--font-numeric); font-size: 28px; line-height: 32px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+.sq-gear.is-limit .sq-gear-num { color: var(--ink-muted); }
+.sq-limit { display: inline-flex; gap: var(--space-1); align-items: center; align-self: flex-start; padding: 2px var(--space-2); border-radius: var(--radius-sm); background: var(--gear-soft); color: var(--gear); font-size: 13px; font-weight: 600; line-height: 18px; }
+.sq-limit.is-reserva { visibility: hidden; }
+
+/* Escalera de marchas */
+.sq-ladder { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 3px; height: var(--ladder-h); align-items: end; }
+.sq-ladder i { display: block; border-radius: var(--radius-sm); background: var(--surface-2); height: 40%; }
+.sq-ladder i.past { background: var(--line-strong); }
+.sq-ladder i.on { background: var(--gear-fill); height: 100%; }
+.sq-ladder i.ref { box-shadow: inset 0 -3px 0 var(--ink); }
+.sq-ladder-ends { display: flex; justify-content: space-between; margin-top: var(--space-1); }
+
+/* Métricas */
+.sq-metric { display: flex; flex-direction: column; gap: var(--space-1); min-width: 0; }
+.sq-metric-val { font-family: var(--font-numeric); font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); display: flex; align-items: baseline; gap: var(--space-1); }
+.sq-metric-val.xl { font-size: 72px; line-height: 72px; }
+.sq-metric-val.lg { font-size: 44px; line-height: 48px; }
+.sq-metric-val.md { font-size: 28px; line-height: 32px; }
+.sq-metric-val.text { font-family: var(--font-sans); line-height: 32px; }
+.sq-metric-val.is-empty { color: var(--ink-muted); }
+.sq-metric-val.is-climb { color: var(--climb); } .sq-metric-val.is-descent { color: var(--descent); }
+.sq-unit { font-family: var(--font-sans); font-size: 16px; font-weight: 600; color: var(--ink-muted); }
+/* Junto a una cifra, con su propio interlineado: si heredara el de la cifra, alinearla por la línea base alargaría
+   el valor y las filas con unidad quedarían más altas que las que no la tienen. */
+.sq-metric-val .sq-unit { line-height: 1; }
+.sq-target { font-family: var(--font-numeric); font-size: 20px; font-weight: 600; color: var(--erg); font-variant-numeric: tabular-nums; }
+
+/* Pendiente */
+.sq-grade { display: flex; align-items: baseline; gap: var(--space-3); font-family: var(--font-numeric); font-variant-numeric: tabular-nums; font-weight: 600; }
+.sq-grade .src { font-size: 28px; line-height: 32px; color: var(--ink-muted); }
+.sq-grade .arrow { font-size: 24px; color: var(--ink-muted); }
+.sq-grade .eff { font-size: 44px; line-height: 48px; }
+.climb { color: var(--climb); } .descent { color: var(--descent); } .flat { color: var(--ink-muted); }
+
+/* Insignia de modo */
+.sq-mode { display: inline-flex; align-items: center; gap: var(--space-2); height: 32px; padding: 0 var(--space-3); border-radius: var(--radius-sm); border: 2px solid currentColor; font-family: var(--font-numeric); font-size: 18px; font-weight: 700; letter-spacing: .06em; background: var(--bg); }
+.sq-mode small { font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: .04em; color: var(--ink-muted); }
+.sq-mode.libre { color: var(--ink); } .sq-mode.sim { color: var(--sim); } .sq-mode.erg { color: var(--erg); }
+/* Variante tocable (cambio de modo activado): es un <button> con el aspecto de 32 px y el área de toque de touch-min. El indicio no es el color: el relleno tintado y el borde más marcado la distinguen de la etiqueta. */
+button.sq-mode { position: relative; margin: 0; cursor: pointer; -webkit-appearance: none; appearance: none; border-width: 3px; background: color-mix(in srgb, currentColor 14%, var(--bg)); }
+button.sq-mode::before { content: ""; position: absolute; inset: calc((32px - var(--touch-min)) / 2) calc((32px - var(--touch-min)) / 4); }
+button.sq-mode:active, button.sq-mode.is-pressed { background: color-mix(in srgb, currentColor 28%, var(--bg)); }
+button.sq-mode:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: 2px; }
+
+/* Chip de conexión */
+.sq-conn { display: inline-flex; align-items: center; gap: var(--space-2); height: 32px; padding: 0 var(--space-3); border-radius: var(--radius-full); border: 1px solid var(--line-strong); background: var(--surface); font-size: 14px; font-weight: 600; color: var(--ink); }
+.sq-conn .dot { width: 10px; height: 10px; border-radius: var(--radius-full); box-sizing: border-box; }
+.sq-conn.ok .dot { background: var(--ok); }
+.sq-conn.wait .dot { border: 2px solid var(--ink-muted); border-right-color: transparent; animation: sq-spin 1s linear infinite; }
+.sq-conn.off { border-color: var(--danger); }
+.sq-conn.off .dot { background: transparent; border: 2px solid var(--danger); }
+.sq-conn .st { font-weight: 400; color: var(--ink-muted); }
+.sq-conn.off .st { color: var(--danger); }
+.sq-conn.idle .dot { height: 2px; border-radius: 1px; background: var(--ink-muted); }
+/* Chip tocable (abre el detalle del dispositivo): mismo aspecto, área táctil de touch-min */
+a.sq-conn { position: relative; text-decoration: none; cursor: pointer; }
+a.sq-conn::before { content: ""; position: absolute; inset: calc((32px - var(--touch-min)) / 2) 0; }
+a.sq-conn:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: 2px; }
+@keyframes sq-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .sq-conn.wait .dot { animation: none; } }
+
+/* Barra de conexiones (ConnectionBar): un icono por enlace y un único objetivo táctil. El estado va en la forma del icono:
+   conectado, el icono en ink; esperando, en ink-muted con una marca girando en la esquina; sin conexión, en danger y tachado.
+   La marca y el tachado se recortan del icono con una máscara para no pisar su dibujo. */
+.sq-connbar { position: relative; display: inline-flex; align-items: center; gap: var(--space-1); height: var(--touch-min); margin: calc((32px - var(--touch-min)) / 2) 0; padding: 0 var(--space-2); border-radius: var(--radius-md); text-decoration: none; cursor: pointer; }
+.sq-connbar:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: 2px; }
+/* Los iconos miden --ic (14 px) y la marca de espera y el tachado se escalan con él: sus medidas son las de un icono de 24 px por u = --ic / 24. */
+/* Los iconos de la barra de conexiones de Rodaje miden 14 px. */
+.sq-connbar, .sq-connbar__i { --ic: 14px; --u: calc(var(--ic) / 24); }
+.sq-connbar__i { position: relative; flex: none; display: inline-block; width: var(--ic); height: var(--ic); color: var(--ink); }
+.sq-connbar__i > .sq-icon { display: block; width: var(--ic); height: var(--ic); color: currentColor; }
+.sq-connbar__i.is-wait { color: var(--ink-muted); }
+.sq-connbar__i.is-wait > .sq-icon { -webkit-mask-image: radial-gradient(circle at calc(19 * var(--u)) calc(19 * var(--u)), transparent calc(6.65 * var(--u)), #000 calc(7 * var(--u))); mask-image: radial-gradient(circle at calc(19 * var(--u)) calc(19 * var(--u)), transparent calc(6.65 * var(--u)), #000 calc(7 * var(--u))); }
+.sq-connbar__i.is-wait::after { content: ""; position: absolute; right: 0; bottom: 0; width: calc(10 * var(--u)); height: calc(10 * var(--u)); box-sizing: border-box; border-radius: var(--radius-full); border: calc(2 * var(--u)) solid var(--ink-muted); border-right-color: transparent; animation: sq-spin 1s linear infinite; }
+.sq-connbar__i.is-off { color: var(--danger); }
+.sq-connbar__i.is-off > .sq-icon { -webkit-mask-image: linear-gradient(to top right, #000 calc(50% - 2.5 * var(--u)), transparent calc(50% - 2.5 * var(--u)), transparent calc(50% + 2.5 * var(--u)), #000 calc(50% + 2.5 * var(--u))); mask-image: linear-gradient(to top right, #000 calc(50% - 2.5 * var(--u)), transparent calc(50% - 2.5 * var(--u)), transparent calc(50% + 2.5 * var(--u)), #000 calc(50% + 2.5 * var(--u))); }
+.sq-connbar__i.is-off::after { content: ""; position: absolute; left: calc(-3 * var(--u)); top: calc(11 * var(--u)); width: calc(30 * var(--u)); height: calc(2 * var(--u)); border-radius: 1px; background: var(--danger); transform: rotate(45deg); }
+@media (prefers-reduced-motion: reduce) { .sq-connbar__i.is-wait::after { animation: none; } }
+/* Batería baja (solo el Square): el icono entero y, en su esquina superior izquierda, una insignia en ink con un «!» en el color del fondo. Sin color de aviso: se distingue por la forma. */
+.sq-connbar__i.is-low > .sq-icon { overflow: visible; }
+.sq-connbar__i.is-low::after { content: ""; position: absolute; left: calc(-3.5 * var(--u)); top: calc(-1 * var(--u)); width: calc(11 * var(--u)); height: calc(11 * var(--u)); border-radius: var(--radius-full); background: radial-gradient(circle at 50% 76%, var(--bg) 0, var(--bg) calc(1 * var(--u)), transparent calc(1.15 * var(--u))), linear-gradient(var(--bg), var(--bg)) 50% 20% / calc(1.9 * var(--u)) calc(4.6 * var(--u)) no-repeat, var(--ink); }
+/* Aviso de giro (TurnIndicator): una flecha a cada lado de la marcha. El sitio está siempre reservado (visibility, no display). */
+.sq-turn { display: flex; align-items: center; justify-content: center; gap: var(--space-4); }
+.sq-turn__a { flex: none; display: inline-grid; place-items: center; width: 56px; height: 56px; color: var(--gear); visibility: hidden; }
+.sq-turn__a > .sq-icon { width: 56px; height: 56px; color: currentColor; }
+.sq-turn__a.is-right > .sq-icon { transform: scaleX(-1); }
+.sq-turn__a.is-on { visibility: visible; }
+
+/* Tecla de botón del Square */
+.sq-key { display: inline-grid; place-items: center; min-width: 36px; height: 36px; padding: 0 var(--space-2); box-sizing: border-box; border-radius: var(--radius-md); background: var(--surface-2); border: 1px solid var(--line-strong); color: var(--ink); font-family: var(--font-numeric); font-size: 18px; font-weight: 700; line-height: 1; }
+.sq-key.wide { font-family: var(--font-sans); font-size: 13px; font-weight: 600; letter-spacing: .02em; white-space: nowrap; }
+.sq-key > .sq-icon { width: 20px; height: 20px; color: currentColor; }
+.sq-key.down { background: var(--gear-fill); border-color: var(--gear-fill); color: var(--on-gear-fill); }
+.sq-plus { color: var(--ink-muted); font-weight: 600; }
+
+/* Aviso de gesto */
+.sq-toast { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); padding: var(--space-2) var(--space-4) var(--space-2) var(--space-2); border-radius: var(--radius-md); background: var(--surface); border: 1px solid var(--line); }
+.sq-toast .gest { font-size: 13px; color: var(--ink-muted); }
+.sq-toast .act { font-weight: 600; color: var(--ink); white-space: nowrap; }
+
+/* Etiqueta de capa */
+.sq-layer { display: inline-flex; align-items: center; height: 22px; padding: 0 var(--space-2); border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; letter-spacing: .04em; }
+.sq-layer.zwift { background: var(--surface-2); color: var(--ink); }
+.sq-layer.app { background: var(--gear-soft); color: var(--gear); }
+
+/* Fila de asignación */
+.sq-map { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr) auto; align-items: center; gap: var(--space-3); min-height: var(--touch-min); padding: var(--space-2) var(--space-4); background: var(--surface); border-bottom: 1px solid var(--line); }
+.sq-map .in { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+.sq-map .gest { font-size: 13px; color: var(--ink-muted); }
+.sq-map.capture { box-shadow: inset 0 0 0 2px var(--gear); }
+a.sq-map { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr) auto auto; color: inherit; text-decoration: none; cursor: pointer; }
+a.sq-map > .sq-icon { color: var(--ink-muted); margin-right: calc(-1 * var(--space-2)); }
+a.sq-map:active { background: var(--surface-2); }
+a.sq-map:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: -3px; }
+/* Variante apilada (pantalla de Botones, agrupada por acción): la acción arriba y sus entradas debajo, una por línea */
+.sq-map--stack { grid-template-columns: minmax(0, 1fr) auto; padding-top: var(--space-3); padding-bottom: var(--space-3); }
+a.sq-map.sq-map--stack { grid-template-columns: minmax(0, 1fr) auto auto; }
+.sq-map__what { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+.sq-map__act { font-weight: 600; }
+.sq-map--stack .in { flex-direction: column; align-items: flex-start; }
+.sq-map .ent { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+.sq-map .combo { display: inline-flex; align-items: center; gap: var(--space-2); white-space: nowrap; }
+/* Fila solo informativa (funciones que resuelve Zwift): sin chevron ni estado táctil */
+.sq-map.is-info { cursor: default; }
+/* Acción sin ninguna entrada asignada */
+.sq-map .sin { color: var(--ink-muted); }
+
+/* Botones */
+.sq-btn { font: inherit; font-weight: 600; height: var(--touch-min); padding: 0 var(--space-6); border-radius: var(--radius-md); border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); cursor: pointer; }
+.sq-btn.primary { background: var(--gear-fill); border-color: var(--gear-fill); color: var(--on-gear-fill); }
+.sq-btn.ride { height: var(--touch-ride); min-width: var(--touch-ride); font-family: var(--font-numeric); font-size: 32px; padding: 0 var(--space-4); }
+.sq-btn:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: 2px; }
+.sq-btn:disabled { opacity: .45; cursor: default; }
+a.sq-btn { display: inline-grid; place-items: center; box-sizing: border-box; text-decoration: none; }
+
+/* Stepper */
+.sq-step { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-3) var(--space-4); background: var(--surface); border-bottom: 1px solid var(--line); }
+.sq-step-ctl { display: flex; align-items: center; gap: var(--space-2); }
+.sq-step-ctl button { width: var(--touch-min); height: var(--touch-min); border-radius: var(--radius-md); border: 1px solid var(--line-strong); background: var(--bg); color: var(--ink); font: 600 22px/1 var(--font-sans); cursor: pointer; }
+.sq-step-ctl button:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: 2px; }
+.sq-step-ctl button:disabled { opacity: .45; cursor: default; }
+.sq-step-val { min-width: 88px; text-align: center; font-family: var(--font-numeric); font-size: 28px; line-height: 32px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.sq-step-val .sq-unit { font-size: 14px; }
+
+/* Fila de marcha: ajuste de una marcha en la tabla; la puesta lleva marca y palabra, no solo color */
+.sq-step--gear { padding-block: var(--space-2); }
+.sq-step--gear .sq-gear-name { font-family: var(--font-numeric); font-size: 22px; line-height: 28px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.sq-step--gear .sq-step-val { min-width: 76px; font-size: 22px; line-height: 28px; }
+.sq-step--gear[aria-current="true"] { box-shadow: inset 4px 0 0 var(--gear); }
+.sq-step--gear[aria-current="true"] .sq-caption::before { content: "● Puesta · "; color: var(--ink); font-weight: 600; }
+
+/* Volcado hexadecimal */
+.sq-hex { font-family: var(--font-mono); font-size: 13px; line-height: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); max-height: calc(12 * 20px + 2 * var(--space-3)); overflow: auto; }
+.sq-hex-row { display: grid; grid-template-columns: 12ch 7ch 6ch auto; gap: var(--space-3); white-space: nowrap; }
+.sq-hex-row .t, .sq-hex-row .ch { color: var(--ink-muted); }
+.sq-hex-row .src { font-weight: 400; color: var(--ink-muted); }
+.sq-hex-row .src.out { color: var(--gear); }
+.sq-hex-row b { font-weight: 400; color: var(--gear); }
+.sq-hex-empty { margin: 0; color: var(--ink-muted); }
+
+/* Marcha física: plato × piñón */
+.sq-ratio-hero { font-family: var(--font-numeric); font-variant-numeric: tabular-nums; font-weight: 700; font-size: 136px; line-height: 120px; letter-spacing: -.02em; color: var(--gear); white-space: nowrap; }
+.sq-ratio-hero .x { font-size: 72px; color: var(--ink-muted); padding: 0 2px; }
+.sq-ratio-hero.is-limit { color: var(--ink-muted); }
+
+/* Indicador de plato */
+.sq-rings { display: inline-flex; gap: 6px; align-items: center; }
+.sq-ring { display: inline-grid; place-items: center; min-width: 44px; height: 28px; padding: 0 var(--space-2); box-sizing: border-box; border-radius: var(--radius-full); border: 2px solid var(--line-strong); color: var(--ink-muted); font: 700 16px/1 var(--font-numeric); font-variant-numeric: tabular-nums; }
+.sq-ring.on { background: var(--gear-fill); border-color: var(--gear-fill); color: var(--on-gear-fill); }
+
+/* Cassette */
+.sq-cass { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 4px; align-items: end; height: 48px; }
+/* Altura de cada piñón: variable --cog, proporcional a sus dientes (el mayor, 100%). */
+.sq-cog { display: block; height: var(--cog, 100%); border-radius: var(--radius-sm); background: var(--surface-2); }
+.sq-cog.on { background: var(--gear-fill); }
+.sq-cog-n { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 4px; margin-top: var(--space-1); font: 600 13px/16px var(--font-numeric); color: var(--ink-muted); text-align: center; font-variant-numeric: tabular-nums; }
+.sq-cog-n .on { color: var(--gear); }
+
+/* ==========================================================================
+   Pantallas: piezas de composición usadas por las maquetas
+   ========================================================================== */
+
+/* Icono (sprite icons.svg, 24dp): <svg class="sq-icon" aria-hidden="true"><use href="…/icons.svg#i-nombre"/></svg> */
+.sq-icon { display: inline-block; flex: none; width: 24px; height: 24px; vertical-align: middle; fill: currentColor; color: var(--ink-muted); }
+
+/* Aviso de salida (ExitNotice): flota translúcido en el centro de la pantalla, sin ocupar sitio. */
+.sq-exit-notice { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; box-sizing: border-box; width: max-content; max-width: calc(100% - 2 * var(--space-6)); padding: var(--space-2) var(--space-4); border-radius: var(--radius-md); background: color-mix(in srgb, var(--surface) 82%, transparent); border: 1px solid var(--line); color: var(--ink); font-size: 14px; line-height: 20px; font-weight: 500; text-align: center; pointer-events: none; }
+
+/* Pantalla de rodaje (RideScreen) */
+.sq-ride { position: relative; box-sizing: border-box; height: 100%; display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-2) var(--space-6) var(--space-4); background: var(--bg); color: var(--ink); }
+/* Arriba solo space-2: las zonas táctiles de la primera fila (48 px, con margen negativo sobre sus 32 px) llegan hasta la barra del sistema. */
+.sq-ride__top { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+.sq-ride__mode { display: flex; align-items: center; gap: var(--space-3); }
+.sq-ride__top--status > .sq-ride__platform { min-width: 0; }
+.sq-ride__top--status > .sq-ride__conns { flex: none; }
+/* La línea superior en horizontal son tres columnas: el modo con la transmisión a la izquierda, el estado de la plataforma centrado en la línea
+   y las conexiones con Ajustes a la derecha. Si el modo no cabe en su columna, la transmisión pasa a dos líneas. */
+.sq-ride__top--status { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: var(--space-3); }
+.sq-ride__top--status > .sq-ride__mode { min-width: 0; justify-self: start; }
+.sq-ride__top--status > .sq-ride__mode .sq-caption { min-width: 0; }
+.sq-ride__top--status > .sq-ride__platform { min-width: 0; justify-self: center; }
+.sq-ride__top--status > .sq-ride__conns { justify-self: end; }
+.sq-ride__conns { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+/* Acceso a Ajustes: último elemento de .sq-ride__conns. Mide 32 px, como la línea de la barra, para no alargarla; la zona
+   táctil llega a touch-min con ::before. En vertical va al final de la fila del modo (.sq-ride__modeline). */
+.sq-ride__settings { position: relative; flex: none; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: var(--radius-full); color: var(--ink-muted); text-decoration: none; cursor: pointer; }
+.sq-ride__settings::before { content: ""; position: absolute; inset: calc((32px - var(--touch-min)) / 2); }
+.sq-ride__settings .sq-icon { color: currentColor; }
+.sq-ride__settings:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: 2px; }
+/* Estado de la plataforma (PlatformBadge): una línea de 32 px, a la izquierda de la fila de Ajustes; la zona táctil llega a touch-min sin alargarla */
+.sq-ride__platform { display: flex; justify-content: center; margin: calc((32px - var(--touch-min)) / 2) 0; }
+.sq-pbadge { display: inline-flex; align-items: center; min-height: var(--touch-min); border-radius: var(--radius-md); text-decoration: none; color: inherit; cursor: pointer; }
+.sq-pbadge:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: 2px; }
+.sq-pbadge .sq-conn.wait { color: var(--ink-muted); }
+/* Variante en vertical: el estado de la plataforma a la izquierda y la barra de conexiones a la derecha */
+.sq-ride__statusrow { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.sq-ride__statusrow > .sq-ride__platform, .sq-ride__top--status > .sq-ride__platform { margin: 0; justify-content: flex-start; }
+.sq-ride__statusrow .sq-pbadge, .sq-ride__top--status > .sq-ride__platform .sq-pbadge { margin: calc((32px - var(--touch-min)) / 2) 0; }
+.sq-ride__moderow { display: flex; align-items: center; gap: var(--space-3); }
+.sq-ride__main { position: relative; }
+.sq-ride__main { margin-bottom: var(--space-2); }
+.sq-ride__main { flex: 1; min-height: 0; display: flex; gap: var(--space-8); align-items: stretch; }
+/* Área fija de datos: el 40 % del ancho útil en horizontal y del alto útil en vertical. La marcha (o la potencia
+   objetivo) ocupa el resto. Con los botones − y +, el script de las maquetas acorta la rejilla con la holgura que le
+   sobra sin bajar su cifra; lo que falte lo pierde la marcha. */
+.sq-ride__main > .sq-ride__gear, .sq-ride__main > .sq-ride__erg { flex: 1; min-width: 0; }
+.sq-ride__main > .sq-mgrid { flex: none; width: 40%; }
+.sq-ride__main > .sq-ride__buttons { flex: none; }
+.sq-ride__gear { display: flex; flex-direction: column; justify-content: center; gap: var(--space-3); min-width: 0; }
+/* La marcha, los platos o la potencia objetivo, reducidos para caber en su zona (zoom); la escalera y el cassette no. */
+.sq-ride__fit { display: flex; flex-direction: column; align-items: center; gap: var(--space-3); width: max-content; align-self: center; }
+.sq-ride__fit > .sq-col { align-items: center; }
+/* Su tamaño natural no ensancha la pantalla: la zona no aporta ancho mínimo y la marcha se reduce dentro. */
+.sq-ride__gear, .sq-ride__erg { contain: inline-size; }
+.sq-ride__gearrow { display: flex; justify-content: center; align-items: flex-end; gap: var(--space-6); }
+.sq-ride__gear > .sq-col, .sq-ride__gearrow > .sq-col { align-self: center; align-items: center; }
+.sq-ride__rings { display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-2); padding-bottom: var(--space-2); }
+.sq-ride__buttons { display: flex; flex-direction: column; justify-content: center; gap: var(--space-3); }
+.sq-ride__foot { display: flex; justify-content: center; min-height: 40px; }
+.sq-ride--v { padding: var(--space-2) var(--space-6) var(--space-4); gap: var(--space-4); }
+.sq-ride--v > .sq-ride__gear, .sq-ride--v > .sq-ride__erg { flex: 1; min-height: 0; }
+.sq-ride--v .sq-ride__gear { align-items: center; }
+.sq-ride--v .sq-ratio-hero { font-size: 136px; }
+.sq-ride--v .sq-ride__rings { flex-direction: row; align-items: center; padding: 0; }
+.sq-ride--v .sq-cass { height: 56px; }
+/* Pantalla baja (menos de 700 dp de alto): menos aire entre bloques y el cassette más bajo; no quita ni reordena nada. */
+.sq-ride--v.sq-ride--baja { gap: var(--space-2); }
+.sq-ride--v.sq-ride--baja .sq-cass { height: 40px; }
+.sq-ride--v .sq-ride__buttons { flex-direction: row; }
+.sq-ride--v .sq-ride__buttons .sq-btn { flex: 1; }
+/* En vertical, bajo la barra de estado del sistema, la fila de la plataforma lleva el estado a la izquierda y la barra de conexiones
+   a la derecha, y debajo el modo con Ajustes a la derecha. */
+.sq-ride__statusrow > .sq-ride__platform { min-width: 0; }
+/* Si el estado no cabe junto a las conexiones pasa a dos líneas dentro de su objetivo táctil de touch-min (2 × 18 + 8 + 2 = 46 px), sin alargar la fila. */
+.sq-ride__statusrow .sq-conn, .sq-ride__top--status > .sq-ride__platform .sq-conn { box-sizing: border-box; height: auto; min-height: 32px; padding-block: var(--space-1); line-height: 18px; }
+.sq-ride__statusrow > .sq-connbar { flex: none; }
+/* En vertical, la fila de la plataforma y la del modo van más juntas: 12 px entre el chip y el modo (4 menos que el hueco entre bloques); en pantalla baja, el hueco de siempre. */
+.sq-ride--v > .sq-ride__statusrow { margin-bottom: calc(-1 * var(--space-1)); }
+.sq-ride--v.sq-ride--baja > .sq-ride__statusrow { margin-bottom: 0; }
+.sq-ride__modeline { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.sq-ride__modeline .sq-ride__mode { flex: 1; min-width: 0; }
+.sq-ride--v .sq-ride__settings { margin-left: auto; }
+.sq-ride__erg { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: var(--space-3); }
+.sq-erg-hero { display: flex; align-items: baseline; gap: var(--space-2); font-family: var(--font-numeric); font-variant-numeric: tabular-nums; font-weight: 700; color: var(--erg); }
+.sq-erg-hero b { font-size: 152px; line-height: 136px; letter-spacing: -.02em; font-weight: 700; }
+.sq-erg-hero .sq-unit { font-size: 24px; }
+.sq-badge-erg { display: inline-flex; align-items: center; padding: 2px var(--space-2); border-radius: var(--radius-sm); background: var(--erg-soft); color: var(--erg); font-size: 13px; font-weight: 600; line-height: 18px; }
+.sq-metric.is-alert .sq-label, .sq-metric.is-alert .sq-metric-val { color: var(--danger); }
+
+/* Rejilla de datos (MetricGrid): de 1 a 6 datos, sin desplazamiento */
+.sq-mgrid { --mg-cols: 1; --mg-rows: 2; --mg-size: 72px; min-height: 0; display: grid; grid-template-columns: repeat(var(--mg-cols), minmax(0, 1fr)); grid-template-rows: repeat(var(--mg-rows), minmax(0, 1fr)); gap: var(--space-2) var(--space-6); }
+.sq-mgrid .sq-metric { justify-content: center; gap: 2px; }
+.sq-ride .sq-mgrid .sq-metric { align-items: center; text-align: center; }
+.sq-mgrid .sq-metric-val { font-size: var(--mg-size); line-height: var(--mg-size); white-space: nowrap; }
+/* Columnas y filas por número de datos. La cifra (--mg-size) no sale de una tabla: es la mayor, hasta 144px, con la
+   que el valor más largo de cada dato cabe en su celda (README de MetricGrid); la fija quien coloca la rejilla. */
+.sq-mgrid[data-n="1"] { --mg-cols: 1; --mg-rows: 1; }
+.sq-mgrid[data-n="2"] { --mg-cols: 1; --mg-rows: 2; }
+.sq-mgrid[data-n="3"] { --mg-cols: 1; --mg-rows: 3; }
+.sq-mgrid[data-n="4"] { --mg-cols: 2; --mg-rows: 2; }
+.sq-mgrid[data-n="5"], .sq-mgrid[data-n="6"] { --mg-cols: 2; --mg-rows: 3; }
+.sq-ride--v .sq-mgrid { flex: none; height: 40%; --mg-cols: 2; }
+.sq-ride--v .sq-mgrid[data-n="1"], .sq-ride--v .sq-mgrid[data-n="2"] { --mg-rows: 1; }
+.sq-ride--v .sq-mgrid[data-n="1"] { --mg-cols: 1; }
+.sq-ride--v .sq-mgrid[data-n="3"], .sq-ride--v .sq-mgrid[data-n="4"] { --mg-rows: 2; }
+.sq-ride--v .sq-mgrid[data-n="5"], .sq-ride--v .sq-mgrid[data-n="6"] { --mg-rows: 3; }
+/* Con 2 columnas y un número impar de datos, el último ocupa la fila entera, centrado: sin hueco a su derecha. */
+.sq-mgrid[data-n="5"] > .sq-metric:nth-child(5), .sq-ride--v .sq-mgrid[data-n="3"] > .sq-metric:nth-child(3) { grid-column: 1 / -1; }
+
+/* Miniatura de la pantalla de rodaje: vista previa de «Datos en pantalla» */
+.sq-item.sq-ride-mini { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: var(--space-3); height: 132px; align-items: stretch; }
+.sq-ride-mini__gear { display: flex; flex-direction: column; justify-content: center; gap: var(--space-2); min-width: 0; }
+.sq-ride-mini .sq-ratio-hero { font-size: 44px; line-height: 40px; }
+.sq-ride-mini .sq-ratio-hero .x { font-size: 26px; }
+.sq-ride-mini .sq-cass { height: 16px; gap: 2px; }
+.sq-mgrid--mini { gap: var(--space-1); }
+.sq-mgrid--mini[data-n="1"] { --mg-size: 28px; }
+.sq-mgrid--mini[data-n="2"] { --mg-size: 22px; }
+.sq-mgrid--mini[data-n="3"], .sq-mgrid--mini[data-n="4"] { --mg-size: 16px; }
+.sq-mgrid--mini[data-n="5"], .sq-mgrid--mini[data-n="6"] { --mg-size: 13px; }
+.sq-mgrid--mini .sq-metric { padding: 0 6px; border-radius: var(--radius-sm); background: var(--surface-2); }
+.sq-mgrid--mini .sq-label { font-size: 9px; line-height: 10px; }
+
+/* Barra superior de pantallas de ajustes (AppBar) */
+.sq-screen { box-sizing: border-box; min-height: 100%; display: flex; flex-direction: column; background: var(--bg); color: var(--ink); }
+.sq-screen__body { flex: 1; display: flex; flex-direction: column; gap: var(--space-6); padding: var(--space-4) var(--space-4) var(--space-8); }
+.sq-appbar { display: flex; align-items: center; gap: var(--space-2); min-height: var(--touch-min); }
+.sq-appbar__back { display: grid; place-items: center; width: var(--touch-min); height: var(--touch-min); margin-left: calc(-1 * var(--space-3)); border-radius: var(--radius-full); color: var(--ink); text-decoration: none; }
+.sq-appbar__back .sq-icon { color: var(--ink); }
+.sq-appbar__back:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: 2px; }
+.sq-title { margin: 0; font-size: 24px; line-height: 32px; font-weight: 600; }
+.sq-intro { margin: 0; }
+/* Párrafo pegado al título de la barra: sin el hueco de la separación entre bloques (la barra ya deja 8 px bajo el título) */
+.sq-appbar + .sq-intro { margin-top: calc(-1 * var(--space-6)); }
+
+/* Navegación inferior (BottomNav) */
+.sq-nav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); background: var(--surface); }
+.sq-nav a { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); min-height: 56px; padding: 10px 0 14px; color: var(--ink-muted); text-decoration: none; font-size: 12px; font-weight: 600; }
+.sq-nav a[aria-current="page"], .sq-nav a[aria-current="page"] .sq-icon { color: var(--gear); }
+.sq-nav a:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: -3px; }
+
+/* Listas de ajustes (SettingsList) */
+.sq-section { display: flex; flex-direction: column; gap: var(--space-2); margin: 0; padding: 0; border: 0; min-width: 0; }
+.sq-section__title { margin: 0; padding: 0; font-size: 18px; line-height: 24px; font-weight: 600; }
+.sq-section > legend.sq-label { margin-bottom: var(--space-2); }
+.sq-list { border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden; }
+.sq-list > * + * { border-top: 1px solid var(--line); }
+.sq-list .sq-step, .sq-list .sq-map { border-bottom: 0; }
+.sq-item { display: flex; align-items: center; gap: var(--space-3); min-height: var(--touch-min); padding: var(--space-3) var(--space-4); box-sizing: border-box; background: var(--surface); color: var(--ink); text-decoration: none; }
+.sq-item__text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.sq-item__name { font-weight: 600; }
+.sq-item--stack { flex-direction: column; align-items: stretch; gap: var(--space-3); }
+.sq-item--stack p { margin: 0; }
+.sq-item--stack > .sq-toast { align-self: flex-start; }
+summary.sq-item { cursor: pointer; list-style: none; }
+summary.sq-item::-webkit-details-marker { display: none; }
+a.sq-item:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: -3px; }
+.sq-check { width: 22px; height: 22px; margin: 0; flex: none; accent-color: var(--gear-fill); }
+.sq-check:disabled { opacity: .45; cursor: default; }
+.sq-opt { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) var(--space-4); background: var(--surface); cursor: pointer; }
+.sq-opt input { appearance: none; width: 20px; height: 20px; margin: 2px 0 0; flex: none; box-sizing: border-box; border: 2px solid var(--line-strong); border-radius: 50%; background: var(--surface); }
+.sq-opt input:checked { border-color: var(--gear); background: radial-gradient(circle, var(--gear) 0 4px, transparent 4.5px), var(--surface); }
+.sq-opt:has(input:checked) { box-shadow: inset 0 0 0 2px var(--gear); }
+.sq-opt:has(input:disabled) { opacity: .45; cursor: default; }
+.sq-list > .sq-opt:first-child { border-radius: calc(var(--radius-md) - 1px) calc(var(--radius-md) - 1px) 0 0; }
+.sq-list > .sq-opt:last-child { border-radius: 0 0 calc(var(--radius-md) - 1px) calc(var(--radius-md) - 1px); }
+.sq-list > .sq-opt:only-child { border-radius: calc(var(--radius-md) - 1px); }
+.sq-item.is-off .sq-item__name { color: var(--ink-muted); }
+.sq-handle { display: grid; place-items: center; width: var(--touch-min); height: var(--touch-min); margin-right: calc(-1 * var(--space-3)); border: 0; background: transparent; cursor: grab; }
+
+/* Control segmentado */
+.sq-seg { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); border: 1px solid var(--line-strong); border-radius: var(--radius-md); overflow: hidden; }
+.sq-seg label { position: relative; display: grid; place-items: center; min-height: var(--touch-min); font-weight: 600; cursor: pointer; }
+.sq-seg label + label { border-left: 1px solid var(--line-strong); }
+.sq-seg input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.sq-seg label:has(input:checked) { background: var(--gear-fill); color: var(--on-gear-fill); }
+.sq-seg label:has(input:focus-visible) { outline: var(--focus-width) solid var(--focus); outline-offset: -3px; }
+
+/* Lista de modos de conexión (ModeList) */
+.sq-compat { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-2); margin-top: var(--space-2); }
+.sq-compat .sq-tag { margin-left: 0; font-weight: 400; }
+.sq-compat .sq-tag b { font-weight: 600; }
+
+/* Fila de servicio publicado (ServiceRow) */
+.sq-svc__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.sq-svc__head > .sq-row:first-child { flex: 1; min-width: 0; }
+.sq-svc__head > :last-child { flex: none; flex-wrap: nowrap; }
+.sq-svc.is-none .sq-item__name, .sq-svc.is-none .sq-icon { color: var(--ink-muted); }
+.sq-svc.is-none .sq-conn { color: var(--ink-muted); }
+a.sq-svc { color: inherit; text-decoration: none; cursor: pointer; }
+a.sq-svc .sq-svc__go { color: var(--ink-muted); }
+.sq-tag { display: inline-block; margin-left: var(--space-2); padding: 0 var(--space-2); border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--surface-2); color: var(--ink); font-size: 12px; font-weight: 600; line-height: 20px; vertical-align: 1px; }
+
+/* Panel de captura de gesto (CapturePanel) */
+.sq-capture { display: flex; flex-direction: column; align-items: center; gap: var(--space-4); padding: var(--space-8) var(--space-4); border: 2px dashed var(--gear); border-radius: var(--radius-md); background: var(--surface); text-align: center; }
+.sq-capture__keys { display: flex; align-items: center; gap: var(--space-2); min-height: 48px; }
+.sq-capture .sq-key { height: 48px; min-width: 48px; font-size: 24px; }
+.sq-capture .sq-key > .sq-icon { width: 28px; height: 28px; }
+.sq-capture .sq-key.wide { font-size: 15px; padding: 0 var(--space-3); }
+.sq-capture.is-off { border: 2px solid var(--line); color: var(--ink-muted); }
+/* Entradas que ya tiene la acción, cada una con su botón de quitar */
+.sq-entry { display: flex; align-items: center; gap: var(--space-2); min-height: var(--touch-min); padding: 0 0 0 var(--space-4); background: var(--surface); }
+.sq-entry .in { flex: 1; min-width: 0; display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+.sq-entry .gest { font-size: 13px; color: var(--ink-muted); }
+.sq-entry__remove { display: grid; place-items: center; width: var(--touch-min); height: var(--touch-min); flex: none; border: 0; background: transparent; color: var(--ink-muted); cursor: pointer; }
+.sq-entry__remove:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: -3px; }
+
+/* Fila de sesión grabada (SessionRow): nombre, tamaño y acciones de icono de touch-min */
+.sq-ses { display: flex; align-items: center; gap: var(--space-1); min-height: var(--touch-min); padding: var(--space-2) 0 var(--space-2) var(--space-4); background: var(--surface); color: var(--ink); }
+.sq-ses__text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.sq-ses__name { font-weight: 600; }
+.sq-ses__acts { display: flex; flex: none; min-width: calc(3 * var(--touch-min)); }
+.sq-ses__act { display: grid; place-items: center; width: var(--touch-min); height: var(--touch-min); flex: none; border: 0; background: transparent; color: var(--ink-muted); cursor: pointer; }
+.sq-ses__act:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: -3px; }
+.sq-ses__act:disabled { opacity: .45; cursor: default; }
+
+/* Aviso en línea (Notice) */
+.sq-notice { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); background: var(--gear-soft); color: var(--gear); font-size: 14px; line-height: 20px; }
+.sq-notice .sq-icon { color: currentColor; }
+.sq-notice.is-danger { background: color-mix(in srgb, var(--danger) 14%, var(--bg)); color: var(--danger); }
+
+/* Guía de inicio de Rodaje (GuideSheet): hoja inferior de dos páginas, con sus pasos (GuideStep). Abierta flota sobre Rodaje; minimizada es una línea (is-compact) en el flujo */
+.sq-guide { box-sizing: border-box; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); color: var(--ink); }
+.sq-guide--sheet { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; border-width: 1px 0 0; border-color: var(--line-strong); border-radius: var(--radius-md) var(--radius-md) 0 0; }
+.sq-guide__grip { align-self: center; flex: none; width: 32px; height: 4px; margin-top: var(--space-2); border-radius: var(--radius-full); background: var(--line-strong); }
+.sq-guide__head { display: flex; align-items: center; gap: var(--space-1); min-height: var(--touch-min); padding-left: var(--space-4); }
+.sq-guide__pages { flex: 1; min-width: 0; display: flex; align-items: center; gap: var(--space-2); }
+.sq-guide__dots { display: inline-flex; align-items: center; gap: var(--space-1); }
+.sq-guide__dots i { display: block; width: 8px; height: 8px; border-radius: var(--radius-full); background: var(--ink-muted); }
+.sq-guide__dots i.on { width: 20px; background: var(--gear); }
+.sq-guide__count { flex: none; font-size: 13px; line-height: 18px; color: var(--ink-muted); }
+.sq-guide__title { margin: 0; flex: 1; min-width: 0; font-size: 15px; line-height: 20px; font-weight: 600; }
+.sq-guide__icon { display: grid; place-items: center; width: var(--touch-min); height: var(--touch-min); flex: none; border: 0; background: transparent; color: var(--ink-muted); cursor: pointer; }
+.sq-guide__icon:focus-visible, .sq-guide__never:focus-visible, .sq-guide__toggle:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: -3px; }
+.sq-guide__page { display: flex; flex-direction: column; gap: var(--space-2); padding: 0 var(--space-4) var(--space-2); }
+.sq-guide__page > h2 { margin: 0; font-size: 20px; line-height: 26px; font-weight: 600; }
+.sq-guide__lead { margin: 0; font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+.sq-guide__page > .sq-guide__steps, .sq-guide__page > .sq-gintro { margin: 0 calc(-1 * var(--space-4)); }
+.sq-guide__steps, .sq-gintro { list-style: none; margin: 0; padding: 0; }
+.sq-gintro > li { display: flex; flex-direction: column; padding: var(--space-2) var(--space-4); border-top: 1px solid var(--line); }
+.sq-gintro__name { font-size: 15px; line-height: 20px; font-weight: 600; }
+.sq-gintro__eg { font-weight: 400; color: var(--ink-muted); }
+.sq-gintro__name > .sq-mode { margin-bottom: var(--space-2); }.sq-gintro__text { font-size: 13px; line-height: 18px; color: var(--ink-muted); }
+.sq-guide__foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-2) var(--space-4) var(--space-3); border-top: 1px solid var(--line); }
+.sq-guide__never { box-sizing: border-box; min-height: var(--touch-min); padding: 0 var(--space-2) 0 0; border: 0; background: transparent; font: inherit; font-size: 14px; font-weight: 600; color: var(--gear); text-align: left; cursor: pointer; }
+.sq-guide__nav { display: flex; gap: var(--space-2); margin-left: auto; }
+.sq-guide__foot .sq-btn { flex: none; min-width: 96px; }
+.sq-gstate { display: flex; align-items: center; gap: var(--space-3); margin: 0; padding: var(--space-1) 0; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--ink); }
+.sq-gstate.is-ok .sq-gstep__dot { background: var(--ok); }
+.sq-gstate.is-wait .sq-gstep__dot { border: 2px solid var(--ink-muted); border-right-color: transparent; animation: sq-spin 1s linear infinite; }
+.sq-gstate.is-todo .sq-gstep__dot { height: 2px; border-radius: 1px; background: var(--ink-muted); }
+.sq-gnum { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+.sq-gnum > li { display: flex; align-items: flex-start; gap: var(--space-3); }
+.sq-gnum__n { flex: none; display: grid; place-items: center; width: 24px; height: 24px; box-sizing: border-box; border: 1px solid var(--line-strong); border-radius: var(--radius-full); font-family: var(--font-numeric); font-size: 14px; font-weight: 700; line-height: 1; color: var(--ink); }
+.sq-gnum__t { font-size: 14px; line-height: 20px; color: var(--ink); padding-top: 2px; }
+/* Minimizada: una línea en el flujo; con la hoja abierta sigue debajo, oculta pero ocupando su sitio (is-covered) */
+.sq-guide.is-compact { flex-direction: row; align-items: center; }
+.sq-ride__foot > .sq-guide.is-compact { flex: 1; }
+.sq-guide.is-covered { visibility: hidden; }
+.sq-guide__toggle { flex: 1; min-width: 0; display: flex; align-items: center; gap: var(--space-2); min-height: var(--touch-min); padding: 0 var(--space-2) 0 var(--space-4); border: 0; background: transparent; font: inherit; color: inherit; text-align: left; cursor: pointer; }
+.sq-guide__label { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.sq-guide__next { font-size: 13px; line-height: 18px; color: var(--ink-muted); }
+.sq-guide__toggle > .sq-icon { margin-left: auto; transform: rotate(180deg); }
+/* Horizontal (sq-guide--wide): las dos páginas llevan sus tres elementos en columnas, con el estado de cada paso debajo */
+.sq-guide--wide .sq-gnum { flex-direction: row; }
+.sq-guide--wide .sq-gnum > li { flex: 1; min-width: 0; }
+.sq-guide--wide .sq-guide__page > .sq-guide__steps, .sq-guide--wide .sq-guide__page > .sq-gintro { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.sq-guide--wide .sq-guide__page > h2 { font-size: 17px; line-height: 22px; }
+.sq-guide--wide .sq-gintro > li + li { border-left: 1px solid var(--line); }
+.sq-guide--wide .sq-gstep { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; column-gap: var(--space-3); align-content: center; height: 100%; }
+.sq-guide--wide .sq-gstep__dot { grid-row: 1; margin-top: 5px; }
+.sq-guide--wide .sq-gstep__text { grid-column: 2; grid-row: 1; }
+.sq-guide--wide .sq-gstep__eg { display: block; }
+.sq-guide--wide .sq-gstep__opt { margin-left: 0; }
+.sq-guide--wide .sq-gstep__state { grid-column: 2; grid-row: 2; }
+.sq-guide--wide .sq-gstep > .sq-icon { grid-column: 3; grid-row: 1 / span 2; align-self: center; }
+.sq-guide--wide li + li > .sq-gstep { border-left: 1px solid var(--line); }
+.sq-gstep { position: relative; box-sizing: border-box; display: flex; align-items: center; gap: var(--space-3); min-height: var(--touch-min); padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4); border-top: 1px solid var(--line); color: inherit; text-decoration: none; }
+a.sq-gstep { cursor: pointer; }
+a.sq-gstep:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: -3px; }
+.sq-gstep__dot { flex: none; width: 10px; height: 10px; box-sizing: border-box; border-radius: var(--radius-full); }
+.sq-gstep.is-ok .sq-gstep__dot { background: var(--ok); }
+.sq-gstep.is-wait .sq-gstep__dot { border: 2px solid var(--ink-muted); border-right-color: transparent; animation: sq-spin 1s linear infinite; }
+.sq-gstep.is-todo .sq-gstep__dot { height: 2px; border-radius: 1px; background: var(--ink-muted); }
+.sq-gstep.is-info .sq-gstep__dot { visibility: hidden; }
+.sq-gstep__text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.sq-gstep__name { font-size: 15px; line-height: 20px; font-weight: 600; }
+.sq-gstep__eg { font-weight: 400; color: var(--ink-muted); }
+.sq-gstep__opt { display: inline-block; margin-left: var(--space-1); padding: 0 var(--space-1); border: 1px solid var(--line-strong); border-radius: var(--radius-sm); font-size: 12px; line-height: 16px; font-weight: 600; color: var(--ink-muted); vertical-align: 1px; }
+.sq-gstep__help { font-size: 13px; line-height: 18px; color: var(--ink-muted); }
+.sq-gstep__state { flex: none; font-size: 13px; line-height: 18px; color: var(--ink-muted); }
+.sq-gstep.is-ok .sq-gstep__state { color: var(--ink); }
+.sq-gstep > .sq-icon { width: 20px; height: 20px; }
+@media (prefers-reduced-motion: reduce) { .sq-gstep.is-wait .sq-gstep__dot { animation: none; } }
+
+/* Fila de botones al pie */
+.sq-actions { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: var(--space-3); }
+.sq-actions--stack { grid-auto-flow: row; }
+.sq-spacer { flex: 1; }
+
+/* ==========================================================================
+   AppIcon y Splash: icono de la app y animación de arranque. El dibujo sale de
+   design-system/identidad/icono-app*.svg y es el mismo en los dos temas (fondo
+   bg de Rodaje): quien lo usa lo envuelve en data-theme="rodaje".
+   ========================================================================== */
+.sq-appicon__fondo { fill: var(--bg); }
+/* Bici de perfil: la rueda trasera, en ámbar, es el rodillo (con su tambor gris debajo). */
+.sq-appicon__cuadro { stroke: var(--ink); }
+.sq-appicon__rueda-delantera { stroke: var(--line-strong); }
+.sq-appicon__rueda-trasera, .sq-appicon__radio { stroke: var(--gear-fill); }
+.sq-appicon__buje { fill: var(--gear-fill); }
+.sq-appicon__tambor { fill: var(--line-strong); }
+.sq-appmask { --ai: 96px; position: relative; display: block; flex: none; width: var(--ai); height: var(--ai); overflow: hidden; }
+.sq-appmask--sm { --ai: 48px; }
+.sq-appmask { box-shadow: 0 0 0 1px var(--line); }
+.sq-appmask--circulo { border-radius: 50%; }
+.sq-appmask--cuadrado { border-radius: 28%; }
+/* Android recorta el lienzo de 108 dp a los 72 dp centrales: el SVG se ve al 150 % y centrado. */
+.sq-appmask > .sq-appicon { position: absolute; left: -25%; top: -25%; width: 150%; height: 150%; }
+.sq-appmask--zona::after { content: ""; position: absolute; inset: 4.1667%; border: 1px dashed var(--ink-muted); border-radius: 50%; }
+/* Monocromo: un solo color (el del tema del móvil); la rueda trasera se distingue por la forma. */
+.sq-appmask--mono { background: var(--surface-2); }
+.sq-appmask--mono .sq-appicon__fondo { fill: none; }
+.sq-appmask--mono .sq-appicon__cuadro, .sq-appmask--mono .sq-appicon__rueda-delantera, .sq-appmask--mono .sq-appicon__rueda-trasera, .sq-appmask--mono .sq-appicon__radio { stroke: var(--ink); }
+.sq-appmask--mono .sq-appicon__buje, .sq-appmask--mono .sq-appicon__tambor { fill: var(--ink); }
+.sq-splash { display: flex; align-items: center; justify-content: center; padding: var(--space-8); border-radius: var(--radius-md); background: var(--bg); }
+.sq-splash > .sq-appicon { width: 144px; height: 144px; }
+/* Estado base = estado final. La rueda trasera gira dos vueltas con aceleración cuadrática en 0,9 s y se queda en su posición (múltiplo de 360°). */
+.sq-splash__rueda { transform-box: view-box; transform-origin: 36px 55px; }
+.sq-splash--anim .sq-splash__rueda { animation: sq-splash-giro 3s infinite; }
+@keyframes sq-splash-giro { 0% { transform: rotate(0deg); animation-timing-function: cubic-bezier(.3333, 0, .6667, .3333); } 30%, 100% { transform: rotate(720deg); } }
+@media (prefers-reduced-motion: reduce) { .sq-splash--anim .sq-splash__rueda { animation: none; } }
+
+/* ==========================================================================
+   Composición: modificadores de .sq-row y .sq-col, rejilla y anchos de
+   referencia. Al final para que prevalezcan sobre los valores de los componentes.
+   ========================================================================== */
+.sq-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
+.sq-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.sq-row--between { justify-content: space-between; }
+.sq-row--start { align-items: flex-start; }
+.sq-row--end { align-items: flex-end; }
+.sq-gap-1 { gap: var(--space-1); } .sq-gap-2 { gap: var(--space-2); } .sq-gap-3 { gap: var(--space-3); } .sq-gap-4 { gap: var(--space-4); }
+.sq-gap-6 { gap: var(--space-6); } .sq-gap-8 { gap: var(--space-8); } .sq-gap-12 { gap: var(--space-12); }
+.sq-w-phone { max-width: 390px; }
+.sq-w-panel { max-width: 640px; }

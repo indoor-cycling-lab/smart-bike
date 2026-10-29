@@ -1,0 +1,19 @@
+<!-- @dsCard group="Rodaje" height=560 subtitle="Aviso flotante, discreto y translúcido, al centro de Rodaje: «Pulsa Atrás otra vez» (con un aviso de acción a la vez) y «Cerrando…»" -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../../components.css"><title>ExitNotice</title>
+<style>.mk { position: relative; height: 240px; margin-bottom: var(--space-4); border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--bg); overflow: hidden; } .mk .sq-ride { height: 100%; }</style></head>
+<body>
+<!-- Con el aviso de acción en el pie -->
+<div class="mk"><div class="sq-ride">
+  <div class="sq-ride__main"><div class="sq-ride__gear"><div class="sq-gear"><div class="sq-gear-num" aria-label="Marcha 14 de 24">14</div><div class="sq-gear-meta"><span class="sq-label">Marcha</span><span class="sq-gear-ratio">de 24</span></div></div></div></div>
+  <div class="sq-ride__foot"><div class="sq-toast"><span class="act">+1 marcha</span></div></div>
+  <div class="sq-exit-notice" role="status">Para cerrar la aplicación, pulsa Atrás otra vez</div>
+</div></div>
+<!-- Cerrando -->
+<div class="mk" style="height: 160px"><div class="sq-ride">
+  <div class="sq-ride__main"><div class="sq-ride__gear"><div class="sq-gear"><div class="sq-gear-num" aria-label="Marcha 14 de 24">14</div></div></div></div>
+  <div class="sq-exit-notice" role="status">Cerrando…</div>
+</div></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+# Tasks
+
+## 1. Maqueta
+
+- [x] 1.1 Dar de alta `GuideSheet` y `GuideStep` en `design-system/` (estilos en `components.css`, carpeta con `README.md` y `preview.html`) con la hoja de tres páginas, la tira minimizada, los estados de un paso (hecho, conectando, esperando, pendiente, a medias, informativo) y la forma en horizontal, y regenerar con `python3 scripts/design-system/generar.py`; verificar que el generador termina sin error, que el contraste pasa en los dos temas y que la guía muestra los componentes en los dos
+- [x] 1.2 Añadir a `maquetas/rodaje.html` y `maquetas/rodaje-vertical.html` los estados de la guía (las tres páginas, la página 2 con el rodillo conectando, conectado y con el controlador, la página 3 en cada modo, la tira minimizada y todo hecho sin guía, y las variantes de pantalla baja); verificar que cada estado se abre por su `#estado=…` y que nada se solapa ni se desplaza a 360 × 640 dp en vertical ni a la anchura mínima en horizontal
+- [x] 1.3 Añadir a `maquetas/ajustes.html` la entrada «Guía de inicio» con su ayuda y actualizar `maquetas/index.html` con los estados nuevos; verificar que los enlaces del índice abren los estados
+- [x] 1.4 Validación de la maqueta por el usuario: dar los enlaces exactos y esperar su aprobación explícita; si pide cambios, ajustar la maqueta, `design.md` y los specs, y volver a pedir validación (aprobada)
+
+## 2. App
+
+- [x] 2.1 Añadir `PasosGuia` y `GuiaInicio` (`VISIBLE`, `DESCARTADA`, `FINALIZADA`) a `:core/dominio`; verificar con tests unitarios los estados del paso de los dispositivos (pendiente, conectando, «falta el controlador», hecho) y de la conexión con la app (pendiente, esperando, hecha), el paso siguiente por hacer, el fin con los dos pasos hechos, el modelo real frente al ejemplo y que un estado de conexión perdido vuelve a pendiente o conectando
+- [x] 2.2 Persistir `guiaInicio` como campo opcional de `estado.json` en `Almacen`, con la evaluación inicial (con algún dispositivo configurado se guarda `FINALIZADA`, sin ninguno `VISIBLE`); verificar con tests que un documento sin el campo se lee igual, que la actualización con dispositivos no la muestra y que la configuración exportada no lo contiene
+- [x] 2.3 Llevar el estado de la guía a `RodajeUiState` (pasos, página actual, abierta o minimizada, descartada en esta ejecución, paso siguiente) y las acciones de abrir, minimizar, cambiar de página, `cerrarGuia`, `noMostrarGuia` y `reabrirGuia` al `RodajeViewModel`; abrir sola en la página 1 solo sin dispositivos configurados y minimizada en los demás arranques; guardar `FINALIZADA` cuando los dos pasos están hechos a la vez, salvo en la ejecución en la que se reabrió desde Ajustes; verificar con tests de ViewModel la apertura inicial, el cambio de página, minimizar y reabrir en la misma página, el descarte con la equis (vuelve al reabrir la app), «No volver a mostrar», el fin de la guía, que no reaparece al perderse la plataforma y que reabrirla con todo hecho la mantiene a la vista
+- [x] 2.4 Componer `GuideSheet` (tres páginas con «Siguiente», «Atrás», deslizamiento, indicador, minimizar y equis, y la página 3 según el modo de conexión con las mismas cadenas de ayuda que Conexión), `GuideStep` y la forma en horizontal según la maqueta aprobada, con la navegación de cada acceso (Dispositivos, Conexión y Ajustes) y los textos en `values/strings.xml` y `values-en/strings.xml`; verificar con tests de instrumentación los estados de la maqueta, los objetivos táctiles de 48 dp, que la hoja no bloquea y la lectura del lector de pantalla («Empareja tus dispositivos, hecho»), y que `TextosInglesTest` pasa
+- [x] 2.5 Mostrar la tira minimizada en el sitio del pie de Rodaje, con «Para empezar» y lo siguiente por hacer, y dar prioridad al aviso de acción mientras dura; verificar con tests de instrumentación que la tira ocupa el pie sin mover la marcha al abrir y minimizar, que no tapa los botones − y + y que el aviso de acción la sustituye y se retira
+- [x] 2.6 Añadir la entrada «Guía de inicio» a `Ajustes.kt` y la navegación que reabre Rodaje con la hoja en la página 1; verificar con un test de instrumentación que tocarla muestra la guía, también si estaba descartada o completada
+- [x] 2.7 Ejecutar `./gradlew :app:testDebugUnitTest ktlintCheck` y corregir lo que falle con `./gradlew ktlintFormat` o a mano; verificar que ambos terminan sin errores
+- [x] 2.8 Probar con el equipo real en el OnePlus 8 con el Neo y el Square: instalar de cero y ver la hoja en la página 1; recorrer las páginas; conectar desde sus pasos; seguir la página 3 en cada modo y emparejar Zwift hasta que desaparezca; minimizarla y ver la tira; instalar sobre una versión anterior con dispositivos y comprobar que no aparece; descartarla y reabrirla desde Ajustes; verificar que se cumplen los escenarios de `getting-started-guide`
+
+## 3. Documentación
+
+- [x] 3.1 Regenerar las capturas de la web con `python3 scripts/sitio/capturas.py` y revisar `site/contenido/es.json` y `en.json` si la web cita el primer arranque; verificar que `site/img/` refleja la guía y que las dos lenguas tienen las mismas claves
+- [x] 3.2 Actualizar la documentación: revisar `docs/funcional.md` (la guía como funcionalidad de F11 o F1), `docs/arquitectura.md` (estado de la guía y `guiaInicio` en `estado.json`), `docs/planificacion.md` (fila de `guia-inicio`, con la hoja de tres páginas, y su dependencia de `modo-tactil-rodaje`) y `docs/desarrollo.md`, y actualizar lo que el change haya cambiado; verificar que la fila del change dice «En curso» o «Archivado» según corresponda
+
+## Workflow follow-up
+
+- Archivar con `/openspec-archive-change` cuando estén hechas las tareas, con las specs sincronizadas en `openspec/specs/`.

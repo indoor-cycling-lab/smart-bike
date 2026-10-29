@@ -1,0 +1,32 @@
+# Sistema
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Android / Gradle
+.gradle/
+.kotlin/
+build/
+local.properties
+*.iml
+.idea/
+captures/
+*.apk
+*.aab
+
+# Entorno local
+.env
+.env.*
+.claude/settings.local.json
+
+# Documentación de trabajo: no forma parte del repositorio (ver AGENTS.md)
+docs/referencias/
+
+# IP del móvil de pruebas (skill desplegar-movil)
+.claude/skills/desplegar-movil/movil.local
+
+# Claves de firma (change preparar-release): nunca en el repositorio
+*.jks
+*.keystore

@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Smart Bike — herramienta de revisión de las maquetas
+   No forma parte de la app: por eso vive fuera del sistema de diseño y se ve
+   distinta a propósito (rayas y monoespaciada). Usa los tokens para seguir el
+   tema activo.
+   ========================================================================== */
+
+/* Con JS, solo se ve el estado activo (sin JS se ven todos apilados) */
+.rv-js [data-mock-state]:not(.is-rv-active) { display: none !important; }
+
+/* Diagnóstico: el volcado y sus acciones solo se ven con «Tráfico en directo» marcada, como en la app */
+.sq-section:has(.rv-trafico-casilla:not(:checked)) .rv-trafico { display: none; }
+
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-sans); }
+
+.rv-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--touch-min);
+  padding: var(--space-1) var(--space-3);
+  background: repeating-linear-gradient(-45deg, var(--gear-soft) 0 10px, var(--surface) 10px 20px);
+  border-bottom: 2px dashed var(--gear);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.rv-bar__tag {
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--gear-fill);
+  color: var(--on-gear-fill);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.rv-bar__label { font-weight: 600; }
+.rv-bar__label:first-of-type { margin-left: auto; }
+.rv-bar__select {
+  min-height: 36px;
+  max-width: 60vw;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 16px; /* sin zoom automático en móvil */
+}
+
+/* Marco del dispositivo: en un ordenador se ve la pantalla del móvil a su
+   tamaño; en el propio móvil ocupa todo el ancho. */
+.rv-stage { display: flex; justify-content: center; padding: var(--space-6) var(--space-4) var(--space-12); }
+.rv-device { box-sizing: border-box; overflow: hidden; border: 1px solid var(--line-strong); border-radius: 24px; background: var(--bg); }
+.rv-device--h { width: 844px; height: 390px; }
+.rv-device--v { width: 390px; min-height: 844px; display: flex; flex-direction: column; }
+.rv-device--v > * { flex: 1; }
+/* Rodaje no se desplaza: alto fijo, que reparte entre la marcha y el área de datos. */
+.rv-device--v:has(> .sq-ride) { height: 844px; }
+/* Su contenido (cifras sin salto de línea) no ensancha el marco: el ancho lo pone la pantalla. */
+.rv-device { min-width: 0; }
+/* Rodaje deja las barras del sistema a la vista (change quitar-barra-estado-rodaje): una barra de estado simulada de 24 px, sin hora ni
+   iconos, para ver el alto que ocupa; la pantalla empieza debajo. Solo en las maquetas, no es un componente. */
+.rv-device:has(> .sq-ride)::before { content: ""; display: block; flex: none; height: 24px; background: var(--surface); border-bottom: 1px solid var(--line); }
+.rv-device--h:has(> .sq-ride) { display: flex; flex-direction: column; }
+.rv-device--h:has(> .sq-ride) > .sq-ride { flex: 1; min-height: 0; height: auto; }
+.rv-captura .rv-device:has(> .sq-ride)::before { display: none; }
+/* Vista de captura (#vista=captura): solo la pantalla, a su tamaño y sin marco */
+.rv-captura .rv-stage { padding: 0; }
+.rv-captura .rv-device { border: 0; border-radius: 0; }
+@media (max-width: 860px) {
+  .rv-stage { padding: 0; }
+  .rv-device { border: 0; border-radius: 0; }
+  .rv-device--h { width: 100%; height: 100vh; }
+  .rv-device--v { width: 100%; min-height: calc(100vh - 48px); }
+  .rv-device--v:has(> .sq-ride) { height: calc(100vh - 48px); }
+  .rv-captura .rv-device--v, .rv-captura .rv-device--v:has(> .sq-ride) { min-height: 100vh; height: 100vh; }
+}
+/* El navegador sin interfaz no baja de 500 px de ancho: el móvil vertical mide siempre 390 y se recorta */
+.rv-captura .rv-device--v { width: 390px; }
+/* Pantalla baja (change rodaje-pantallas-bajas): un móvil de 360 × 640. En un ordenador, a su tamaño; en el propio móvil
+   ocupa todo el alto como los demás. En la vista de captura también, aunque la ventana sea más alta. */
+@media (min-width: 861px) {
+  .rv-device.rv-device--v.rv-device--baja, .rv-device.rv-device--v.rv-device--baja:has(> .sq-ride) { width: 360px; height: 640px; min-height: 0; }
+}
+.rv-captura .rv-device.rv-device--v.rv-device--baja, .rv-captura .rv-device.rv-device--v.rv-device--baja:has(> .sq-ride) { width: 360px; height: 640px; min-height: 0; }
+
+/* Índice de maquetas */
+.rv-index { max-width: 960px; margin: 0 auto; padding: var(--space-6) var(--space-4) var(--space-12); display: flex; flex-direction: column; gap: var(--space-6); }
+.rv-index h1 { margin: 0; font-family: var(--font-numeric); font-size: 48px; line-height: 48px; color: var(--gear); }
+.rv-index h2 { margin: 0; font-size: 18px; }
+.rv-index a { color: var(--gear); }
+.rv-index table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.rv-index th, .rv-index td { text-align: left; vertical-align: top; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--line); }
+.rv-index th { font-size: 13px; color: var(--ink-muted); font-weight: 600; }
+.rv-index td ul { margin: 0; padding-left: 1.1em; }
+.rv-scroll { overflow-x: auto; }

@@ -1,0 +1,45 @@
+{
+  "permissions": {
+    "deny": [
+      "mcp__rea__capture_adb_screen",
+      "mcp__rea__collect_adb_bugreport",
+      "mcp__rea__inspect_adb_client",
+      "mcp__rea__inspect_adb_device",
+      "mcp__rea__inspect_adb_display",
+      "mcp__rea__inspect_adb_package",
+      "mcp__rea__inspect_adb_window",
+      "mcp__rea__install_adb_package",
+      "mcp__rea__list_adb_devices",
+      "mcp__rea__list_adb_directory",
+      "mcp__rea__list_adb_features",
+      "mcp__rea__list_adb_packages",
+      "mcp__rea__list_adb_processes",
+      "mcp__rea__list_adb_services",
+      "mcp__rea__pull_adb_file",
+      "mcp__rea__pull_adb_package",
+      "mcp__rea__push_adb_file",
+      "mcp__rea__read_adb_logcat",
+      "mcp__rea__read_adb_setting",
+      "mcp__rea__resolve_adb_packages",
+      "mcp__rea__start_adb_activity",
+      "mcp__rea__start_adb_app",
+      "mcp__rea__stop_adb_app",
+      "mcp__rea__uninstall_adb_package"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|mcp__.*adb.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/adb_guard.py\"",
+            "timeout": 10,
+            "onFailure": "block"
+          }
+        ]
+      }
+    ]
+  }
+}

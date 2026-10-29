@@ -1,0 +1,40 @@
+<!-- @dsCard group="Rodaje" height=300 width=1100 subtitle="La misma zona con 2, 5 y 6 datos: la cifra es la mayor con la que cabe el valor más largo de cada dato (aquí, fijada para esta zona). Debajo, la miniatura de «Datos en pantalla»" -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../../components.css"><title>MetricGrid</title>
+<style>
+  .mg-zone { width: 320px; height: 260px; box-sizing: border-box; padding: var(--space-3); border: 1px dashed var(--line); border-radius: var(--radius-md); }
+  .mg-zone .sq-mgrid { height: 100%; }
+  /* Como en la pantalla de rodaje (.sq-ride .sq-mgrid .sq-metric): cada dato centrado en su celda. */
+  .mg-zone .sq-metric { align-items: center; text-align: center; }
+</style></head>
+<body>
+<div class="sq-pad sq-row sq-row--start sq-gap-8">
+  <div class="sq-col sq-gap-2"><span class="sq-caption">2 datos</span>
+    <div class="mg-zone"><div class="sq-mgrid" data-n="2" style="--mg-size: 92px">
+      <div class="sq-metric"><span class="sq-label">Potencia</span><span class="sq-metric-val">247<span class="sq-unit">W</span></span></div>
+      <div class="sq-metric"><span class="sq-label">Cadencia</span><span class="sq-metric-val">91<span class="sq-unit">rpm</span></span></div>
+    </div></div></div>
+  <div class="sq-col sq-gap-2"><span class="sq-caption">5 datos: el último, centrado</span>
+    <div class="mg-zone"><div class="sq-mgrid" data-n="5" style="--mg-size: 40px">
+      <div class="sq-metric"><span class="sq-label">Potencia</span><span class="sq-metric-val">247<span class="sq-unit">W</span></span></div>
+      <div class="sq-metric"><span class="sq-label">Cadencia</span><span class="sq-metric-val">91<span class="sq-unit">rpm</span></span></div>
+      <div class="sq-metric"><span class="sq-label">Tiempo</span><span class="sq-metric-val">1:12:40</span></div>
+      <div class="sq-metric"><span class="sq-label">W/kg</span><span class="sq-metric-val">3,3</span></div>
+      <div class="sq-metric"><span class="sq-label">Potencia media</span><span class="sq-metric-val">231<span class="sq-unit">W</span></span></div>
+    </div></div></div>
+  <div class="sq-col sq-gap-2"><span class="sq-caption">6 datos: filas con y sin unidad, alineadas</span>
+    <div class="mg-zone"><div class="sq-mgrid" data-n="6" style="--mg-size: 40px">
+      <div class="sq-metric"><span class="sq-label">Potencia</span><span class="sq-metric-val">247<span class="sq-unit">W</span></span></div>
+      <div class="sq-metric"><span class="sq-label">Cadencia</span><span class="sq-metric-val">91<span class="sq-unit">rpm</span></span></div>
+      <div class="sq-metric"><span class="sq-label">Tiempo</span><span class="sq-metric-val">1:12:40</span></div>
+      <div class="sq-metric"><span class="sq-label">W/kg</span><span class="sq-metric-val">3,3</span></div>
+      <div class="sq-metric"><span class="sq-label">Potencia media</span><span class="sq-metric-val">231<span class="sq-unit">W</span></span></div>
+      <div class="sq-metric"><span class="sq-label">Potencia máxima</span><span class="sq-metric-val">612<span class="sq-unit">W</span></span></div>
+    </div></div></div>
+</div>
+<div class="sq-pad sq-w-phone">
+  <div class="sq-list"><div class="sq-item sq-ride-mini"><div class="sq-ride-mini__gear"><span class="sq-ratio-hero">50<span class="x">×</span>17</span><div class="sq-cass"><i class="sq-cog" style="--cog: 100%"></i><i class="sq-cog" style="--cog: 92%"></i><i class="sq-cog" style="--cog: 85%"></i><i class="sq-cog" style="--cog: 79%"></i><i class="sq-cog" style="--cog: 72%"></i><i class="sq-cog" style="--cog: 68%"></i><i class="sq-cog on" style="--cog: 64%"></i><i class="sq-cog" style="--cog: 60%"></i><i class="sq-cog" style="--cog: 58%"></i><i class="sq-cog" style="--cog: 56%"></i><i class="sq-cog" style="--cog: 53%"></i><i class="sq-cog" style="--cog: 51%"></i></div></div><div class="sq-mgrid sq-mgrid--mini" data-n="4"><div class="sq-metric"><span class="sq-label">Potencia</span><span class="sq-metric-val">247 W</span></div><div class="sq-metric"><span class="sq-label">Cadencia</span><span class="sq-metric-val">91 rpm</span></div><div class="sq-metric"><span class="sq-label">Tiempo</span><span class="sq-metric-val">1:12:40</span></div><div class="sq-metric"><span class="sq-label">W/kg</span><span class="sq-metric-val">3,3</span></div></div></div></div>
+</div>
+</body>
+</html>

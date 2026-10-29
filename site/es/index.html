@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Bike · Tu rodillo, como una smart bike</title>
+<meta name="description" content="App Android que reúne el rodillo, los mandos de cambio, el pulsómetro, el ventilador y Zwift de un setup de rodillo, y los maneja desde un solo sitio sin tocar la pantalla.">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://indoor-cycling-lab.github.io/smart-bike/es/">
+<link rel="alternate" hreflang="es" href="https://indoor-cycling-lab.github.io/smart-bike/es/"><link rel="alternate" hreflang="en" href="https://indoor-cycling-lab.github.io/smart-bike/en/"><link rel="alternate" hreflang="x-default" href="https://indoor-cycling-lab.github.io/smart-bike/">
+<meta property="og:title" content="Smart Bike · Tu rodillo, como una smart bike">
+<meta property="og:description" content="App Android que reúne el rodillo, los mandos de cambio, el pulsómetro, el ventilador y Zwift de un setup de rodillo, y los maneja desde un solo sitio sin tocar la pantalla.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://indoor-cycling-lab.github.io/smart-bike/es/">
+<link rel="icon" href="../assets/icono.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../sitio.css">
+<script>
+(function () {
+  var d = document.documentElement;
+  try { var t = localStorage.getItem("sb-tema"); if (t === "claro" || t === "rodaje") d.setAttribute("data-theme", t); } catch (e) {}
+})();
+</script>
+</head>
+<body>
+<header class="cabecera">
+  <a class="saltar" href="#principal">Saltar al contenido</a>
+  <div class="cabecera__fila">
+    <a class="marca" href="./" aria-label="Smart Bike, inicio"><svg class="logo" viewBox="18 29 72 50" aria-hidden="true" focusable="false"><rect class="tambor" x="30" y="68.5" width="12" height="6" rx="3"/><circle class="rueda-delantera" cx="72" cy="55" r="12" fill="none" stroke-width="4"/><circle class="rueda-trasera" cx="36" cy="55" r="12" fill="none" stroke-width="5"/><path class="radio" d="M38.6 56.5 L44.66 60" stroke-width="1.5" stroke-linecap="round"/><path class="radio" d="M36 58 L36 65" stroke-width="1.5" stroke-linecap="round"/><path class="radio" d="M33.4 56.5 L27.34 60" stroke-width="1.5" stroke-linecap="round"/><path class="radio" d="M33.4 53.5 L27.34 50" stroke-width="1.5" stroke-linecap="round"/><path class="radio" d="M36 52 L36 45" stroke-width="1.5" stroke-linecap="round"/><path class="radio" d="M38.6 53.5 L44.66 50" stroke-width="1.5" stroke-linecap="round"/><circle class="buje" cx="36" cy="55" r="2.5"/><path class="cuadro" d="M44.37 40.78 L46 38 L64 38 L72 55 M46 38 L54 55 M54 55 L52.5 55 M54 55 L64 38 M64 38 L62 33 L68 33 M46 38 L46 34 M41 34 L50 34" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Smart Bike</span></a>
+    <nav class="nav" aria-label="Secciones"><ul><li><a href="#setup">El setup</a></li><li><a href="#pasos">Cómo se usa</a></li><li><a href="#funciones">Funciones</a></li><li><a href="#pantallas">Pantallas</a></li><li><a href="#limites">Límites</a></li></ul></nav>
+    <div class="herramientas">
+      <a class="boton boton--discreto" id="enlace-idioma" href="../en/" hreflang="en" lang="en" aria-label="Read this page in English">English</a>
+      <button class="boton boton--discreto" id="tema" type="button" hidden aria-label="Cambiar entre tema claro y oscuro" data-oscuro="Oscuro" data-claro="Claro"><span class="visible-solo-oscuro">Claro</span><span class="visible-solo-claro">Oscuro</span></button>
+    </div>
+  </div>
+</header>
+<main id="principal">
+<section class="hero" aria-labelledby="titulo-hero">
+  <div class="hero__texto">
+    <p class="eyebrow">Proyecto personal · Android</p>
+    <h1 id="titulo-hero">Tu rodillo, como una smart bike</h1>
+    <p class="hero__lema">Con el móvil montado en la bici, el rodillo, los mandos de cambio, el pulsómetro, el ventilador y Zwift se manejan desde un solo sitio y sin tocar la pantalla mientras ruedas.</p>
+    <p class="hero__acciones"><a class="boton boton--principal" href="https://github.com/indoor-cycling-lab/smart-bike">Ver el código</a><a class="boton" href="#funciones">Qué hace</a></p>
+    <p class="hero__nota">Nació para que un Tacx Neo 1 pudiera usar los cambios virtuales de un cuadro Elite Square.</p>
+  </div>
+  <div class="hero__imagen"><figure class="marco marco--horizontal"><img class="img-oscuro" src="../img/rodaje-es-oscuro.png" width="1688" height="780" alt="Pantalla de rodaje en horizontal: marcha 52×17 de una transmisión Shimano, potencia de 247 W y cadencia de 91 rpm"><img class="img-claro" src="../img/rodaje-es-claro.png" width="1688" height="780" alt="Pantalla de rodaje en horizontal: marcha 52×17 de una transmisión Shimano, potencia de 247 W y cadencia de 91 rpm"></figure></div>
+</section>
+<section class="cifras" aria-label="Smart Bike en cifras">
+  <ul class="cifras__lista"><li><span class="cifra__valor">0</span><span class="cifra__texto">toques en la pantalla mientras ruedas</span></li><li><span class="cifra__valor">1</span><span class="cifra__texto">móvil para el rodillo, los mandos, los sensores y Zwift</span></li><li><span class="cifra__valor">2×12</span><span class="cifra__texto">la transmisión de una bici real, o 24 marchas lineales</span></li><li><span class="cifra__valor">&lt;100 ms</span><span class="cifra__texto">objetivo de la palanca a la resistencia del rodillo</span></li></ul>
+</section>
+<section class="seccion" id="setup" aria-labelledby="titulo-setup">
+  <h2 id="titulo-setup">Un solo sitio para todo el setup</h2>
+  <p class="seccion__intro">El móvil hace de central: habla con cada dispositivo por Bluetooth y se presenta ante Zwift como un rodillo inteligente, por wifi o por Bluetooth.</p>
+  <div class="esquema" role="group" aria-label="Elite Square, Tacx Neo 1, pulsómetro y ventilador Wahoo KICKR Headwind se conectan por Bluetooth al móvil con Smart Bike, que se conecta a Zwift por wifi o por Bluetooth.">
+    <div class="esquema__col"><h3 class="etiqueta">Dispositivos</h3><ul class="esquema__lista" aria-hidden="true"><li class="nodo"><span class="nodo__nombre">Elite Square</span><span class="nodo__detalle">Mandos de cambio</span><span class="enlace">Bluetooth</span></li><li class="nodo"><span class="nodo__nombre">Tacx Neo 1</span><span class="nodo__detalle">Rodillo</span><span class="enlace">Bluetooth</span></li><li class="nodo"><span class="nodo__nombre">Pulsómetro</span><span class="nodo__detalle">Banda de pulso</span><span class="enlace">Bluetooth</span></li><li class="nodo"><span class="nodo__nombre">Wahoo KICKR Headwind</span><span class="nodo__detalle">Ventilador</span><span class="enlace">Bluetooth</span></li></ul></div>
+    <div class="esquema__flecha" aria-hidden="true"></div>
+    <div class="esquema__col esquema__col--central" aria-hidden="true"><h3 class="etiqueta">Móvil Android</h3><div class="nodo nodo--central"><span class="nodo__nombre">Smart Bike</span><span class="nodo__detalle">La app, en el móvil montado en la bici</span></div></div>
+    <div class="esquema__flecha esquema__flecha--wifi" aria-hidden="true"><span class="enlace">wifi (DirCon) o Bluetooth</span></div>
+    <div class="esquema__col" aria-hidden="true"><h3 class="etiqueta">PC</h3><div class="nodo nodo--destino"><span class="nodo__nombre">Zwift</span><span class="nodo__detalle">Rodillo inteligente y controlador, con potencia, cadencia y pendiente</span></div></div>
+  </div>
+</section>
+<section class="seccion" id="pasos" aria-labelledby="titulo-pasos">
+  <h2 id="titulo-pasos">Cómo se usa</h2>
+  <p class="seccion__intro">Se configura una vez con el móvil en la mano y, la primera vez, una guía de inicio te lleva paso a paso. Después, al abrir la app, todo se conecta solo.</p>
+  <ol class="pasos"><li class="paso"><h3>Conecta tus dispositivos</h3><p>En Dispositivos, cada uno tiene su «Buscar»: el rodillo, el controlador y, si los usas, el pulsómetro y el ventilador.</p></li><li class="paso"><h3>Elige cómo se conecta</h3><p>En Conexión ves qué publica la app (rodillo, controlador y pulso) y si tu app de entrenamiento los usa, y eliges el modo: wifi + Bluetooth, solo Bluetooth o solo wifi.</p></li><li class="paso"><h3>Empareja en Zwift y rueda</h3><p>En Zwift, elige Smart Bike como rodillo, potencia y cadencia. Desde ahí, marchas, menús y Ride On van con los botones del Square. Sin app de entrenamiento también se rueda, en modo Libre o en ERG manual.</p></li></ol>
+</section>
+<section class="seccion" id="funciones" aria-labelledby="titulo-funciones">
+  <h2 id="titulo-funciones">Qué hace</h2>
+  <article class="funcion" id="marchas" aria-labelledby="t-marchas">
+  <div class="funcion__texto">
+    <p class="eyebrow">Marchas virtuales</p>
+    <h3 id="t-marchas">Cambios de marcha en un rodillo que no los tiene</h3>
+    <p>Los botones del Square cambian de marcha en el Neo. La app traduce cada marcha en más o menos resistencia, con un modelo simple o uno físico.</p>
+    <ul class="puntos"><li>Transmisión lineal de 24 marchas o la de una bici real (de momento, solo la mía: Shimano 105 2×12).</li><li>Cambio de plato automático o manual, con los topes de la transmisión.</li><li>Las palancas se pueden comportar como las de un grupo inalámbrico (probado con Shimano Di2).</li></ul>
+  </div>
+  <div class="funcion__imagenes funcion__imagenes--2"><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/marchas-es-oscuro.png" width="780" height="1688" alt="Pantalla de marchas con la transmisión Shimano 105 2×12 en modo automático" loading="lazy" decoding="async"><img class="img-claro" src="../img/marchas-es-claro.png" width="780" height="1688" alt="Pantalla de marchas con la transmisión Shimano 105 2×12 en modo automático" loading="lazy" decoding="async"></figure><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/rodaje-vertical-plato-es-oscuro.png" width="780" height="1688" alt="Pantalla de rodaje en vertical durante un cambio de plato: marcha 52×19 y aviso «Plato 52»" loading="lazy" decoding="async"><img class="img-claro" src="../img/rodaje-vertical-plato-es-claro.png" width="780" height="1688" alt="Pantalla de rodaje en vertical durante un cambio de plato: marcha 52×19 y aviso «Plato 52»" loading="lazy" decoding="async"></figure></div>
+</article><article class="funcion funcion--inversa" id="zwift" aria-labelledby="t-zwift">
+  <div class="funcion__texto">
+    <p class="eyebrow">Zwift y plataformas</p>
+    <h3 id="t-zwift">Rodillo y controlador para Zwift, sin emparejar el Square</h3>
+    <p>La app publica un rodillo inteligente con potencia y cadencia, un controlador y tu pulso, y tu app de entrenamiento se conecta a ellos. Probado con Zwift: recibe lo que mide el Neo y devuelve la pendiente.</p>
+    <ul class="puntos"><li>Tres modos: wifi + Bluetooth (el rodillo por DirCon y el controlador aparte), solo Bluetooth, o solo wifi en un solo dispositivo, como una Zwift Ride.</li><li>Por Bluetooth, Zwift puede ver «Smart Bike» en lugar del nombre del móvil: si lo activas, la app renombra el móvil mientras publica y le devuelve su nombre al terminar.</li><li>Los botones del Square llegan a Zwift como los de un controlador oficial: menús, dirección, freno y Ride On.</li><li>Habla los estándares de los rodillos inteligentes (FTMS, por Bluetooth y por wifi con DirCon), así que otras plataformas como Rouvy o MyWhoosh deberían poder usarlo como cualquier rodillo. Por ahora solo está probado con Zwift, y el controlador y el modo solo wifi son propios de Zwift.</li><li>Las marchas son siempre las de la app. También funciona sin Zwift: en modo Libre (terreno llano, la dureza la da la marcha) o en ERG manual, con la potencia que fijas tú.</li></ul>
+  </div>
+  <div class="funcion__imagenes funcion__imagenes--2"><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/conexion-es-oscuro.png" width="780" height="1688" alt="Pantalla de conexión con el rodillo y el controlador conectados, el pulso enviándose y el modo «Wifi + Bluetooth» elegido" loading="lazy" decoding="async"><img class="img-claro" src="../img/conexion-es-claro.png" width="780" height="1688" alt="Pantalla de conexión con el rodillo y el controlador conectados, el pulso enviándose y el modo «Wifi + Bluetooth» elegido" loading="lazy" decoding="async"></figure><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/botones-es-oscuro.png" width="780" height="1688" alt="Pantalla de botones, dentro de Ajustes, con las acciones de la app asignadas a los botones del Square" loading="lazy" decoding="async"><img class="img-claro" src="../img/botones-es-claro.png" width="780" height="1688" alt="Pantalla de botones, dentro de Ajustes, con las acciones de la app asignadas a los botones del Square" loading="lazy" decoding="async"></figure></div>
+</article><article class="funcion" id="sensores" aria-labelledby="t-sensores">
+  <div class="funcion__texto">
+    <p class="eyebrow">Pulso y ventilador</p>
+    <h3 id="t-sensores">El pulso a Zwift y un ventilador que te sigue</h3>
+    <p>Reenvía a Zwift el pulso de una banda Bluetooth y controla un ventilador Wahoo KICKR Headwind, de forma manual o según el pulso.</p>
+    <ul class="puntos"><li>La velocidad del ventilador sube y baja de 10 en 10 % con los botones del Square, y los umbrales de pulso de cada zona se ajustan en la app.</li><li>La barra de la pantalla de rodaje enseña de un vistazo el estado de cada dispositivo; el de Zwift va aparte, en palabras.</li></ul>
+  </div>
+  <div class="funcion__imagenes funcion__imagenes--1"><figure class="marco marco--horizontal"><img class="img-oscuro" src="../img/pulso-ventilador-es-oscuro.png" width="1688" height="780" alt="Pantalla de rodaje con los iconos del rodillo, el Square y el ventilador, y el aviso «Ventilador: 50 %» tras subir su velocidad con un botón" loading="lazy" decoding="async"><img class="img-claro" src="../img/pulso-ventilador-es-claro.png" width="1688" height="780" alt="Pantalla de rodaje con los iconos del rodillo, el Square y el ventilador, y el aviso «Ventilador: 50 %» tras subir su velocidad con un botón" loading="lazy" decoding="async"></figure></div>
+</article><article class="funcion funcion--ancha" id="rodaje" aria-labelledby="t-rodaje">
+  <div class="funcion__texto">
+    <p class="eyebrow">Pantalla de rodaje</p>
+    <h3 id="t-rodaje">Pensada para verse a un metro y manejarse sin tocarla</h3>
+    <p>Cifras grandes, la marcha siempre visible y los botones del Square para todo. El móvil se toca para configurar antes o después de rodar.</p>
+    <ul class="puntos"><li>Botones, gestos y acciones configurables, en Ajustes → Botones.</li><li>El modo siempre a la vista: LIBRE, SIM con la pendiente de Zwift, ERG MANUAL o el ERG de un entrenamiento, con la potencia que las palancas ajustan de 10 en 10 W.</li><li>De uno a seis datos a elegir, entre ellos la pendiente que envía Zwift.</li><li>Sin el Square también se rueda: aparecen los botones − y + para cambiar de marcha y, si lo activas, el modo se cambia tocando su indicador.</li><li>Tema claro y oscuro, en horizontal o en vertical.</li></ul>
+  </div>
+  <div class="funcion__imagenes funcion__imagenes--2"><figure class="marco marco--horizontal"><img class="img-oscuro" src="../img/rodaje-erg-es-oscuro.png" width="1688" height="780" alt="Pantalla de rodaje durante un entrenamiento ERG de Zwift, con la potencia objetivo y la cadencia" loading="lazy" decoding="async"><img class="img-claro" src="../img/rodaje-erg-es-claro.png" width="1688" height="780" alt="Pantalla de rodaje durante un entrenamiento ERG de Zwift, con la potencia objetivo y la cadencia" loading="lazy" decoding="async"></figure><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/rodaje-vertical-datos-es-oscuro.png" width="780" height="1688" alt="Pantalla de rodaje en vertical con cinco datos y los botones − y + para cambiar de marcha tocando el móvil" loading="lazy" decoding="async"><img class="img-claro" src="../img/rodaje-vertical-datos-es-claro.png" width="780" height="1688" alt="Pantalla de rodaje en vertical con cinco datos y los botones − y + para cambiar de marcha tocando el móvil" loading="lazy" decoding="async"></figure></div>
+</article>
+  <p class="pie-captura">Captura de la maqueta de la app, con datos ilustrativos.</p>
+</section>
+<section class="seccion" id="pantallas" aria-labelledby="titulo-pantallas">
+  <h2 id="titulo-pantallas">Guía, dispositivos, ajustes y diagnóstico</h2>
+  <p class="seccion__intro">Lo que no se necesita rodando está a un toque: una guía de inicio que explica los pasos y los modos de uso la primera vez, buscar y olvidar dispositivos, ajustar la transmisión y los botones, elegir el idioma (español o inglés), hacer copia de seguridad de la configuración, ver el tráfico de cada dispositivo cuando algo no cuadra y grabar las sesiones en archivos de texto, con las 20 últimas guardadas, para revisarlas o compartirlas después.</p>
+  <div class="galeria"><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/guia-inicio-es-oscuro.png" width="780" height="1688" alt="Guía de inicio sobre la pantalla de rodaje, en la página «Cómo puedes usar la app», con los modos LIBRE, SIM y ERG" loading="lazy" decoding="async"><img class="img-claro" src="../img/guia-inicio-es-claro.png" width="780" height="1688" alt="Guía de inicio sobre la pantalla de rodaje, en la página «Cómo puedes usar la app», con los modos LIBRE, SIM y ERG" loading="lazy" decoding="async"></figure><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/dispositivos-es-oscuro.png" width="780" height="1688" alt="Pantalla de dispositivos con el rodillo y el Square conectados, y las secciones del pulsómetro y el ventilador" loading="lazy" decoding="async"><img class="img-claro" src="../img/dispositivos-es-claro.png" width="780" height="1688" alt="Pantalla de dispositivos con el rodillo y el Square conectados, y las secciones del pulsómetro y el ventilador" loading="lazy" decoding="async"></figure><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/ajustes-es-oscuro.png" width="780" height="1688" alt="Pantalla de ajustes con las entradas a Marchas, Botones y Diagnóstico, las opciones al rodar y el tema" loading="lazy" decoding="async"><img class="img-claro" src="../img/ajustes-es-claro.png" width="780" height="1688" alt="Pantalla de ajustes con las entradas a Marchas, Botones y Diagnóstico, las opciones al rodar y el tema" loading="lazy" decoding="async"></figure><figure class="marco marco--vertical"><img class="img-oscuro" src="../img/diagnostico-es-oscuro.png" width="780" height="1688" alt="Pantalla de diagnóstico con los datos de conexión y los botones del Square, que se iluminan al pulsarlos" loading="lazy" decoding="async"><img class="img-claro" src="../img/diagnostico-es-claro.png" width="780" height="1688" alt="Pantalla de diagnóstico con los datos de conexión y los botones del Square, que se iluminan al pulsarlos" loading="lazy" decoding="async"></figure></div>
+</section>
+<section class="seccion" id="limites" aria-labelledby="titulo-limites">
+  <h2 id="titulo-limites">Lo que conviene saber</h2>
+  <p class="seccion__intro">Smart Bike es un proyecto personal, publicado por si a alguien le sirve de referencia o de punto de partida. No es un producto terminado.</p>
+  <ul class="limites"><li><h3>Hecho para mi equipo</h3><p>Tacx Neo 1, Elite Square, Zwift en un PC y un móvil Android 13. Con otros rodillos, controladores o versiones de Android puede no funcionar.</p></li><li><h3>Probado en parte</h3><p>Algunas partes están validadas con el equipo real y otras figuran como «a validar» en la planificación del proyecto. Otras plataformas, como Rouvy o MyWhoosh, aún no se han probado.</p></li><li><h3>Solo Android</h3><p>Android 9 o superior. No hay versión para iOS ni publicación en tiendas: el APK firmado se descarga de las Releases de GitHub, o se compila desde el código.</p></li><li><h3>Sin garantías</h3><p>Algunos protocolos, como el de DirCon y el del controlador de Zwift, no son oficiales y se han reconstruido por observación: Zwift puede cambiar su comportamiento en cualquier momento.</p></li></ul>
+  <p class="limites__peticion">¿Usas otro rodillo, otro controlador u otra plataforma? Smart Bike es de uso personal, pero si abres un issue en GitHub contando tu equipo, se puede estudiar añadir su compatibilidad.</p>
+  <p class="acciones"><a class="boton boton--principal" href="https://github.com/indoor-cycling-lab/smart-bike/issues/new?template=compatibilidad.yml">Pedir compatibilidad</a><a class="boton" href="https://github.com/indoor-cycling-lab/smart-bike/blob/main/docs/planificacion.md">Ver la planificación y el estado de cada parte</a></p>
+</section>
+</main>
+<footer class="pie">
+  <p class="pie__cafe">¿Te resulta útil Smart Bike o te gusta el proyecto? <a class="boton boton--discreto" href="https://ko-fi.com/jmlopezdona">Invítame a un café</a></p>
+  <p>Tacx, Elite, Zwift, Wahoo y el resto de marcas citadas pertenecen a sus propietarios. Este proyecto es independiente y no está afiliado ni respaldado por ninguno de ellos.</p>
+  <p>Software libre bajo licencia GPL-3.0. <a href="https://github.com/indoor-cycling-lab/smart-bike/blob/main/LICENSE">Ver la licencia</a> · <a href="https://github.com/indoor-cycling-lab/smart-bike">Código fuente en GitHub</a></p>
+</footer>
+<script>
+(function () {
+  var d = document.documentElement;
+  var boton = document.getElementById("tema");
+  function claro() {
+    var t = d.getAttribute("data-theme");
+    return t ? t === "claro" : matchMedia("(prefers-color-scheme: light)").matches;
+  }
+  if (boton) {
+    boton.hidden = false;
+    boton.addEventListener("click", function () {
+      var nuevo = claro() ? "rodaje" : "claro";
+      d.setAttribute("data-theme", nuevo);
+      try { localStorage.setItem("sb-tema", nuevo); } catch (e) {}
+    });
+  }
+  var idioma = document.getElementById("enlace-idioma");
+  if (idioma) {
+    var base = idioma.getAttribute("href").split("#")[0];
+    var sincronizar = function () { idioma.setAttribute("href", base + location.hash); };
+    window.addEventListener("hashchange", sincronizar);
+    sincronizar();
+  }
+})();
+</script>
+</body>
+</html>

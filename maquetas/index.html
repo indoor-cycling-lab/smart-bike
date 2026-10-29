@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maquetas · Smart Bike</title>
+<!-- Índice de revisión: no es una pantalla de la app. -->
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="../design-system/components.css">
+<link rel="stylesheet" href="revision.css">
+<script src="revision.js"></script>
+</head>
+<body data-mock-states="">
+<main class="rv-index">
+  <h1>Smart Bike · Maquetas</h1>
+  <p>Referencia visual y de estados de cada pantalla. Cada maqueta tiene arriba un selector de <strong>estado</strong> y de <strong>tema</strong>; el estado va en la dirección (<code>#estado=…</code>), así se puede enlazar uno concreto. Añadiendo <code>&amp;vista=captura</code> se oculta la barra y se ve solo la pantalla, a su tamaño (es lo que usa la web pública para sus capturas). Los componentes y sus pautas están en la <a href="../design-system/styleguide/">guía de estilo</a>.</p>
+
+  <h2>Rodaje</h2>
+  <div class="rv-scroll"><table>
+    <thead><tr><th>Pantalla</th><th>Estados</th><th>Funcionalidades</th></tr></thead>
+    <tbody>
+      <tr><td><a href="rodaje.html">Rodaje (horizontal)</a></td><td><ul>
+        <li><a href="rodaje.html#estado=lineal-2">Lineal 24 · 2 datos</a> (por defecto; bajo la barra de estado del sistema, en una línea: el modo con la transmisión a la izquierda, el estado de la plataforma, «Esperando conexión…», centrado, y a la derecha la barra de conexiones con el icono de Ajustes) y <a href="rodaje.html#estado=lineal-2&amp;tema=claro">en tema claro</a></li>
+        <li><a href="rodaje.html#estado=lineal-2-botones">Lineal 24 · 2 datos · botones − y +</a> (la misma cifra que sin botones)</li>
+        <li><a href="rodaje.html#estado=velocidad">Lineal 24 · velocidad y distancia</a> y <a href="rodaje.html#estado=velocidad-sin-valor">velocidad sin valor</a> (otro modelo: «—»)</li>
+        <li><a href="rodaje.html#estado=lineal-1">Lineal 24 · 1 dato</a> (solo la cadencia)</li>
+        <li><a href="rodaje.html#estado=shimano-auto">Shimano 105 · automático</a> (52×17, «+1 marcha»)</li>
+        <li><a href="rodaje.html#estado=shimano-5">Shimano 105 · 5 datos</a> (el quinto centrado) y <a href="rodaje.html#estado=shimano-5-botones">con botones − y +</a></li>
+        <li><a href="rodaje.html#estado=shimano-plato">Shimano 105 · cambio de plato</a> (52×19, «Plato 52»)</li>
+        <li><a href="rodaje.html#estado=shimano-tope-plato">Shimano 105 · tope de plato en manual</a></li>
+        <li><a href="rodaje.html#estado=shimano-3">Shimano · 3 datos</a> (con el tiempo)</li>
+        <li><a href="rodaje.html#estado=sram-4">SRAM · 4 datos · botones − y +</a></li>
+        <li><a href="rodaje.html#estado=campagnolo-6">Campagnolo · 6 datos</a> (los seis: sin velocidad ni distancia) y <a href="rodaje.html#estado=campagnolo-6-botones">con botones − y +</a> (la marcha cede el sitio)</li>
+        <li><a href="rodaje.html#estado=tope">Tope en la marcha más dura</a></li>
+        <li><a href="rodaje.html#estado=neo-off">Neo desconectado</a></li>
+        <li><a href="rodaje.html#estado=sin-aviso">Sin aviso de acción</a></li>
+        <li><a href="rodaje.html#estado=erg">Entrenamiento ERG de Zwift</a></li>
+        <li><a href="rodaje.html#estado=sin-zwift">Libre</a> (rodaje sin app de entrenamiento: el indicador dice «LIBRE»)</li>
+        <li><a href="rodaje.html#estado=tope-lineal">Sin Zwift · tope en lineal</a></li>
+        <li><a href="rodaje.html#estado=square-off">Libre · Square sin conexión</a> (con el ajuste de los botones desactivado, los botones − y + aparecen y la marcha y los datos se encogen; con el Square conectado, no: <a href="rodaje.html#estado=sin-zwift">Libre</a>)</li>
+        <li>Modo tocable (change <code>modo-tactil-rodaje</code>; con el ajuste activado el indicador es un botón con relleno tintado): <a href="rodaje.html#estado=tactil-libre">Libre</a> (tras volver de ERG manual, «Modo Libre»), <a href="rodaje.html#estado=tactil-sim">SIM</a>, <a href="rodaje.html#estado=tactil-erg-manual">ERG manual</a> (tras tocar en Libre, «ERG manual · 200 W») y <a href="rodaje.html#estado=tactil-erg-app">ERG APP</a> (el toque avisa «Entrenamiento de la app»). Con el ajuste desactivado sigue siendo la etiqueta de siempre, tenga botones − y + o no (<a href="rodaje.html#estado=sin-zwift">Libre</a>)</li>
+        <li><a href="rodaje.html#estado=sin-dispositivos">Sin Zwift · sin dispositivos</a> (sin rodillo configurado no se publica nada: «Sin rodillo»)</li>
+        <li>Guía de inicio, hoja inferior de cuatro páginas (changes <code>guia-inicio</code> y <code>guia-modos-de-uso</code>): <a href="rodaje.html#estado=guia-pagina-1">página 1 · qué es</a>, <a href="rodaje.html#estado=guia-pagina-2">página 2 · pasos</a>, <a href="rodaje.html#estado=guia-pagina-2-conectando">rodillo conectando</a>, <a href="rodaje.html#estado=guia-pagina-2-rodillo">rodillo conectado, falta el controlador</a>, <a href="rodaje.html#estado=guia-pagina-2-controlador">rodillo y controlador</a>, <a href="rodaje.html#estado=guia-pagina-3">página 3 · modos de uso</a>, <a href="rodaje.html#estado=guia-pagina-4">página 4 · conectar a la app, opcional (wifi + Bluetooth)</a>, <a href="rodaje.html#estado=guia-pagina-4-bluetooth">página 4 · solo Bluetooth</a>, <a href="rodaje.html#estado=guia-pagina-4-wifi">página 4 · solo wifi</a>, <a href="rodaje.html#estado=guia-minimizada">minimizada</a>, <a href="rodaje.html#estado=guia-todo-hecho">todo hecho, sin guía</a></li>
+        <li><a href="rodaje.html#estado=neo-conectando">Sin Zwift · Neo conectando al abrir</a></li>
+        <li><a href="rodaje.html#estado=square-reconectando">Sin Zwift · Square reconectando</a></li>
+        <li><a href="rodaje.html#estado=conectando">Sin Zwift · Neo y Square conectando</a></li>
+        <li><a href="rodaje.html#estado=zwift-ruta">SIM · ruta de Zwift en lineal</a></li>
+        <li>Dato «Pendiente» (change <code>modo-libre-y-pendiente</code>): <a href="rodaje.html#estado=pendiente-subida">+4,2 % en una ruta (SIM)</a>, <a href="rodaje.html#estado=pendiente-bajada">−7,0 % en bajada</a>, <a href="rodaje.html#estado=pendiente-libre">0,0 % en Libre</a> y <a href="rodaje.html#estado=pendiente-erg">«—» en ERG</a></li>
+        <li><a href="rodaje.html#estado=zwift-mando-esperando">Zwift · ruta con el controlador esperando</a> (el rodillo conectado y el estado «Conectado · sin controlador» hasta que Zwift se conecta también al controlador)</li>
+        <li><a href="rodaje.html#estado=zwift-pulso-sin-elegir">Pulsómetro conectado sin el pulso elegido</a> («Conectado · sin pulso»)</li>
+        <li><a href="rodaje.html#estado=zwift-mando-sin-conexion">Zwift · ruta con el controlador sin conexión</a> (también «Conectado a Zwift · sin controlador»)</li>
+        <li><a href="rodaje.html#estado=zwift-erg">Zwift · entrenamiento ERG en lineal</a></li>
+        <li><a href="rodaje.html#estado=zwift-erg-tope">Zwift · tope de potencia en ERG</a></li>
+        <li><a href="rodaje.html#estado=erg-manual">ERG manual · entrar a 200 W</a> (sin Zwift)</li>
+        <li><a href="rodaje.html#estado=erg-manual-ajuste">ERG manual · +10 W</a></li>
+        <li><a href="rodaje.html#estado=erg-manual-tope">ERG manual · tope de potencia</a></li>
+        <li><a href="rodaje.html#estado=erg-manual-zwift">ERG manual · sobre una ruta de Zwift</a></li>
+        <li><a href="rodaje.html#estado=zwift-erg-alternar">Zwift · alternar durante un entrenamiento</a></li>
+        <li><a href="rodaje.html#estado=zwift-no-visible">Sin Zwift · Zwift no visible</a> (el anuncio no responde en la red: el estado dice «No visible en la red»)</li>
+        <li><a href="rodaje.html#estado=sin-wifi">Sin wifi</a> (el estado de la plataforma dice «Sin wifi» y la Z de Zwift, tachada)</li>
+        <li><a href="rodaje.html#estado=shimano-peor-caso">Shimano 105 · «Conectado · sin controlador» y cuatro enlaces</a> (el peor caso de la línea superior: la transmisión pasa a dos líneas y el estado sigue centrado)</li>
+        <li>Rodillo por Bluetooth: <a href="rodaje.html#estado=bt-esperando">esperando</a>, <a href="rodaje.html#estado=bt-conectado">conectado</a>, <a href="rodaje.html#estado=bt-sin-bluetooth">«Sin Bluetooth»</a> y <a href="rodaje.html#estado=bt-no-disponible">«No disponible»</a> (también en <a href="rodaje-vertical.html#estado=bt-sin-bluetooth">vertical</a>)</li>
+        <li>Giro de Zwift: <a href="rodaje.html#estado=giro-izquierda">izquierda</a>, <a href="rodaje.html#estado=giro-derecha">derecha</a>, <a href="rodaje.html#estado=giro-ambos">los dos lados</a> y <a href="rodaje.html#estado=giro-shimano">con la Shimano</a> (una flecha a cada lado de la marcha; su sitio está siempre reservado)</li>
+        <li><a href="rodaje.html#estado=square-bateria-baja">Square con la batería baja</a> (marca en el icono del Square de la barra de conexiones, sin porcentaje)</li>
+        <li>Pulsómetro en la barra de conexiones (el corazón, al final): <a href="rodaje.html#estado=pulso-conectado">conectado</a>, <a href="rodaje.html#estado=pulso-reconectando">reconectando</a>, <a href="rodaje.html#estado=pulso-sin-conexion">sin conexión</a> y <a href="rodaje.html#estado=cinco-enlaces">los cinco enlaces a la vez</a>; Rodaje no muestra ningún número de pulso</li>
+        <li>Ventilador en la barra de conexiones (el aspa, al final): <a href="rodaje.html#estado=ventilador-conectado">conectado</a>, <a href="rodaje.html#estado=ventilador-reconectando">reconectando</a>, <a href="rodaje.html#estado=ventilador-sin-conexion">sin conexión</a> y <a href="rodaje.html#estado=seis-enlaces">los seis enlaces a la vez</a>; avisos del pie: <a href="rodaje.html#estado=ventilador-50">velocidad</a>, <a href="rodaje.html#estado=ventilador-automatico">automático</a>, <a href="rodaje.html#estado=ventilador-en-automatico">velocidad en automático</a> y <a href="rodaje.html#estado=sin-ventilador">sin ventilador</a>; Rodaje no muestra ninguna velocidad ni modo del ventilador</li>
+      </ul></td><td>F1.2, F1.3, F1.4, F5, F7, F8, F11 (F11.3, F11.6, F11.8), F12.7. La barra de conexiones abre Dispositivos y el estado de lo publicado (sin nombre de plataforma), Conexión</td></tr>
+      <tr><td><a href="rodaje-vertical.html">Rodaje (vertical)</a></td><td><ul>
+        <li><a href="rodaje-vertical.html#estado=conectando">Neo y Square conectando</a>: la barra de conexiones a la derecha del estado de la plataforma, con los iconos de espera, y debajo el modo con la transmisión y el icono de Ajustes al final de la fila; y <a href="rodaje-vertical.html#estado=datos-2&amp;tema=claro">en tema claro</a></li>
+        <li><a href="rodaje-vertical.html#estado=velocidad">Velocidad y distancia</a> y <a href="rodaje-vertical.html#estado=velocidad-sin-valor">velocidad sin valor</a> (otro modelo: «—»)</li>
+        <li>Datos (SRAM): <a href="rodaje-vertical.html#estado=datos-1">1</a>, <a href="rodaje-vertical.html#estado=datos-2">2</a> (por defecto), <a href="rodaje-vertical.html#estado=datos-3">3</a>, <a href="rodaje-vertical.html#estado=datos-4">4</a>, <a href="rodaje-vertical.html#estado=datos-5">5</a> y <a href="rodaje-vertical.html#estado=datos-6">6</a>: área fija del 40 %, el último impar centrado</li>
+        <li>Con botones − y + (SRAM): <a href="rodaje-vertical.html#estado=botones-1">1</a>, <a href="rodaje-vertical.html#estado=botones-2">2</a>, <a href="rodaje-vertical.html#estado=botones-3">3</a>, <a href="rodaje-vertical.html#estado=botones-4">4</a>, <a href="rodaje-vertical.html#estado=botones-5">5</a> y <a href="rodaje-vertical.html#estado=botones-6">6</a> datos: la misma cifra que sin botones</li>
+        <li>Pantalla baja (360 × 640): <a href="rodaje-vertical.html#estado=baja-botones-4">SRAM con 4 datos y botones</a>, <a href="rodaje-vertical.html#estado=baja-shimano-botones-4">Shimano con 4 datos y botones</a>, <a href="rodaje-vertical.html#estado=baja-datos-6">6 datos sin botones</a> y <a href="rodaje-vertical.html#estado=baja-botones-6-recorte">6 datos elegidos con botones: se ven 4</a></li>
+        <li><a href="rodaje-vertical.html#estado=lineal-5">Lineal 24 · 5 datos</a> y <a href="rodaje-vertical.html#estado=lineal-5-botones">con botones − y +</a></li>
+        <li><a href="rodaje-vertical.html#estado=sin-zwift">Libre · lineal 24</a></li>
+        <li><a href="rodaje-vertical.html#estado=shimano-auto">Sin Zwift · Shimano 105 automático</a></li>
+        <li><a href="rodaje-vertical.html#estado=shimano-plato">Sin Zwift · Shimano 105 cambio de plato</a></li>
+        <li><a href="rodaje-vertical.html#estado=tope-lineal">Sin Zwift · tope en lineal</a></li>
+        <li><a href="rodaje-vertical.html#estado=square-off">Libre · Square sin conexión</a> (botones − y + visibles con el ajuste desactivado) y, en pantalla baja, <a href="rodaje-vertical.html#estado=baja-square-off-botones">360 × 640 con los 4 primeros datos</a></li>
+        <li>Modo tocable (change <code>modo-tactil-rodaje</code>): <a href="rodaje-vertical.html#estado=tactil-libre">Libre</a>, <a href="rodaje-vertical.html#estado=tactil-sim">SIM</a>, <a href="rodaje-vertical.html#estado=tactil-erg-manual">ERG manual</a> y <a href="rodaje-vertical.html#estado=tactil-erg-app">ERG APP</a>; el botón del modo y Ajustes comparten la fila sin solaparse</li>
+        <li><a href="rodaje-vertical.html#estado=sin-dispositivos">Sin Zwift · sin dispositivos</a></li>
+        <li>Guía de inicio, hoja inferior de cuatro páginas (changes <code>guia-inicio</code> y <code>guia-modos-de-uso</code>), en 390 × 844: <a href="rodaje-vertical.html#estado=guia-pagina-1">página 1 · qué es</a>, <a href="rodaje-vertical.html#estado=guia-pagina-2">página 2 · pasos</a>, <a href="rodaje-vertical.html#estado=guia-pagina-2-conectando">rodillo conectando</a>, <a href="rodaje-vertical.html#estado=guia-pagina-2-rodillo">rodillo conectado, falta el controlador</a>, <a href="rodaje-vertical.html#estado=guia-pagina-2-controlador">rodillo y controlador</a>, <a href="rodaje-vertical.html#estado=guia-pagina-3">página 3 · modos de uso</a>, <a href="rodaje-vertical.html#estado=guia-pagina-4">página 4 · conectar a la app, opcional (wifi + Bluetooth)</a>, <a href="rodaje-vertical.html#estado=guia-pagina-4-bluetooth">página 4 · solo Bluetooth</a>, <a href="rodaje-vertical.html#estado=guia-pagina-4-wifi">página 4 · solo wifi</a>, <a href="rodaje-vertical.html#estado=guia-minimizada">minimizada</a>, <a href="rodaje-vertical.html#estado=guia-todo-hecho">todo hecho, sin guía</a>; en pantalla baja (360 × 640): <a href="rodaje-vertical.html#estado=guia-baja-pagina-1">página 1</a>, <a href="rodaje-vertical.html#estado=guia-baja-pagina-2">página 2</a>, <a href="rodaje-vertical.html#estado=guia-baja-pagina-3">página 3 · modos de uso</a>, <a href="rodaje-vertical.html#estado=guia-baja-pagina-4">página 4 · conectar, opcional</a>, <a href="rodaje-vertical.html#estado=guia-baja-minimizada">minimizada</a></li>
+        <li><a href="rodaje-vertical.html#estado=neo-conectando">Sin Zwift · Neo conectando al abrir</a></li>
+        <li><a href="rodaje-vertical.html#estado=square-reconectando">Sin Zwift · Square reconectando</a></li>
+        <li><a href="rodaje-vertical.html#estado=conectando">Sin Zwift · Neo y Square conectando</a></li>
+        <li><a href="rodaje-vertical.html#estado=zwift-ruta">SIM · ruta de Zwift en lineal</a></li>
+        <li>Dato «Pendiente»: <a href="rodaje-vertical.html#estado=pendiente-subida">subida</a>, <a href="rodaje-vertical.html#estado=pendiente-bajada">bajada</a>, <a href="rodaje-vertical.html#estado=pendiente-libre">Libre</a> y <a href="rodaje-vertical.html#estado=pendiente-erg">ERG</a></li>
+        <li><a href="rodaje-vertical.html#estado=zwift-mando-esperando">Zwift · ruta con el controlador esperando</a> y <a href="rodaje-vertical.html#estado=zwift-pulso-sin-elegir">sin el pulso elegido</a></li>
+        <li><a href="rodaje-vertical.html#estado=zwift-mando-sin-conexion">Zwift · ruta con el controlador sin conexión</a></li>
+        <li><a href="rodaje-vertical.html#estado=zwift-erg">Zwift · entrenamiento ERG en lineal</a></li>
+        <li><a href="rodaje-vertical.html#estado=zwift-erg-tope">Zwift · tope de potencia en ERG</a></li>
+        <li><a href="rodaje-vertical.html#estado=erg-manual">ERG manual · entrar a 200 W</a></li>
+        <li><a href="rodaje-vertical.html#estado=erg-manual-tope">ERG manual · tope de potencia</a></li>
+        <li><a href="rodaje-vertical.html#estado=zwift-no-visible">Sin Zwift · Zwift no visible</a></li>
+        <li><a href="rodaje-vertical.html#estado=sin-wifi">Sin wifi</a></li>
+        <li>Giro de Zwift: <a href="rodaje-vertical.html#estado=giro-izquierda">izquierda</a>, <a href="rodaje-vertical.html#estado=giro-derecha">derecha</a>, <a href="rodaje-vertical.html#estado=giro-ambos">los dos lados</a> y <a href="rodaje-vertical.html#estado=giro-shimano">con la Shimano</a></li>
+        <li><a href="rodaje-vertical.html#estado=square-bateria-baja">Square con la batería baja</a></li>
+        <li>Pulsómetro: <a href="rodaje-vertical.html#estado=pulso-conectado">conectado</a>, <a href="rodaje-vertical.html#estado=pulso-reconectando">reconectando</a>, <a href="rodaje-vertical.html#estado=pulso-sin-conexion">sin conexión</a> y <a href="rodaje-vertical.html#estado=cinco-enlaces">los cinco enlaces a la vez</a> en la franja superior a 360 dp</li>
+        <li>Ventilador: <a href="rodaje-vertical.html#estado=ventilador-conectado">conectado</a>, <a href="rodaje-vertical.html#estado=ventilador-reconectando">reconectando</a>, <a href="rodaje-vertical.html#estado=ventilador-sin-conexion">sin conexión</a> y <a href="rodaje-vertical.html#estado=seis-enlaces">los seis enlaces a la vez</a> en la franja superior a 360 dp; avisos del pie: <a href="rodaje-vertical.html#estado=ventilador-50">velocidad</a>, <a href="rodaje-vertical.html#estado=ventilador-automatico">automático</a>, <a href="rodaje-vertical.html#estado=ventilador-en-automatico">velocidad en automático</a> y <a href="rodaje-vertical.html#estado=sin-ventilador">sin ventilador</a></li>
+        <li><a href="rodaje-vertical.html#estado=baja-cuatro-enlaces">Pantalla baja · cuatro enlaces y «Conectado · sin controlador»</a> (el peor caso de la fila de la plataforma a 360 dp) y <a href="rodaje-vertical.html#estado=enlaces-mezclados">enlaces esperando y sin conexión juntos</a> (agrupados a 4 dp)</li>
+      </ul></td><td>F1.2, F1.3, F1.4, F5, F7, F8, F11 (F11.3, F11.8)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Configuración</h2>
+  <div class="rv-scroll"><table>
+    <thead><tr><th>Pantalla</th><th>Estados</th><th>Funcionalidades</th></tr></thead>
+    <tbody>
+      <tr><td><a href="conexion.html">Conexión</a></td><td><ul>
+        <li><a href="conexion.html#estado=inicio">Esperando</a> (Wifi + Bluetooth, el recomendado; rodillo, controlador y pulso esperando; «Smart Bike»), <a href="conexion.html#estado=todo-conectado">todo conectado</a> y <a href="conexion.html#estado=rodillo-conectado">rodillo conectado con controlador y pulso esperando</a></li>
+        <li><a href="conexion.html#estado=reconectando">Neo y Square reconectando</a> y <a href="conexion.html#estado=sin-lectura">pulso sin lectura</a> (los servicios siguen publicados con una nota)</li>
+        <li>No se ofrece: <a href="conexion.html#estado=sin-pulsometro">sin pulsómetro</a>, <a href="conexion.html#estado=sin-square">sin Square</a> y <a href="conexion.html#estado=primer-uso">primer uso</a> (sin rodillo no se publica nada)</li>
+        <li>Solo Bluetooth: <a href="conexion.html#estado=solo-bluetooth">esperando</a> y <a href="conexion.html#estado=solo-bluetooth-conectado">conectado</a>; con el nombre por Bluetooth: <a href="conexion.html#estado=solo-bluetooth-nombre">Solo Bluetooth</a> y <a href="conexion.html#estado=wifi-bluetooth-nombre">Wifi + Bluetooth</a>, y <a href="conexion.html#estado=no-se-pudo-renombrar">no se pudo renombrar</a> (aviso de alerta); <a href="conexion.html#estado=solo-wifi">Solo wifi (modo Zwift Ride)</a> (el controlador y el pulso, dentro del mismo dispositivo)</li>
+        <li><a href="conexion.html#estado=kickr">KICKR BIKE PRO</a> como nombre ante la app</li>
+        <li><a href="conexion.html#estado=no-visible">No visible en la red</a>, <a href="conexion.html#estado=sin-wifi">sin wifi</a>, <a href="conexion.html#estado=bluetooth-apagado">Bluetooth apagado</a> (<a href="conexion.html#estado=bt-apagado-solo-bluetooth">con Solo Bluetooth</a>) (Wifi + Bluetooth y Solo Bluetooth) y <a href="conexion.html#estado=no-periferico">móvil sin modo periférico</a></li>
+      </ul></td><td>F8, F9, F12.1, F12.9, F16.2, NF3</td></tr>
+      <tr><td><a href="dispositivos.html">Dispositivos</a></td><td><ul>
+        <li><a href="dispositivos.html#estado=conectado">Todo conectado</a> (rodillo y controlador con «Olvidar»; «Buscar» solo sin configurado)</li>
+        <li><a href="dispositivos.html#estado=primer-uso">Primer uso</a> (las cuatro secciones con «Ninguno configurado» y su «Buscar»)</li>
+        <li><a href="dispositivos.html#estado=neo-conectando">Neo conectando</a></li>
+        <li><a href="dispositivos.html#estado=neo-no-encontrado">Neo no encontrado</a> (aviso de error con qué hacer; «Buscar» en el rodillo)</li>
+        <li><a href="dispositivos.html#estado=square-no-encontrado">Square no encontrado</a></li>
+        <li><a href="dispositivos.html#estado=square-reconectando">Controlador reconectando</a> («Reconectar» y «Olvidar»; «Buscar» solo sin configurado)</li>
+        <li><a href="dispositivos.html#estado=square-bateria-baja">Square con la batería baja</a> (aviso informativo bajo el controlador conectado: «Batería del Square baja (15 %). Revisa la pila antes de rodar.»)</li>
+        <li><a href="dispositivos.html#estado=bluetooth-apagado">Bluetooth apagado</a></li>
+        <li><a href="dispositivos.html#estado=sin-permiso">Sin permiso de Bluetooth</a> (aviso de error con «Abrir ajustes»)</li>
+        <li>Pulsómetro: <a href="dispositivos.html#estado=pulso-sin-configurado">sin banda configurada</a> (fila y «Buscar», sin error), <a href="dispositivos.html#estado=pulso-buscando">buscando</a>, <a href="dispositivos.html#estado=pulso-conectado">conectado</a> y <a href="dispositivos.html#estado=pulso-no-encontrado">no encontrado</a> (con el aviso de error)</li>
+        <li>Ventilador: <a href="dispositivos.html#estado=ventilador-sin-configurado">sin ventilador configurado</a> (fila y «Buscar», sin error), <a href="dispositivos.html#estado=ventilador-buscando">buscando</a>, <a href="dispositivos.html#estado=ventilador-conectado">conectado</a> (con «Olvidar») y <a href="dispositivos.html#estado=ventilador-no-encontrado">no encontrado</a> (con el aviso de error)</li>
+      </ul></td><td>F1, F8, F9, F12.1, NF3</td></tr>
+      <tr><td><a href="botones.html">Botones</a> (desde Ajustes)</td><td><ul>
+        <li><a href="botones.html#estado=lista">Asignación por defecto</a> (acciones de la app con las de ERG y de pantalla, funciones de Zwift asignables y gestos)</li>
+        <li>Las teclas de símbolo (△ ○ □ ✕) y de cruceta (↑ ↓ ← →) son iconos dibujados, también en <a href="diagnostico.html#estado=rodando">Diagnóstico</a> y <a href="asignar.html#estado=detectado">Asignar acción</a>; sus ocho formas, en la sección SquareKey de <a href="../design-system/styleguide/index.html">la guía</a></li>
+        <li><a href="botones.html#estado=modificada">Asignación modificada</a> (sin botón, también «Usar powerup»; combinación nueva, palancas invertidas)</li>
+        <li><a href="botones.html#estado=sin-square">Sin Square configurado</a> (el controlador no se publica; la asignación se conserva)</li>
+        <li><a href="botones.html#estado=restaurar">Confirmar la restauración</a></li>
+        <li><a href="botones.html#estado=shimano">Shimano 105</a> (su propia asignación, con las acciones de plato)</li>
+        <li>Acciones del ventilador, tras «Siguiente modelo» y sin botón por defecto: en <a href="botones.html#estado=lista">la asignación por defecto</a> y con «Ventilador: + velocidad» asignada en <a href="botones.html#estado=modificada">la asignación modificada</a></li>
+      </ul></td><td>F3.2, F3.5, F4.1, F4.2, F4.5, F7.2, F7.3, F9, F12.4</td></tr>
+      <tr><td><a href="asignar.html">Asignar acción</a></td><td><ul>
+        <li><a href="asignar.html#estado=esperando">Esperando una pulsación</a></li>
+        <li><a href="asignar.html#estado=sin-square">Square sin conexión</a></li>
+        <li><a href="asignar.html#estado=detectado">Combinación libre</a></li>
+        <li><a href="asignar.html#estado=en-uso">Entrada ya asignada</a></li>
+        <li><a href="asignar.html#estado=zwift">Botón que usa Zwift</a> (controlador desactivado)</li>
+        <li><a href="asignar.html#estado=funcion-zwift">Función de Zwift</a> («Ride On», «pulsar» mientras se mantiene)</li>
+      </ul></td><td>F3.1, F3.3, F4.2, F4.3, F5.7, F5.8, F9</td></tr>
+      <tr><td><a href="marchas.html">Marchas</a></td><td><ul>
+        <li><a href="marchas.html#estado=lineal">Transmisión lineal</a> (por defecto)</li>
+        <li><a href="marchas.html#estado=shimano">Shimano 105 · automático</a></li>
+        <li><a href="marchas.html#estado=shimano-manual">Shimano 105 · manual</a></li>
+        <li><a href="marchas.html#estado=avanzada">Simulación avanzada abierta</a></li>
+      </ul></td><td>F5.5–F5.8, F6, F12.3</td></tr>
+      <tr><td><a href="ajustes.html">Ajustes</a></td><td><ul>
+        <li><a href="ajustes.html#estado=inicio">Ajustes</a> (Marchas, Botones, Guía de inicio, Diagnóstico, Al rodar, Pantalla, Ciclista, Rodillo, Copia de seguridad y Depuración, sin sección «Zwift»; Oscuro y «Según el móvil» elegidos)</li>
+        <li>Copia de seguridad: <a href="ajustes.html#estado=copia-confirmar">confirmar la importación</a>, <a href="ajustes.html#estado=copia-importada">importada</a>, <a href="ajustes.html#estado=copia-exportada">exportada</a>, <a href="ajustes.html#estado=copia-error-version">archivo de una versión más nueva</a> y <a href="ajustes.html#estado=copia-error-archivo">archivo que no es una configuración</a></li>
+        <li>Casilla «Cambiar de modo tocando» (independiente de «Botones − y + en pantalla»): <a href="ajustes.html#estado=inicio">desactivada</a> y <a href="ajustes.html#estado=modo-tocando">activada</a></li>
+        <li><a href="ajustes.html#estado=ingles">Idioma «English» elegido</a> (el ajuste «Idioma · Language» de la sección «Pantalla», encima de «Tema»; la maqueta sigue en español)</li>
+        <li><a href="ajustes.html#estado=claro&amp;tema=claro">Tema claro elegido</a> (la maqueta en claro)</li>
+        <li>Modelo de resistencia: <a href="ajustes.html#estado=simple">Simple</a>, <a href="ajustes.html#estado=tabla">Por tabla</a> (con «Tabla de marchas») y <a href="ajustes.html#estado=fisico">Físico</a> (con «Potencia mínima»); «Dificultad» y «Peso de la bici» en todos</li>
+        <li><a href="ajustes.html#estado=vertical">Orientación vertical</a> y <a href="ajustes.html#estado=horizontal">horizontal</a> elegidas (<a href="ajustes.html#estado=horizontal&amp;tema=claro">horizontal en claro</a>)</li>
+        <li>Sección «Ventilador» (tras «Rodillo», solo con ventilador configurado): <a href="ajustes.html#estado=ventilador-manual">manual</a>, <a href="ajustes.html#estado=ventilador-automatico">automático</a> (velocidad deshabilitada), <a href="ajustes.html#estado=ventilador-otro-modo">otro modo</a>, <a href="ajustes.html#estado=ventilador-sin-conexion">sin conexión</a> (controles deshabilitados), <a href="ajustes.html#estado=ventilador-extremos">100 % y umbrales en los extremos</a> y <a href="ajustes.html#estado=ventilador-sin-configurado">sin ventilador configurado</a> (la sección no aparece)</li>
+        <li>Sección «Depuración» (al final, tras «Copia de seguridad»): <a href="ajustes.html#estado=depuracion-apagada">grabación apagada</a> (10 % de espacio libre mínimo, «Sesiones grabadas» con su resumen), <a href="ajustes.html#estado=depuracion-grabando">grabando</a> y <a href="ajustes.html#estado=depuracion-detenida">detenida por poco espacio</a></li>
+      </ul></td><td>F6.5, F7.1, F9, F12.2 (peso), F12.5, F12.7, F13.4</td></tr>
+      <tr><td><a href="sesiones.html">Sesiones grabadas</a></td><td><ul>
+        <li><a href="sesiones.html#estado=inicio">Una sesión grabándose</a> (por defecto; se abre desde Ajustes, en «Depuración»; la que se graba no se puede borrar)</li>
+        <li><a href="sesiones.html#estado=cerradas">Todas cerradas</a></li>
+        <li><a href="sesiones.html#estado=vacia">Sin sesiones</a></li>
+        <li><a href="sesiones.html#estado=detenida-espacio">Detenida por poco espacio</a> y <a href="sesiones.html#estado=detenida-error">por un error</a></li>
+        <li>Confirmar el borrado: <a href="sesiones.html#estado=borrar-una">de una sesión</a> y <a href="sesiones.html#estado=borrar-todas">de todas</a></li>
+      </ul></td><td>F13.4</td></tr>
+      <tr><td><a href="tabla-marchas.html">Tabla de marchas</a></td><td><ul>
+        <li><a href="tabla-marchas.html#estado=lineal">Transmisión lineal</a> (24 marchas, la 17 puesta)</li>
+        <li><a href="tabla-marchas.html#estado=shimano">Shimano 105</a> (24 combinaciones por relación, la 36×17 puesta)</li>
+      </ul></td><td>F6.2</td></tr>
+      <tr><td><a href="datos.html">Datos en pantalla</a></td><td><ul>
+        <li><a href="datos.html#estado=dos">2 datos (por defecto)</a></li>
+        <li><a href="datos.html#estado=uno">1 dato (mínimo)</a></li>
+        <li><a href="datos.html#estado=cuatro">4 datos</a></li>
+        <li><a href="datos.html#estado=velocidad">4 datos con velocidad y distancia</a></li>
+        <li><a href="datos.html#estado=pendiente">4 datos con Pendiente</a> (nueve datos a elegir)</li>
+        <li><a href="datos.html#estado=seis">6 datos (máximo; velocidad y distancia deshabilitadas)</a></li>
+        <li>Pantalla baja (360 × 640): <a href="datos.html#estado=baja-botones-6">6 datos con botones, con el aviso de que Rodaje muestra 4</a> y <a href="datos.html#estado=baja-sin-botones-6">6 datos sin botones, sin aviso</a></li>
+      </ul></td><td>F11.3, F12.7</td></tr>
+      <tr><td><a href="diagnostico.html">Diagnóstico</a></td><td><ul>
+        <li><a href="diagnostico.html#estado=conectado">Todo conectado</a> (por defecto; se abre desde Ajustes; «Datos de conexión» solo tiene datos, sin estado ni avisos de conexión)</li>
+        <li><a href="diagnostico.html#estado=todos-los-datos">Todos los datos de conexión</a> (app de entrenamiento por wifi, nombre anunciado, batería del Square «15 % · baja», pulso, ventilador y, en Simulación, la de Zwift)</li>
+        <li><a href="diagnostico.html#estado=buscando">Buscando</a></li>
+        <li><a href="diagnostico.html#estado=conectando">Conectando al abrir</a></li>
+        <li><a href="diagnostico.html#estado=neo-no-encontrado">Rodillo no encontrado</a></li>
+        <li><a href="diagnostico.html#estado=square-reconectando">Square reconectando</a></li>
+        <li><a href="diagnostico.html#estado=bluetooth-apagado">Bluetooth apagado</a></li>
+        <li><a href="diagnostico.html#estado=sin-permiso">Sin permiso de Bluetooth</a></li>
+        <li><a href="diagnostico.html#estado=limites">Límites del control manual</a> (último gesto: □ larga)</li>
+        <li><a href="diagnostico.html#estado=rodando">Rodando con Zwift</a> (rodillo y controlador conectados)</li>
+        <li><a href="diagnostico.html#estado=zwift-wifi">Todo por wifi · simulación de Zwift</a> (en la sección Simulación, lo último que manda Zwift: pendiente, relación de su marcha, Crr, CW y masas; aparte, lo que simula el Neo)</li>
+        <li><a href="diagnostico.html#estado=kickr">Nombre ante la app: KICKR BIKE PRO</a> («Nombre anunciado» con el KICKR BIKE PRO y su identidad propia; en el resto de estados, «Smart Bike»)</li>
+        <li><a href="diagnostico.html#estado=zwift-ruta">Zwift · ruta en lineal</a></li>
+        <li><a href="diagnostico.html#estado=zwift-erg">Zwift · ERG en lineal</a></li>
+        <li><a href="diagnostico.html#estado=bajada-limitada">Bajada limitada</a> (Zwift −7 % en la marcha 1, con «La marcha no crea bajadas»)</li>
+        <li><a href="diagnostico.html#estado=sin-wifi">Sin wifi</a></li>
+        <li>Rodillo por Bluetooth: <a href="diagnostico.html#estado=bt-rodando">Zwift conectado</a> (con el nombre Bluetooth del móvil y «Por Bluetooth» en la app de entrenamiento) y <a href="diagnostico.html#estado=bt-sin-bluetooth">Bluetooth apagado</a></li>
+        <li><a href="diagnostico.html#estado=shimano">Shimano 105</a> (marcha 52×17 con su relación)</li>
+        <li><a href="diagnostico.html#estado=erg-manual">ERG manual</a> (220 W fijados, entrada 200 W)</li>
+        <li><a href="diagnostico.html#estado=fisico">Modelo físico</a> y <a href="diagnostico.html#estado=fisico-minima">potencia mínima actuando en una bajada</a></li>
+        <li>Batería del Square en «Datos de conexión»: <a href="diagnostico.html#estado=bateria-ok">80 %</a>, <a href="diagnostico.html#estado=bateria-sin-lectura">sin lectura todavía</a>, <a href="diagnostico.html#estado=bateria-baja">baja («15 % · baja», sin aviso aparte)</a> y <a href="diagnostico.html#estado=square-sin-conexion-bateria">sin conexión con la última batería</a></li>
+        <li>Pulsómetro en «Datos de conexión»: <a href="diagnostico.html#estado=pulso-128">128 bpm</a> (con su tráfico y lo enviado a Zwift), <a href="diagnostico.html#estado=pulso-sin-lectura">sin lectura</a> y <a href="diagnostico.html#estado=pulso-reconectando">reconectando</a> (solo «—», el estado está en Dispositivos)</li>
+        <li>Ventilador en «Datos de conexión»: <a href="diagnostico.html#estado=ventilador-manual-40">manual 40 %</a> (con su tráfico), <a href="diagnostico.html#estado=ventilador-sin-notificacion">sin notificación</a> y <a href="diagnostico.html#estado=ventilador-reconectando">reconectando</a> (último modo y velocidad con su antigüedad)</li>
+        <li>En todos los estados, el tráfico empieza oculto: se ve al marcar «Tráfico en directo»</li>
+      </ul></td><td>F1.1, F1.2, F1.3, F1.4, F2, F3, F5, F6.5, F7.2, F8, F13</td></tr>
+      <tr><td><a href="identidad.html">Identidad de la app</a></td><td><ul>
+        <li><a href="identidad.html#estado=icono">Icono en el launcher</a> (máscara circular y de cuadrado redondeado, zona segura, 48 dp)</li>
+        <li><a href="identidad.html#estado=monocromo">Icono monocromo</a></li>
+        <li><a href="identidad.html#estado=splash">Splash de arranque</a> (animación y estado final; <a href="identidad.html#estado=splash&amp;tema=claro">con tema claro</a> sigue oscura)</li>
+        <li><a href="identidad.html#estado=botones">Icono de Botones</a> en la entrada de Ajustes, junto al manillar del controlador</li>
+      </ul></td><td>Ninguna (identidad visual)</td></tr>
+    </tbody>
+  </table></div>
+
+  <p class="sq-caption">Datos de ejemplo. Lo que va entre corchetes (<code>[MÁSCARA EN HEX]</code>, <code>[NOTIFICACIÓN 0x43]</code>) está pendiente de capturar con el Square real, y los platos y cassettes de cada marca hay que confirmarlos antes de llevarlos al código.</p>
+</main>
+</body>
+</html>

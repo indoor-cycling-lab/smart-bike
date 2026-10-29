@@ -1,0 +1,9 @@
+root = true
+
+[*.{kt,kts}]
+ktlint_code_style = intellij_idea
+ij_kotlin_imports_layout = *
+max_line_length = off
+# Las funciones @Composable se nombran en PascalCase como los componentes del sistema de diseño (131 infracciones
+# de function-naming el 28-10-2026, todas composables).
+ktlint_function_naming_ignore_when_annotated_with = Composable

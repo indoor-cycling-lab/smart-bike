@@ -1,0 +1,9 @@
+# Traza de ejemplo escrita a mano (no capturada): Campagnolo D + palanca D1, y suelta.
+# Las trazas reales del Square y del Neo se añaden en la validación con el equipo real.
+100 APP EVT - Square: conectado
+05-01 12:04:31.208  4321  4400 I SqTrama: 1000 SQUARE RX 0x43 0a1b2c80000000ff
+1100 SQUARE RX 0x43 0a1b2c80020000ff
+1100 SQUARE RX 0x43 0a1b2c80020000ff
+1180 SQUARE RX 0x43 0a1b2c80000000ff
+1300 SQUARE RX 0x43 0a1b2c00000000ff
+1400 NEO TX fec3 a44e

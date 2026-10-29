@@ -1,0 +1,60 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../../components.css">
+<title>Smart Bike</title>
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--bg); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+  .gear { fill:var(--gear-fill); }
+  .deep { fill:var(--line-strong); }
+  .climb { fill:var(--climb); }
+  .descent { fill:var(--descent); }
+  .cut { fill:var(--bg); }
+  .blk { rx:var(--radius-md); }
+  .badge { rx:var(--radius-sm); }
+  .pill { rx:4px; }
+  .words { position:absolute; left:var(--space-6); bottom:var(--space-6); max-width:440px; }
+  .name { margin:0; font-family:var(--font-numeric); font-size:104px; line-height:.95; font-weight:700; letter-spacing:-.01em; color:var(--ink); }
+  .tag { margin:var(--space-2) 0 0 4px; font-size:14px; line-height:20px; color:var(--ink-muted); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+  blocks      gear-fill 224×280 bled off the top (the brand, largest) · line-strong 240×192 bleeding off the right edge (the deep slab) · climb 64×24 and descent 32×24 (state colours, small) — ≈35% of 960×288
+  arrangement one tall gear slab with a lower slab beside it, bottoms on one line space-6 above the edge, space-4 gutter
+  pattern     a cassette in profile cut out of the gear slab in bg: twelve space-2-wide pills whose heights follow the teeth of an 11–36 cassette, at a space-4 pitch — the app is about cogs and gears
+  scales      gutters space-4; pitch space-4; pill width space-2 (rx = half); corners radius-md, state blocks radius-sm
+-->
+<rect class="gear blk" x="16" y="-16" width="224" height="280" rx="8"/>
+<rect class="cut pill" x="32" y="50" width="8" height="190" rx="4"/>
+<rect class="cut pill" x="48" y="72" width="8" height="168" rx="4"/>
+<rect class="cut pill" x="64" y="89" width="8" height="151" rx="4"/>
+<rect class="cut pill" x="80" y="106" width="8" height="134" rx="4"/>
+<rect class="cut pill" x="96" y="122" width="8" height="118" rx="4"/>
+<rect class="cut pill" x="112" y="134" width="8" height="106" rx="4"/>
+<rect class="cut pill" x="128" y="145" width="8" height="95" rx="4"/>
+<rect class="cut pill" x="144" y="156" width="8" height="84" rx="4"/>
+<rect class="cut pill" x="160" y="162" width="8" height="78" rx="4"/>
+<rect class="cut pill" x="176" y="167" width="8" height="73" rx="4"/>
+<rect class="cut pill" x="192" y="173" width="8" height="67" rx="4"/>
+<rect class="cut pill" x="208" y="178" width="8" height="62" rx="4"/>
+<rect class="climb badge" x="256" y="32" width="64" height="24" rx="4"/>
+<rect class="descent badge" x="336" y="32" width="32" height="24" rx="4"/>
+<rect class="deep blk" x="256" y="72" width="240" height="192" rx="8"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Square<br>Shift</h1>
+<p class="tag">Marchas virtuales para el Tacx Neo desde el Elite Square.</p>
+</div>
+</div>
+</body>
+</html>

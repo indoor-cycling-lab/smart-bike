@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asignar acción · Maquetas · Smart Bike</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="../design-system/components.css">
+<link rel="stylesheet" href="revision.css">
+<script src="revision.js"></script>
+</head>
+<body data-mock-states="esperando:Esperando una pulsación, sin-square:Square sin conexión, detectado:Combinación libre, en-uso:Entrada ya asignada, zwift:Botón que usa Zwift (mando desactivado), funcion-zwift:Función de Zwift">
+  <div class="rv-stage"><div class="rv-device rv-device--v">
+    <div class="sq-screen">
+      <div class="sq-screen__body">
+        <div class="sq-appbar"><a class="sq-appbar__back" href="botones.html" aria-label="Volver a Botones"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-arrow_back"/></svg></a><h1 class="sq-title">Asignar acción</h1></div>
+        <div class="sq-col sq-gap-1"><span class="sq-label">Acción</span><span class="sq-section__title" data-mock-state="esperando sin-square detectado en-uso zwift">−3 marchas</span><span class="sq-section__title" data-mock-state="funcion-zwift">Ride On</span><span class="sq-caption" data-mock-state="funcion-zwift">Función de Zwift: llega a Zwift por el controlador Zwift de la app</span></div>
+        <section class="sq-section">
+          <span class="sq-label">Botones de esta acción</span>
+          <div class="sq-list" data-mock-state="esperando sin-square detectado en-uso zwift"><div class="sq-entry"><div class="in"><span class="sq-key wide">Campag. I</span><span class="sq-plus">+</span><span class="sq-key wide">Palanca I1</span><span class="gest">pulsar</span></div><button type="button" class="sq-entry__remove" aria-label="Quitar Campag. I + Palanca I1 pulsar"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-close"/></svg></button></div></div><div class="sq-list" data-mock-state="funcion-zwift"><div class="sq-entry"><div class="in"><span class="sq-key">Z</span><span class="gest">pulsar</span></div><button type="button" class="sq-entry__remove" aria-label="Quitar Z pulsar"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-close"/></svg></button></div></div>
+        </section>
+        <div class="sq-capture" data-mock-state="esperando detectado en-uso zwift funcion-zwift"><span>Pulsa en el Square el botón o la combinación que quieres añadir</span><div class="sq-capture__keys"><span class="sq-caption" data-mock-state="esperando">Esperando…</span><span class="sq-row" data-mock-state="detectado funcion-zwift"><span class="sq-key wide down">Campag. D</span><span class="sq-plus">+</span><span class="sq-key down" role="img" aria-label="triángulo"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-tecla_triangulo"/></svg></span></span><span class="sq-row" data-mock-state="en-uso"><span class="sq-key wide down">Palanca D1</span></span><span class="sq-row" data-mock-state="zwift"><span class="sq-key down">A</span></span></div><span class="sq-caption" data-mock-state="detectado funcion-zwift">Detectado: combinación</span><span class="sq-caption" data-mock-state="en-uso zwift">Detectado: botón</span></div>
+        <div class="sq-capture is-off" data-mock-state="sin-square"><span>Conecta el Square para capturar un botón</span></div>
+        <fieldset class="sq-section" data-mock-state="esperando sin-square en-uso zwift"><legend class="sq-label">Gesto</legend><div class="sq-seg"><label><input type="radio" name="g-esperando" checked>Pulsar</label><label><input type="radio" name="g-esperando">Corta</label><label><input type="radio" name="g-esperando">Larga</label><label><input type="radio" name="g-esperando">Doble</label></div><span class="sq-caption">Pulsar responde al instante. Corta, larga y doble esperan a saber qué gesto es: úsalas fuera de las palancas.</span></fieldset>
+        <fieldset class="sq-section" data-mock-state="detectado"><legend class="sq-label">Gesto</legend><div class="sq-seg"><label><input type="radio" name="g-detectado">Pulsar</label><label><input type="radio" name="g-detectado" checked>Corta</label><label><input type="radio" name="g-detectado">Larga</label><label><input type="radio" name="g-detectado">Doble</label></div><span class="sq-caption">Pulsar responde al instante. Corta, larga y doble esperan a saber qué gesto es: úsalas fuera de las palancas.</span></fieldset>
+        <fieldset class="sq-section" data-mock-state="funcion-zwift"><legend class="sq-label">Gesto</legend><div class="sq-seg"><label><input type="radio" name="g-zwift" checked>Pulsar</label><label><input type="radio" name="g-zwift">Corta</label><label><input type="radio" name="g-zwift">Larga</label><label><input type="radio" name="g-zwift">Doble</label></div><span class="sq-caption">Pulsar: Zwift la recibe al instante y mientras se mantiene el botón, como en un controlador oficial. Corta, larga y doble le envían una pulsación breve.</span></fieldset>
+        <div class="sq-notice" role="status" data-mock-state="funcion-zwift"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-info"/></svg><span>Campag. D + △ pulsar está libre.</span></div>
+        <div class="sq-notice" role="status" data-mock-state="detectado"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-info"/></svg><span>Campag. D + △ corta está libre.</span></div>
+        <div class="sq-notice is-danger" role="alert" data-mock-state="en-uso"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-error"/></svg><span>Palanca D1 pulsar ya hace «+1 marcha». Si guardas, dejará de hacerlo.</span></div>
+        <div class="sq-notice" role="status" data-mock-state="zwift"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-info"/></svg><span>El mando de Zwift está desactivado. Con el Square emparejado en Zwift, Zwift también recibirá A (Seleccionar).</span></div>
+        <div class="sq-spacer"></div>
+        <div class="sq-actions" data-mock-state="esperando sin-square"><a class="sq-btn" href="botones.html">Cancelar</a><button type="button" class="sq-btn primary" disabled>Guardar</button></div>
+        <div class="sq-actions" data-mock-state="detectado en-uso zwift funcion-zwift"><a class="sq-btn" href="botones.html">Cancelar</a><button type="button" class="sq-btn primary">Guardar</button></div>
+      </div>
+    </div>
+  </div></div>
+</body>
+</html>

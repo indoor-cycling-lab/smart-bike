@@ -1,0 +1,137 @@
+{
+  "escala": 2,
+  "capturas": [
+    {
+      "id": "rodaje",
+      "maqueta": "rodaje",
+      "estado": "shimano-auto",
+      "ancho": 844,
+      "alto": 390,
+      "alt": {
+        "es": "Pantalla de rodaje en horizontal: marcha 52×17 de una transmisión Shimano, potencia de 247 W y cadencia de 91 rpm",
+        "en": "Ride screen in landscape: gear 52×17 on a Shimano drivetrain, 247 W power and 91 rpm cadence"
+      }
+    },
+    {
+      "id": "rodaje-vertical-plato",
+      "maqueta": "rodaje-vertical",
+      "estado": "shimano-plato",
+      "ancho": 390,
+      "alto": 844,
+      "alt": {
+        "es": "Pantalla de rodaje en vertical durante un cambio de plato: marcha 52×19 y aviso «Plato 52»",
+        "en": "Ride screen in portrait during a chainring shift: gear 52×19 and a “Plato 52” notice"
+      }
+    },
+    {
+      "id": "marchas",
+      "maqueta": "marchas",
+      "estado": "shimano",
+      "ancho": 390,
+      "alto": 844,
+      "alt": {
+        "es": "Pantalla de marchas con la transmisión Shimano 105 2×12 en modo automático",
+        "en": "Gears screen with a Shimano 105 2×12 drivetrain in automatic mode"
+      }
+    },
+    {
+      "id": "conexion",
+      "maqueta": "conexion",
+      "estado": "todo-conectado",
+      "ancho": 390,
+      "alto": 844,
+      "alt": {
+        "es": "Pantalla de conexión con el rodillo y el controlador conectados, el pulso enviándose y el modo «Wifi + Bluetooth» elegido",
+        "en": "Connection screen with the trainer and controller connected, heart rate being sent and the “Wifi + Bluetooth” mode selected"
+      }
+    },
+    {
+      "id": "botones",
+      "maqueta": "botones",
+      "estado": "lista",
+      "ancho": 390,
+      "alto": 844,
+      "alt": {
+        "es": "Pantalla de botones, dentro de Ajustes, con las acciones de la app asignadas a los botones del Square",
+        "en": "Buttons screen, inside Settings, with the app's actions assigned to the Square's buttons"
+      }
+    },
+    {
+      "id": "pulso-ventilador",
+      "maqueta": "rodaje",
+      "estado": "ventilador-50",
+      "ancho": 844,
+      "alto": 390,
+      "alt": {
+        "es": "Pantalla de rodaje con los iconos del rodillo, el Square y el ventilador, y el aviso «Ventilador: 50 %» tras subir su velocidad con un botón",
+        "en": "Ride screen with the trainer, Square and fan icons, and a “Ventilador: 50 %” notice after raising its speed with a button"
+      }
+    },
+    {
+      "id": "rodaje-erg",
+      "maqueta": "rodaje",
+      "estado": "zwift-erg",
+      "ancho": 844,
+      "alto": 390,
+      "alt": {
+        "es": "Pantalla de rodaje durante un entrenamiento ERG de Zwift, con la potencia objetivo y la cadencia",
+        "en": "Ride screen during a Zwift ERG workout, with the target power and cadence"
+      }
+    },
+    {
+      "id": "rodaje-vertical-datos",
+      "maqueta": "rodaje-vertical",
+      "estado": "lineal-5-botones",
+      "ancho": 390,
+      "alto": 844,
+      "alt": {
+        "es": "Pantalla de rodaje en vertical con cinco datos y los botones − y + para cambiar de marcha tocando el móvil",
+        "en": "Ride screen in portrait with five readings and the − and + buttons to shift by touching the phone"
+      }
+    },
+    {
+      "id": "guia-inicio",
+      "maqueta": "rodaje-vertical",
+      "estado": "guia-pagina-3",
+      "ancho": 390,
+      "alto": 844,
+      "alt": {
+        "es": "Guía de inicio sobre la pantalla de rodaje, en la página «Cómo puedes usar la app», con los modos LIBRE, SIM y ERG",
+        "en": "Getting started guide over the ride screen, on the “How you can use the app” page, with the FREE, SIM and ERG modes"
+      }
+    },
+    {
+      "id": "dispositivos",
+      "maqueta": "dispositivos",
+      "estado": "conectado",
+      "ancho": 390,
+      "alto": 844,
+      "alt": {
+        "es": "Pantalla de dispositivos con el rodillo y el Square conectados, y las secciones del pulsómetro y el ventilador",
+        "en": "Devices screen with the trainer and the Square connected, and the heart rate monitor and fan sections"
+      }
+    },
+    {
+      "id": "ajustes",
+      "maqueta": "ajustes",
+      "estado": "inicio",
+      "ancho": 390,
+      "alto": 844,
+      "alt": {
+        "es": "Pantalla de ajustes con las entradas a Marchas, Botones y Diagnóstico, las opciones al rodar y el tema",
+        "en": "Settings screen with the entries for Gears, Buttons and Diagnostics, the riding options and the theme"
+      }
+    },
+    {
+      "id": "diagnostico",
+      "maqueta": "diagnostico",
+      "estado": "zwift-ruta",
+      "ancho": 390,
+      "alto": 844,
+      "alt": {
+        "es": "Pantalla de diagnóstico con los datos de conexión y los botones del Square, que se iluminan al pulsarlos",
+        "en": "Diagnostics screen with the connection data and the Square's buttons, which light up when pressed"
+      }
+    }
+  ]
+}

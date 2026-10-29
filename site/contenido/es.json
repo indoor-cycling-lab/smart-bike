@@ -1,0 +1,232 @@
+{
+  "lang": "es",
+  "meta": {
+    "titulo": "Smart Bike · Tu rodillo, como una smart bike",
+    "descripcion": "App Android que reúne el rodillo, los mandos de cambio, el pulsómetro, el ventilador y Zwift de un setup de rodillo, y los maneja desde un solo sitio sin tocar la pantalla."
+  },
+  "ui": {
+    "saltar": "Saltar al contenido",
+    "inicio": "Smart Bike, inicio",
+    "nav_etiqueta": "Secciones",
+    "nav": {
+      "setup": "El setup",
+      "pasos": "Cómo se usa",
+      "funciones": "Funciones",
+      "pantallas": "Pantallas",
+      "limites": "Límites"
+    },
+    "idioma_texto": "English",
+    "idioma_etiqueta": "Read this page in English",
+    "tema": "Tema",
+    "tema_oscuro": "Oscuro",
+    "tema_claro": "Claro",
+    "tema_etiqueta": "Cambiar entre tema claro y oscuro",
+    "repo": "Código en GitHub",
+    "pie_captura": "Captura de la maqueta de la app, con datos ilustrativos."
+  },
+  "hero": {
+    "eyebrow": "Proyecto personal · Android",
+    "titulo": "Tu rodillo, como una smart bike",
+    "texto": "Con el móvil montado en la bici, el rodillo, los mandos de cambio, el pulsómetro, el ventilador y Zwift se manejan desde un solo sitio y sin tocar la pantalla mientras ruedas.",
+    "cta_repo": "Ver el código",
+    "cta_mas": "Qué hace",
+    "nota": "Nació para que un Tacx Neo 1 pudiera usar los cambios virtuales de un cuadro Elite Square."
+  },
+  "cifras": {
+    "etiqueta": "Smart Bike en cifras",
+    "items": [
+      {
+        "valor": "0",
+        "texto": "toques en la pantalla mientras ruedas"
+      },
+      {
+        "valor": "1",
+        "texto": "móvil para el rodillo, los mandos, los sensores y Zwift"
+      },
+      {
+        "valor": "2×12",
+        "texto": "la transmisión de una bici real, o 24 marchas lineales"
+      },
+      {
+        "valor": "<100 ms",
+        "texto": "objetivo de la palanca a la resistencia del rodillo"
+      }
+    ]
+  },
+  "setup": {
+    "id": "setup",
+    "titulo": "Un solo sitio para todo el setup",
+    "intro": "El móvil hace de central: habla con cada dispositivo por Bluetooth y se presenta ante Zwift como un rodillo inteligente, por wifi o por Bluetooth.",
+    "etiqueta_dispositivos": "Dispositivos",
+    "etiqueta_central": "Móvil Android",
+    "etiqueta_destino": "PC",
+    "dispositivos": [
+      {
+        "nombre": "Elite Square",
+        "detalle": "Mandos de cambio",
+        "via": "Bluetooth"
+      },
+      {
+        "nombre": "Tacx Neo 1",
+        "detalle": "Rodillo",
+        "via": "Bluetooth"
+      },
+      {
+        "nombre": "Pulsómetro",
+        "detalle": "Banda de pulso",
+        "via": "Bluetooth"
+      },
+      {
+        "nombre": "Wahoo KICKR Headwind",
+        "detalle": "Ventilador",
+        "via": "Bluetooth"
+      }
+    ],
+    "central": {
+      "nombre": "Smart Bike",
+      "detalle": "La app, en el móvil montado en la bici"
+    },
+    "destino": {
+      "nombre": "Zwift",
+      "detalle": "Rodillo inteligente y controlador, con potencia, cadencia y pendiente",
+      "via": "wifi (DirCon) o Bluetooth"
+    },
+    "resumen": "Elite Square, Tacx Neo 1, pulsómetro y ventilador Wahoo KICKR Headwind se conectan por Bluetooth al móvil con Smart Bike, que se conecta a Zwift por wifi o por Bluetooth."
+  },
+  "pasos": {
+    "id": "pasos",
+    "titulo": "Cómo se usa",
+    "intro": "Se configura una vez con el móvil en la mano y, la primera vez, una guía de inicio te lleva paso a paso. Después, al abrir la app, todo se conecta solo.",
+    "items": [
+      {
+        "titulo": "Conecta tus dispositivos",
+        "texto": "En Dispositivos, cada uno tiene su «Buscar»: el rodillo, el controlador y, si los usas, el pulsómetro y el ventilador."
+      },
+      {
+        "titulo": "Elige cómo se conecta",
+        "texto": "En Conexión ves qué publica la app (rodillo, controlador y pulso) y si tu app de entrenamiento los usa, y eliges el modo: wifi + Bluetooth, solo Bluetooth o solo wifi."
+      },
+      {
+        "titulo": "Empareja en Zwift y rueda",
+        "texto": "En Zwift, elige Smart Bike como rodillo, potencia y cadencia. Desde ahí, marchas, menús y Ride On van con los botones del Square. Sin app de entrenamiento también se rueda, en modo Libre o en ERG manual."
+      }
+    ]
+  },
+  "funciones": {
+    "id": "funciones",
+    "titulo": "Qué hace",
+    "items": [
+      {
+        "id": "marchas",
+        "kicker": "Marchas virtuales",
+        "titulo": "Cambios de marcha en un rodillo que no los tiene",
+        "texto": "Los botones del Square cambian de marcha en el Neo. La app traduce cada marcha en más o menos resistencia, con un modelo simple o uno físico.",
+        "puntos": [
+          "Transmisión lineal de 24 marchas o la de una bici real (de momento, solo la mía: Shimano 105 2×12).",
+          "Cambio de plato automático o manual, con los topes de la transmisión.",
+          "Las palancas se pueden comportar como las de un grupo inalámbrico (probado con Shimano Di2)."
+        ],
+        "imagenes": [
+          "marchas",
+          "rodaje-vertical-plato"
+        ],
+        "disposicion": "alterna"
+      },
+      {
+        "id": "zwift",
+        "kicker": "Zwift y plataformas",
+        "titulo": "Rodillo y controlador para Zwift, sin emparejar el Square",
+        "texto": "La app publica un rodillo inteligente con potencia y cadencia, un controlador y tu pulso, y tu app de entrenamiento se conecta a ellos. Probado con Zwift: recibe lo que mide el Neo y devuelve la pendiente.",
+        "puntos": [
+          "Tres modos: wifi + Bluetooth (el rodillo por DirCon y el controlador aparte), solo Bluetooth, o solo wifi en un solo dispositivo, como una Zwift Ride.",
+          "Por Bluetooth, Zwift puede ver «Smart Bike» en lugar del nombre del móvil: si lo activas, la app renombra el móvil mientras publica y le devuelve su nombre al terminar.",
+          "Los botones del Square llegan a Zwift como los de un controlador oficial: menús, dirección, freno y Ride On.",
+          "Habla los estándares de los rodillos inteligentes (FTMS, por Bluetooth y por wifi con DirCon), así que otras plataformas como Rouvy o MyWhoosh deberían poder usarlo como cualquier rodillo. Por ahora solo está probado con Zwift, y el controlador y el modo solo wifi son propios de Zwift.",
+          "Las marchas son siempre las de la app. También funciona sin Zwift: en modo Libre (terreno llano, la dureza la da la marcha) o en ERG manual, con la potencia que fijas tú."
+        ],
+        "imagenes": [
+          "conexion",
+          "botones"
+        ],
+        "disposicion": "alterna"
+      },
+      {
+        "id": "sensores",
+        "kicker": "Pulso y ventilador",
+        "titulo": "El pulso a Zwift y un ventilador que te sigue",
+        "texto": "Reenvía a Zwift el pulso de una banda Bluetooth y controla un ventilador Wahoo KICKR Headwind, de forma manual o según el pulso.",
+        "puntos": [
+          "La velocidad del ventilador sube y baja de 10 en 10 % con los botones del Square, y los umbrales de pulso de cada zona se ajustan en la app.",
+          "La barra de la pantalla de rodaje enseña de un vistazo el estado de cada dispositivo; el de Zwift va aparte, en palabras."
+        ],
+        "imagenes": [
+          "pulso-ventilador"
+        ],
+        "disposicion": "alterna"
+      },
+      {
+        "id": "rodaje",
+        "kicker": "Pantalla de rodaje",
+        "titulo": "Pensada para verse a un metro y manejarse sin tocarla",
+        "texto": "Cifras grandes, la marcha siempre visible y los botones del Square para todo. El móvil se toca para configurar antes o después de rodar.",
+        "puntos": [
+          "Botones, gestos y acciones configurables, en Ajustes → Botones.",
+          "El modo siempre a la vista: LIBRE, SIM con la pendiente de Zwift, ERG MANUAL o el ERG de un entrenamiento, con la potencia que las palancas ajustan de 10 en 10 W.",
+          "De uno a seis datos a elegir, entre ellos la pendiente que envía Zwift.",
+          "Sin el Square también se rueda: aparecen los botones − y + para cambiar de marcha y, si lo activas, el modo se cambia tocando su indicador.",
+          "Tema claro y oscuro, en horizontal o en vertical."
+        ],
+        "imagenes": [
+          "rodaje-erg",
+          "rodaje-vertical-datos"
+        ],
+        "disposicion": "ancha"
+      }
+    ]
+  },
+  "pantallas": {
+    "id": "pantallas",
+    "titulo": "Guía, dispositivos, ajustes y diagnóstico",
+    "texto": "Lo que no se necesita rodando está a un toque: una guía de inicio que explica los pasos y los modos de uso la primera vez, buscar y olvidar dispositivos, ajustar la transmisión y los botones, elegir el idioma (español o inglés), hacer copia de seguridad de la configuración, ver el tráfico de cada dispositivo cuando algo no cuadra y grabar las sesiones en archivos de texto, con las 20 últimas guardadas, para revisarlas o compartirlas después.",
+    "imagenes": [
+      "guia-inicio",
+      "dispositivos",
+      "ajustes",
+      "diagnostico"
+    ]
+  },
+  "limites": {
+    "id": "limites",
+    "titulo": "Lo que conviene saber",
+    "intro": "Smart Bike es un proyecto personal, publicado por si a alguien le sirve de referencia o de punto de partida. No es un producto terminado.",
+    "items": [
+      {
+        "titulo": "Hecho para mi equipo",
+        "texto": "Tacx Neo 1, Elite Square, Zwift en un PC y un móvil Android 13. Con otros rodillos, controladores o versiones de Android puede no funcionar."
+      },
+      {
+        "titulo": "Probado en parte",
+        "texto": "Algunas partes están validadas con el equipo real y otras figuran como «a validar» en la planificación del proyecto. Otras plataformas, como Rouvy o MyWhoosh, aún no se han probado."
+      },
+      {
+        "titulo": "Solo Android",
+        "texto": "Android 9 o superior. No hay versión para iOS ni publicación en tiendas: el APK firmado se descarga de las Releases de GitHub, o se compila desde el código."
+      },
+      {
+        "titulo": "Sin garantías",
+        "texto": "Algunos protocolos, como el de DirCon y el del controlador de Zwift, no son oficiales y se han reconstruido por observación: Zwift puede cambiar su comportamiento en cualquier momento."
+      }
+    ],
+    "peticion": "¿Usas otro rodillo, otro controlador u otra plataforma? Smart Bike es de uso personal, pero si abres un issue en GitHub contando tu equipo, se puede estudiar añadir su compatibilidad.",
+    "cta_issue": "Pedir compatibilidad",
+    "cta": "Ver la planificación y el estado de cada parte"
+  },
+  "pie": {
+    "cafe": "¿Te resulta útil Smart Bike o te gusta el proyecto?",
+    "cafe_enlace": "Invítame a un café",
+    "marcas": "Tacx, Elite, Zwift, Wahoo y el resto de marcas citadas pertenecen a sus propietarios. Este proyecto es independiente y no está afiliado ni respaldado por ninguno de ellos.",
+    "licencia": "Software libre bajo licencia GPL-3.0.",
+    "licencia_enlace": "Ver la licencia",
+    "repo": "Código fuente en GitHub"
+  }
+}

@@ -1,0 +1,61 @@
+name: Pedir compatibilidad / Request support
+description: Otro rodillo, controlador, sensor o plataforma de entrenamiento. / Another trainer, controller, sensor or training platform.
+title: "[Compatibilidad] "
+labels: ["compatibilidad"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Smart Bike es un proyecto de uso personal: cada petición se estudia, pero no hay garantía de que se añada. Cuanto más concreto sea tu equipo, más fácil es valorarla. Puedes escribir en español o en inglés.
+
+        Smart Bike is a personal project: every request is considered, but there's no guarantee it will be added. The more specific your setup, the easier it is to assess. You can write in Spanish or English.
+  - type: checkboxes
+    id: tipo
+    attributes:
+      label: ¿Qué quieres que funcione? / What would you like to work?
+      options:
+        - label: Rodillo / Trainer
+        - label: Controlador o mandos de cambio / Controller or shifters
+        - label: Pulsómetro o ventilador / Heart rate monitor or fan
+        - label: Plataforma de entrenamiento / Training platform
+        - label: Otro / Other
+  - type: input
+    id: rodillo
+    attributes:
+      label: Rodillo (marca y modelo) / Trainer (brand and model)
+      placeholder: Tacx Neo 2T, Wahoo KICKR Core…
+  - type: input
+    id: controlador
+    attributes:
+      label: Controlador o mandos (marca y modelo) / Controller or shifters (brand and model)
+      placeholder: Elite Square, Zwift Click, Shimano Di2…
+  - type: input
+    id: sensores
+    attributes:
+      label: Pulsómetro o ventilador, si aplica / Heart rate monitor or fan, if relevant
+  - type: input
+    id: plataforma
+    attributes:
+      label: Plataforma y dispositivo donde la usas / Platform and the device you run it on
+      placeholder: Rouvy en un PC, MyWhoosh en un iPad, Zwift en Apple TV…
+  - type: input
+    id: movil
+    attributes:
+      label: Móvil y versión de Android / Phone and Android version
+      placeholder: Pixel 7, Android 14
+    validations:
+      required: true
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Qué esperas y qué pasa ahora / What you expect and what happens now
+      description: Si ya has probado Smart Bike con tu equipo, cuenta qué modo de conexión usaste y qué falla. / If you've already tried Smart Bike with your setup, say which connection mode you used and what fails.
+    validations:
+      required: true
+  - type: textarea
+    id: registro
+    attributes:
+      label: Registro de la sesión (opcional) / Session log (optional)
+      description: |
+        En Ajustes → Depuración, activa «Grabar sesiones», reproduce el problema y comparte el archivo desde «Sesiones grabadas». Puede incluir direcciones de red y nombres de dispositivos: revísalo antes de adjuntarlo.
+        The app is in Spanish: in Ajustes → Depuración, turn on «Grabar sesiones», reproduce the problem and share the file from «Sesiones grabadas». It may include network addresses and device names: review it before attaching.

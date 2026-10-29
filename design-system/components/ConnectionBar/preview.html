@@ -1,0 +1,100 @@
+<!-- @dsCard group="Rodaje" height=560 subtitle="Un icono por enlace: conectado, esperando, sin conexión y batería baja; con dos, tres, cuatro y seis enlaces, estados mezclados y el manillar ampliado" -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../../components.css"><title>ConnectionBar</title></head>
+<body>
+<!-- Cada icono en los tres estados -->
+<div class="sq-pad sq-row" style="gap:var(--space-6)">
+  <span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-bolt"/></svg></span>
+  <span class="sq-connbar__i is-wait"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-bolt"/></svg></span>
+  <span class="sq-connbar__i is-off"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-bolt"/></svg></span>
+</div>
+<div class="sq-pad sq-row" style="gap:var(--space-6)">
+  <span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg></span>
+  <span class="sq-connbar__i is-wait"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg></span>
+  <span class="sq-connbar__i is-off"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg></span>
+</div>
+<div class="sq-pad sq-row" style="gap:var(--space-6)">
+  <span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-favorite"/></svg></span>
+  <span class="sq-connbar__i is-wait"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-favorite"/></svg></span>
+  <span class="sq-connbar__i is-off"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-favorite"/></svg></span>
+</div>
+<div class="sq-pad sq-row" style="gap:var(--space-6)">
+  <span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-mode_fan"/></svg></span>
+  <span class="sq-connbar__i is-wait"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-mode_fan"/></svg></span>
+  <span class="sq-connbar__i is-off"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-mode_fan"/></svg></span>
+</div>
+<!-- El Square con la batería baja, junto a los otros estados del mismo icono -->
+<div class="sq-pad sq-row" style="gap:var(--space-6)">
+  <span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg></span>
+  <span class="sq-connbar__i is-low"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg></span>
+  <span class="sq-connbar__i is-wait"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg></span>
+  <span class="sq-connbar__i is-off"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg></span>
+</div>
+<!-- El manillar del Square ampliado a 48 dp, en los cuatro estados -->
+<div class="sq-pad sq-row" style="gap:var(--space-6)">
+  <span class="sq-connbar__i is-ok" style="--ic:48px"><svg class="sq-icon" aria-hidden="true" style="width:48px;height:48px"><use href="../../icons.svg#i-manillar"/></svg></span>
+  <span class="sq-connbar__i is-low" style="--ic:48px"><svg class="sq-icon" aria-hidden="true" style="width:48px;height:48px"><use href="../../icons.svg#i-manillar"/></svg></span>
+  <span class="sq-connbar__i is-wait" style="--ic:48px"><svg class="sq-icon" aria-hidden="true" style="width:48px;height:48px"><use href="../../icons.svg#i-manillar"/></svg></span>
+  <span class="sq-connbar__i is-off" style="--ic:48px"><svg class="sq-icon" aria-hidden="true" style="width:48px;height:48px"><use href="../../icons.svg#i-manillar"/></svg></span>
+</div>
+<!-- La barra con los dos enlaces de siempre (Neo y Square), a la derecha de la fila del estado de lo publicado a 360 px -->
+<div class="sq-pad" style="width:360px;box-sizing:border-box">
+  <div class="sq-ride__statusrow" style="margin:0">
+    <div class="sq-ride__platform"><a class="sq-pbadge" href="#"><span class="sq-conn ok"><span class="dot"></span>Conectado</span></a></div>
+    <a class="sq-connbar" href="#" aria-label="Conexiones: Neo, conectado; Controlador, sin conexión">
+      <span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-bolt"/></svg></span>
+      <span class="sq-connbar__i is-off"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg></span>
+    </a>
+  </div>
+</div>
+<!-- Con tres enlaces (Neo, Square y pulsómetro) -->
+<div class="sq-pad" style="width:360px;box-sizing:border-box">
+  <div class="sq-ride__statusrow" style="margin:0">
+    <div class="sq-ride__platform"><a class="sq-pbadge" href="#"><span class="sq-conn ok"><span class="dot"></span>Conectado</span></a></div>
+    <a class="sq-connbar" href="#" aria-label="Conexiones: Neo, conectado; Controlador, conectado; pulso, esperando">
+      <span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-bolt"/></svg></span>
+      <span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg></span>
+      <span class="sq-connbar__i is-wait"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-favorite"/></svg></span>
+    </a>
+  </div>
+</div>
+<!-- Con cuatro enlaces (pulso y ventilador) -->
+<div class="sq-pad" style="width:360px;box-sizing:border-box">
+  <div class="sq-ride__statusrow" style="margin:0">
+    <div class="sq-ride__platform"><a class="sq-pbadge" href="#"><span class="sq-conn ok"><span class="dot"></span>Conectado</span></a></div>
+    <a class="sq-connbar" href="#" aria-label="Conexiones: Neo, conectado; Controlador, conectado; pulso, esperando; ventilador, sin conexión">
+      <span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-bolt"/></svg></span>
+      <span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg></span>
+      <span class="sq-connbar__i is-wait"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-favorite"/></svg></span>
+      <span class="sq-connbar__i is-off"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-mode_fan"/></svg></span>
+    </a>
+  </div>
+</div>
+<!-- Con seis enlaces: el peor caso a 360 px, con el estado más largo -->
+<div class="sq-pad" style="width:360px;box-sizing:border-box">
+  <div class="sq-ride__statusrow" style="margin:0">
+    <div class="sq-ride__platform"><a class="sq-pbadge" href="#"><span class="sq-conn ok"><span class="dot"></span>Conectado · sin controlador</span></a></div>
+    <a class="sq-connbar" href="#" aria-label="Conexiones: Neo, conectado; Controlador, conectado; Zwift, conectado; pulso, esperando; ventilador, sin conexión; sensor, conectado">
+      <span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-bolt"/></svg></span>
+      <span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg></span>
+      <span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-zwift"/></svg></span>
+      <span class="sq-connbar__i is-wait"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-favorite"/></svg></span>
+      <span class="sq-connbar__i is-off"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-mode_fan"/></svg></span>
+      <span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-sensors"/></svg></span>
+    </a>
+  </div>
+</div>
+<!-- Estados mezclados juntos, a 4 px: la marca de espera de uno y el tachado del vecino no se tocan -->
+<div class="sq-pad" style="width:360px;box-sizing:border-box">
+  <div class="sq-ride__statusrow" style="margin:0">
+    <div class="sq-ride__platform"><a class="sq-pbadge" href="#"><span class="sq-conn wait"><span class="dot"></span>Esperando conexión…</span></a></div>
+    <a class="sq-connbar" href="#" aria-label="Conexiones: Neo, esperando; Controlador, sin conexión; pulso, esperando">
+      <span class="sq-connbar__i is-wait"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-bolt"/></svg></span>
+      <span class="sq-connbar__i is-off"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg></span>
+      <span class="sq-connbar__i is-wait"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-favorite"/></svg></span>
+    </a>
+  </div>
+</div>
+</body>
+</html>

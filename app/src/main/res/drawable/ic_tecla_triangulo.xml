@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generado por scripts/design-system/generar.py a partir de icons.svg (i-tecla_triangulo). No editar a mano. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="960"
+    android:viewportHeight="960">
+    <group android:translateY="960">
+        <path
+            android:fillColor="#FF000000"
+            android:pathData="M514.7 -779.9 L824.7 -239.9 A40 40 0 0 1 790 -180 L170 -180 A40 40 0 0 1 135.3 -239.9 L445.3 -779.9 A40 40 0 0 1 514.7 -779.9Z M239.1 -260 L720.9 -260 L480 -679.7Z" />
+    </group>
+</vector>

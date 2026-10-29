@@ -1,0 +1,84 @@
+schema: spec-driven
+
+context: |
+  Language: es
+  All artifacts must be written in es.
+  Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+
+  Proyecto: app Android mínima que controla un rodillo Tacx Neo 1 con los
+  botones de un cuadro Elite Square, con cambio de marchas virtual, y hace de
+  puente con Zwift. Sustituye a qdomyos-zwift solo para este caso de uso.
+
+  Topología: el móvil es central BLE del Neo (FE-C sobre BLE, servicio
+  6e40fec1-…) y del Square (servicio 347b0001-…, característica 0x43 con
+  máscara de bits). Hacia Zwift ofrece FTMS 0x1826 + Cycling Power por wifi
+  (DirCon: mDNS + TCP en la red local, transporte principal) o como
+  periférico BLE (alternativa); el servicio de mando Zwift Ride va en el
+  mismo servidor.
+
+  Stack: Kotlin, Jetpack Compose, minSdk 28. Módulos :core (Kotlin puro:
+  dominio y protocolo) y :app. BLE central (Neo, Square) con Nordic
+  Android-BLE-Library; periférico nativo (BluetoothGattServer,
+  BluetoothLeAdvertiser); DirCon con NsdManager y sockets TCP nativos. Coroutines y StateFlow, foreground service,
+  inyección manual (AppGraph), DataStore con JSON tipado
+  (kotlinx.serialization), tema SqTema generado de tokens.json (Tokens.kt).
+
+  Funcionalidades y prioridades: docs/funcional.md (identificadores F1…F15
+  y NF1…NF7; referenciarlos en las propuestas).
+
+  Fases y changes previstos, con sus dependencias y estado:
+  docs/planificacion.md. Cada change nuevo parte de su fila.
+
+  Arquitectura (módulos, componentes, flujo de datos, concurrencia,
+  protocolos y lo pendiente de validar): docs/arquitectura.md. Los design.md
+  la respetan; si un cambio se aparta de ella, se actualiza en el mismo
+  change.
+
+  Reglas de trabajo completas en AGENTS.md.
+
+  Interfaz: los estilos salen solo de design-system/ (tokens.json, componentes
+  sq-*, pautas en README.md); las maquetas de maquetas/ son la referencia
+  visual y de estados. Los composables se llaman como los componentes
+  (GearDisplay, MetricGrid…). Los cambios de UI pasan primero por maqueta y
+  validación del usuario (AGENTS.md, «Cambios de UI: maqueta primero»).
+
+  Documentación técnica de apoyo (protocolos BLE, análisis de otras apps,
+  diseño de módulos) en docs/referencias/, empezando por
+  docs/referencias/README.md. Es material de trabajo: NO formará parte del
+  repositorio final, así que no se enlaza desde código, specs ni docs
+  definitivos; lo necesario se incorpora a las specs.
+
+  Restricciones:
+  - No copiar código de qdomyos-zwift (GPL-3.0) ni de BikeControl (no
+    comercial); reimplementar a partir de la documentación de protocolos.
+  - Latencia de las palancas de cambio < 100 ms de extremo a extremo.
+  - Todo lo marcado "a validar" en docs/referencias/ requiere prueba con el equipo real
+    antes de darse por bueno.
+
+rules:
+  proposal:
+    - Indica siempre qué queda fuera de alcance.
+    - En Impact, indica qué documentos de docs/ cambian (funcional.md, arquitectura.md, planificacion.md, desarrollo.md) o «ninguno».
+    - Propón una porción vertical que se pueda probar de principio a fin con el equipo real, no una capa aislada.
+  design:
+    - Si el cambio depende de un comportamiento BLE marcado "a validar", di cómo se valida con el equipo real.
+    - Justifica cada dependencia nueva con sus alternativas.
+  specs:
+    - Describe comportamiento observable por el usuario, no detalles de implementación.
+    - Para cada pantalla, incluye los escenarios de conexión perdida, dispositivo ausente y límites (topes, máximos) cuando apliquen.
+  tasks:
+    - Incluye las tareas de tests junto a la tarea que implementan, no al final.
+    - Si se añade un componente visual, incluye su alta en design-system/ (components.css, README.md y preview.html) y regenerar la guía antes de usarlo en la app.
+    - Si se tocan tokens o colores, incluye la comprobación de contraste en los dos temas.
+    - Si el cambio tiene impacto visual (pantalla, estado o componente nuevo, cambio de disposición o flujo, tokens o colores), organiza las tareas en dos secciones, "Maqueta" y "App", y cierra la sección "Maqueta" con la tarea "Validación de la maqueta por el usuario" (criterio completo en AGENTS.md).
+    - Cierra tasks.md con la sección "Documentación" y la tarea "Actualizar la documentación", que revisa docs/funcional.md, docs/arquitectura.md, docs/planificacion.md y docs/desarrollo.md y actualizar lo que el change haya cambiado o decidido (funcionalidades, decisiones abiertas, componentes, protocolos validados, orden y alcance de los changes siguientes). La fila del change en planificacion.md se actualiza siempre.
+
+operations:
+  apply:
+    guidance:
+      - Si tasks.md tiene la tarea "Validación de la maqueta por el usuario" sin marcar, detente al terminar la sección "Maqueta", da al usuario los enlaces exactos a las maquetas y estados que debe revisar, y no empieces la sección "App".
+      - Marca la tarea de validación solo con la aprobación explícita del usuario en la conversación; si pide cambios, ajusta la maqueta, design.md y las specs, y vuelve a pedir validación.
+  archive:
+    guidance:
+      - Antes de archivar, comprueba que la tarea "Actualizar la documentación" esté marcada y que la revisión de docs/funcional.md, docs/arquitectura.md, docs/planificacion.md y docs/desarrollo.md se haya hecho de verdad; si falta, hazla o avisa al usuario antes de seguir.
+      - Al archivar, marca el change como "Archivado" en docs/planificacion.md y revisa si cambia el estado o las dependencias de los changes siguientes.

@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ajustes · Maquetas · Smart Bike</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="../design-system/components.css">
+<link rel="stylesheet" href="revision.css">
+<script src="revision.js"></script>
+</head>
+<body data-mock-states="inicio:Ajustes (Oscuro y Según el móvil), ingles:Idioma English elegido, claro:Tema claro elegido, vertical:Orientación vertical, horizontal:Orientación horizontal, simple:Modelo Simple, tabla:Modelo Por tabla, fisico:Modelo Físico, copia-confirmar:Copia · confirmar la importación, copia-importada:Copia · configuración importada, copia-exportada:Copia · configuración exportada, copia-error-version:Copia · archivo de una versión más nueva, copia-error-archivo:Copia · archivo que no es una configuración, ventilador-manual:Ventilador · manual 40 %, ventilador-automatico:Ventilador · automático, ventilador-otro-modo:Ventilador · en otro modo, ventilador-sin-conexion:Ventilador · sin conexión, ventilador-extremos:Ventilador · 100 % y umbrales en los extremos, ventilador-sin-configurado:Sin ventilador configurado (sin la sección), depuracion-apagada:Depuración · grabación apagada, depuracion-grabando:Depuración · grabando, depuracion-detenida:Depuración · detenida por poco espacio, modo-tocando:Cambiar de modo tocando activado">
+<div class="rv-stage"><div class="rv-device rv-device--v">
+<div class="sq-screen">
+<div class="sq-screen__body">
+  <div class="sq-appbar"><h1 class="sq-title">Ajustes</h1></div>
+  <div class="sq-list">
+    <a class="sq-item" href="marchas.html"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-settings"/></svg><span class="sq-item__text"><span class="sq-item__name">Marchas</span><span class="sq-caption">Lineal · 24 marchas</span></span><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-chevron_right"/></svg></a>
+    <a class="sq-item" href="botones.html"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-botones"/></svg><span class="sq-item__text"><span class="sq-item__name">Botones</span><span class="sq-caption">Lineal · asignación, gestos y tiempos</span></span><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-chevron_right"/></svg></a>
+    <a class="sq-item" href="rodaje-vertical.html#estado=guia-pagina-1"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-info"/></svg><span class="sq-item__text"><span class="sq-item__name">Guía de inicio</span><span class="sq-caption">Qué conectar para empezar a rodar</span></span><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-chevron_right"/></svg></a>
+    <a class="sq-item" href="diagnostico.html"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-monitor_heart"/></svg><span class="sq-item__text"><span class="sq-item__name">Diagnóstico</span><span class="sq-caption">Datos de conexión, botones, datos crudos y control manual</span></span><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-chevron_right"/></svg></a>
+  </div>
+  <section class="sq-section">
+    <h2 class="sq-section__title">Al rodar</h2>
+    <div class="sq-list">
+      <a class="sq-item" href="datos.html"><span class="sq-item__text"><span class="sq-item__name">Datos en pantalla</span><span class="sq-caption">Potencia y cadencia</span></span><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-chevron_right"/></svg></a>
+      <label class="sq-item"><span class="sq-item__text"><span class="sq-item__name">Botones − y + en pantalla</span><span class="sq-caption">Para cambiar de marcha tocando el móvil. Solo manda con el Square conectado: sin él, los botones aparecen siempre</span></span><input class="sq-check" type="checkbox"></label>
+      <label class="sq-item" data-mock-state="inicio ingles claro vertical horizontal simple tabla fisico copia-confirmar copia-importada copia-exportada copia-error-version copia-error-archivo ventilador-manual ventilador-automatico ventilador-otro-modo ventilador-sin-conexion ventilador-extremos ventilador-sin-configurado depuracion-apagada depuracion-grabando depuracion-detenida"><span class="sq-item__text"><span class="sq-item__name">Cambiar de modo tocando</span><span class="sq-caption">Toca el indicador de modo para pasar de Libre o SIM a ERG manual y volver. No cambia el modo en un entrenamiento de la app</span></span><input class="sq-check" type="checkbox"></label>
+      <label class="sq-item" data-mock-state="modo-tocando"><span class="sq-item__text"><span class="sq-item__name">Cambiar de modo tocando</span><span class="sq-caption">Toca el indicador de modo para pasar de Libre o SIM a ERG manual y volver. No cambia el modo en un entrenamiento de la app</span></span><input class="sq-check" type="checkbox" checked></label>
+      <label class="sq-item"><span class="sq-item__text"><span class="sq-item__name">Mostrar la acción</span><span class="sq-caption">Un aviso breve: «+1 marcha», «Plato 52», «+10 W»</span></span><input class="sq-check" type="checkbox" checked></label>
+      <label class="sq-item"><span class="sq-item__text"><span class="sq-item__name">Vibrar</span><span class="sq-caption">Al cambiar, en los topes y al reconocer un gesto</span></span><input class="sq-check" type="checkbox" checked></label>
+    </div>
+  </section>
+  <section class="sq-section">
+    <h2 class="sq-section__title">Pantalla</h2>
+    <fieldset class="sq-section" data-mock-state="inicio modo-tocando claro vertical horizontal simple tabla fisico copia-confirmar copia-importada copia-exportada copia-error-version copia-error-archivo ventilador-manual ventilador-automatico ventilador-otro-modo ventilador-sin-conexion ventilador-extremos ventilador-sin-configurado depuracion-apagada depuracion-grabando depuracion-detenida"><legend class="sq-label">Idioma · Language</legend>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="idioma-es" checked><span class="sq-item__text"><span class="sq-item__name">Español</span></span></label>
+        <label class="sq-opt"><input type="radio" name="idioma-es"><span class="sq-item__text"><span class="sq-item__name">English</span></span></label>
+      </div>
+    </fieldset>
+    <fieldset class="sq-section" data-mock-state="ingles"><legend class="sq-label">Idioma · Language</legend>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="idioma-en"><span class="sq-item__text"><span class="sq-item__name">Español</span></span></label>
+        <label class="sq-opt"><input type="radio" name="idioma-en" checked><span class="sq-item__text"><span class="sq-item__name">English</span></span></label>
+      </div>
+    </fieldset>
+    <fieldset class="sq-section" data-mock-state="inicio modo-tocando ingles vertical horizontal simple tabla fisico copia-confirmar copia-importada copia-exportada copia-error-version copia-error-archivo ventilador-manual ventilador-automatico ventilador-otro-modo ventilador-sin-conexion ventilador-extremos ventilador-sin-configurado depuracion-apagada depuracion-grabando depuracion-detenida"><legend class="sq-label">Tema</legend>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="tema-oscuro" checked><span class="sq-item__text"><span class="sq-item__name">Oscuro</span><span class="sq-caption">Para rodar en interior, con poca luz</span></span></label>
+        <label class="sq-opt"><input type="radio" name="tema-oscuro"><span class="sq-item__text"><span class="sq-item__name">Claro</span><span class="sq-caption">Para leer con luz de día</span></span></label>
+      </div>
+    </fieldset>
+    <fieldset class="sq-section" data-mock-state="claro"><legend class="sq-label">Tema</legend>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="tema-claro"><span class="sq-item__text"><span class="sq-item__name">Oscuro</span><span class="sq-caption">Para rodar en interior, con poca luz</span></span></label>
+        <label class="sq-opt"><input type="radio" name="tema-claro" checked><span class="sq-item__text"><span class="sq-item__name">Claro</span><span class="sq-caption">Para leer con luz de día</span></span></label>
+      </div>
+    </fieldset>
+    <fieldset class="sq-section" data-mock-state="inicio modo-tocando ingles claro simple tabla fisico copia-confirmar copia-importada copia-exportada copia-error-version copia-error-archivo ventilador-manual ventilador-automatico ventilador-otro-modo ventilador-sin-conexion ventilador-extremos ventilador-sin-configurado depuracion-apagada depuracion-grabando depuracion-detenida"><legend class="sq-label">Orientación</legend>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="orientacion-movil" checked><span class="sq-item__text"><span class="sq-item__name">Según el móvil</span><span class="sq-caption">Gira con el móvil y respeta el bloqueo de rotación</span></span></label>
+        <label class="sq-opt"><input type="radio" name="orientacion-movil"><span class="sq-item__text"><span class="sq-item__name">Vertical</span><span class="sq-caption">Siempre en vertical, aunque gires el móvil</span></span></label>
+        <label class="sq-opt"><input type="radio" name="orientacion-movil"><span class="sq-item__text"><span class="sq-item__name">Horizontal</span><span class="sq-caption">Siempre en horizontal, aunque gires el móvil</span></span></label>
+      </div>
+    </fieldset>
+    <fieldset class="sq-section" data-mock-state="vertical"><legend class="sq-label">Orientación</legend>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="orientacion-vertical"><span class="sq-item__text"><span class="sq-item__name">Según el móvil</span><span class="sq-caption">Gira con el móvil y respeta el bloqueo de rotación</span></span></label>
+        <label class="sq-opt"><input type="radio" name="orientacion-vertical" checked><span class="sq-item__text"><span class="sq-item__name">Vertical</span><span class="sq-caption">Siempre en vertical, aunque gires el móvil</span></span></label>
+        <label class="sq-opt"><input type="radio" name="orientacion-vertical"><span class="sq-item__text"><span class="sq-item__name">Horizontal</span><span class="sq-caption">Siempre en horizontal, aunque gires el móvil</span></span></label>
+      </div>
+    </fieldset>
+    <fieldset class="sq-section" data-mock-state="horizontal"><legend class="sq-label">Orientación</legend>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="orientacion-horizontal"><span class="sq-item__text"><span class="sq-item__name">Según el móvil</span><span class="sq-caption">Gira con el móvil y respeta el bloqueo de rotación</span></span></label>
+        <label class="sq-opt"><input type="radio" name="orientacion-horizontal"><span class="sq-item__text"><span class="sq-item__name">Vertical</span><span class="sq-caption">Siempre en vertical, aunque gires el móvil</span></span></label>
+        <label class="sq-opt"><input type="radio" name="orientacion-horizontal" checked><span class="sq-item__text"><span class="sq-item__name">Horizontal</span><span class="sq-caption">Siempre en horizontal, aunque gires el móvil</span></span></label>
+      </div>
+    </fieldset>
+  </section>
+  <section class="sq-section">
+    <h2 class="sq-section__title">Ciclista</h2>
+    <div class="sq-list">
+      <div class="sq-step"><span class="sq-item__text"><span>Peso del ciclista</span><span class="sq-caption">Para calcular W/kg</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar peso del ciclista">−</button><span class="sq-step-val">75<span class="sq-unit"> kg</span></span><button type="button" aria-label="Subir peso del ciclista">+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Peso de la bici</span><span class="sq-caption">Para el modelo físico</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar peso de la bici">−</button><span class="sq-step-val">8,0<span class="sq-unit"> kg</span></span><button type="button" aria-label="Subir peso de la bici">+</button></div></div>
+    </div>
+  </section>
+  <section class="sq-section">
+    <h2 class="sq-section__title">Rodillo</h2>
+    <fieldset class="sq-section" data-mock-state="inicio modo-tocando ingles claro vertical horizontal simple copia-confirmar copia-importada copia-exportada copia-error-version copia-error-archivo ventilador-manual ventilador-automatico ventilador-otro-modo ventilador-sin-conexion ventilador-extremos ventilador-sin-configurado depuracion-apagada depuracion-grabando depuracion-detenida"><legend class="sq-label">Modelo de resistencia</legend>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="modelo-simple" checked><span class="sq-item__text"><span class="sq-item__name">Simple</span><span class="sq-caption">Pendiente del terreno más un porcentaje fijo por marcha</span></span></label>
+        <label class="sq-opt"><input type="radio" name="modelo-simple"><span class="sq-item__text"><span class="sq-item__name">Por tabla</span><span class="sq-caption">Cada marcha con su propio ajuste, que editas tú</span></span></label>
+        <label class="sq-opt"><input type="radio" name="modelo-simple"><span class="sq-item__text"><span class="sq-item__name">Físico</span><span class="sq-caption">Calcula la potencia con tu cadencia, la marcha y los pesos</span></span></label>
+      </div>
+    </fieldset>
+    <fieldset class="sq-section" data-mock-state="tabla"><legend class="sq-label">Modelo de resistencia</legend>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="modelo-tabla"><span class="sq-item__text"><span class="sq-item__name">Simple</span><span class="sq-caption">Pendiente del terreno más un porcentaje fijo por marcha</span></span></label>
+        <label class="sq-opt"><input type="radio" name="modelo-tabla" checked><span class="sq-item__text"><span class="sq-item__name">Por tabla</span><span class="sq-caption">Cada marcha con su propio ajuste, que editas tú</span></span></label>
+        <label class="sq-opt"><input type="radio" name="modelo-tabla"><span class="sq-item__text"><span class="sq-item__name">Físico</span><span class="sq-caption">Calcula la potencia con tu cadencia, la marcha y los pesos</span></span></label>
+      </div>
+    </fieldset>
+    <fieldset class="sq-section" data-mock-state="fisico"><legend class="sq-label">Modelo de resistencia</legend>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="modelo-fisico"><span class="sq-item__text"><span class="sq-item__name">Simple</span><span class="sq-caption">Pendiente del terreno más un porcentaje fijo por marcha</span></span></label>
+        <label class="sq-opt"><input type="radio" name="modelo-fisico"><span class="sq-item__text"><span class="sq-item__name">Por tabla</span><span class="sq-caption">Cada marcha con su propio ajuste, que editas tú</span></span></label>
+        <label class="sq-opt"><input type="radio" name="modelo-fisico" checked><span class="sq-item__text"><span class="sq-item__name">Físico</span><span class="sq-caption">Calcula la potencia con tu cadencia, la marcha y los pesos</span></span></label>
+      </div>
+    </fieldset>
+    <div class="sq-list" data-mock-state="tabla">
+      <a class="sq-item" href="tabla-marchas.html"><span class="sq-item__text"><span class="sq-item__name">Tabla de marchas</span><span class="sq-caption">Lineal · 24 marchas</span></span><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-chevron_right"/></svg></a>
+    </div>
+    <div class="sq-list">
+      <div class="sq-step"><span class="sq-item__text"><span>Dificultad</span><span class="sq-caption">Endurece o suaviza todas las marchas</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar dificultad">−</button><span class="sq-step-val">100<span class="sq-unit"> %</span></span><button type="button" aria-label="Subir dificultad">+</button></div></div>
+    </div>
+    <div class="sq-list" data-mock-state="fisico">
+      <div class="sq-step"><span class="sq-item__text"><span>Potencia mínima</span><span class="sq-caption">Del modelo físico, en bajadas y al parar</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar potencia mínima">−</button><span class="sq-step-val">30<span class="sq-unit"> W</span></span><button type="button" aria-label="Subir potencia mínima">+</button></div></div>
+    </div>
+    <fieldset class="sq-section" data-mock-state="inicio modo-tocando ingles claro vertical horizontal simple tabla copia-confirmar copia-importada copia-exportada copia-error-version copia-error-archivo ventilador-manual ventilador-automatico ventilador-otro-modo ventilador-sin-conexion ventilador-extremos ventilador-sin-configurado depuracion-apagada depuracion-grabando depuracion-detenida"><legend class="sq-label">Bajadas</legend>
+      <p class="sq-caption">Con pendiente negativa, el motor del Neo empuja el volante.</p>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="bajadas"><span class="sq-item__text"><span class="sq-item__name">Sin protección</span><span class="sq-caption">Lo que pida el terreno más la marcha, aunque el Neo empuje</span></span></label>
+        <label class="sq-opt"><input type="radio" name="bajadas" checked><span class="sq-item__text"><span class="sq-item__name">La marcha no crea bajadas</span><span class="sq-caption">Bajar de marcha nunca hace la bajada más pronunciada</span></span></label>
+        <label class="sq-opt"><input type="radio" name="bajadas"><span class="sq-item__text"><span class="sq-item__name">Nunca empujar</span><span class="sq-caption">El Neo no empuja nunca, ni en las bajadas</span></span></label>
+      </div>
+    </fieldset>
+  </section>
+  <section class="sq-section" data-mock-state="ventilador-manual">
+    <h2 class="sq-section__title">Ventilador</h2>
+    <fieldset class="sq-section"><legend class="sq-label">Modo</legend>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="vm" checked><span class="sq-item__text"><span class="sq-item__name">Manual</span><span class="sq-caption">Tú eliges la velocidad</span></span></label><label class="sq-opt"><input type="radio" name="vm"><span class="sq-item__text"><span class="sq-item__name">Automático</span><span class="sq-caption">El ventilador sigue tu pulso, con la banda que tiene emparejada</span></span></label>
+      </div>
+    </fieldset>
+    <div class="sq-list">
+      <div class="sq-step"><span class="sq-item__text"><span>Velocidad manual</span><span class="sq-caption">Entre 0 y 100 %, de 10 en 10</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar velocidad del ventilador">−</button><span class="sq-step-val">40<span class="sq-unit"> %</span></span><button type="button" aria-label="Subir velocidad del ventilador">+</button></div></div>
+    </div>
+    <p class="sq-caption">Pulso desde el que el ventilador entra en cada zona del modo automático; por debajo de la zona 1 está parado. Cada umbral es mayor que el anterior.</p>
+    <div class="sq-list">
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 1</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 1">−</button><span class="sq-step-val">120<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 1">+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 2</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 2">−</button><span class="sq-step-val">135<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 2">+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 3</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 3">−</button><span class="sq-step-val">150<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 3">+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 4</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 4">−</button><span class="sq-step-val">165<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 4">+</button></div></div>
+    </div>
+  </section>
+  <section class="sq-section" data-mock-state="ventilador-automatico">
+    <h2 class="sq-section__title">Ventilador</h2>
+    <fieldset class="sq-section"><legend class="sq-label">Modo</legend>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="va"><span class="sq-item__text"><span class="sq-item__name">Manual</span><span class="sq-caption">Tú eliges la velocidad</span></span></label><label class="sq-opt"><input type="radio" name="va" checked><span class="sq-item__text"><span class="sq-item__name">Automático</span><span class="sq-caption">El ventilador sigue tu pulso, con la banda que tiene emparejada</span></span></label>
+      </div>
+    </fieldset>
+    <div class="sq-list">
+      <div class="sq-step"><span class="sq-item__text"><span>Velocidad manual</span><span class="sq-caption">En automático la velocidad la decide el ventilador</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar velocidad del ventilador" disabled>−</button><span class="sq-step-val">40<span class="sq-unit"> %</span></span><button type="button" aria-label="Subir velocidad del ventilador" disabled>+</button></div></div>
+    </div>
+    <p class="sq-caption">Pulso desde el que el ventilador entra en cada zona del modo automático; por debajo de la zona 1 está parado. Cada umbral es mayor que el anterior.</p>
+    <div class="sq-list">
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 1</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 1">−</button><span class="sq-step-val">120<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 1">+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 2</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 2">−</button><span class="sq-step-val">135<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 2">+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 3</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 3">−</button><span class="sq-step-val">150<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 3">+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 4</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 4">−</button><span class="sq-step-val">165<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 4">+</button></div></div>
+    </div>
+  </section>
+  <section class="sq-section" data-mock-state="ventilador-otro-modo">
+    <h2 class="sq-section__title">Ventilador</h2>
+    <fieldset class="sq-section"><legend class="sq-label">Modo</legend>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="vo"><span class="sq-item__text"><span class="sq-item__name">Manual</span><span class="sq-caption">Tú eliges la velocidad</span></span></label><label class="sq-opt"><input type="radio" name="vo"><span class="sq-item__text"><span class="sq-item__name">Automático</span><span class="sq-caption">El ventilador sigue tu pulso, con la banda que tiene emparejada</span></span></label><label class="sq-opt"><input type="radio" name="vo" checked><span class="sq-item__text"><span class="sq-item__name">Otro modo</span><span class="sq-caption">El ventilador está apagado o en un modo por sensor. Elige manual o automático</span></span></label>
+      </div>
+    </fieldset>
+    <div class="sq-list">
+      <div class="sq-step"><span class="sq-item__text"><span>Velocidad manual</span><span class="sq-caption">Pasa el ventilador a manual para elegir la velocidad</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar velocidad del ventilador" disabled>−</button><span class="sq-step-val">40<span class="sq-unit"> %</span></span><button type="button" aria-label="Subir velocidad del ventilador" disabled>+</button></div></div>
+    </div>
+    <p class="sq-caption">Pulso desde el que el ventilador entra en cada zona del modo automático; por debajo de la zona 1 está parado. Cada umbral es mayor que el anterior.</p>
+    <div class="sq-list">
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 1</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 1">−</button><span class="sq-step-val">120<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 1">+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 2</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 2">−</button><span class="sq-step-val">135<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 2">+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 3</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 3">−</button><span class="sq-step-val">150<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 3">+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 4</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 4">−</button><span class="sq-step-val">165<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 4">+</button></div></div>
+    </div>
+  </section>
+  <section class="sq-section" data-mock-state="ventilador-sin-conexion">
+    <h2 class="sq-section__title">Ventilador</h2>
+    <div class="sq-notice" role="status"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-info"/></svg><span>Ventilador sin conexión. Se ve lo último que comunicó; no se puede cambiar nada.</span></div>
+    <fieldset class="sq-section"><legend class="sq-label">Modo</legend>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="vs" checked disabled><span class="sq-item__text"><span class="sq-item__name">Manual</span><span class="sq-caption">Tú eliges la velocidad</span></span></label><label class="sq-opt"><input type="radio" name="vs" disabled><span class="sq-item__text"><span class="sq-item__name">Automático</span><span class="sq-caption">El ventilador sigue tu pulso, con la banda que tiene emparejada</span></span></label>
+      </div>
+    </fieldset>
+    <div class="sq-list">
+      <div class="sq-step"><span class="sq-item__text"><span>Velocidad manual</span><span class="sq-caption">Entre 0 y 100 %, de 10 en 10</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar velocidad del ventilador" disabled>−</button><span class="sq-step-val">40<span class="sq-unit"> %</span></span><button type="button" aria-label="Subir velocidad del ventilador" disabled>+</button></div></div>
+    </div>
+    <p class="sq-caption">Pulso desde el que el ventilador entra en cada zona del modo automático; por debajo de la zona 1 está parado. Cada umbral es mayor que el anterior.</p>
+    <div class="sq-list">
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 1</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 1" disabled>−</button><span class="sq-step-val">120<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 1" disabled>+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 2</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 2" disabled>−</button><span class="sq-step-val">135<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 2" disabled>+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 3</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 3" disabled>−</button><span class="sq-step-val">150<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 3" disabled>+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 4</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 4" disabled>−</button><span class="sq-step-val">165<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 4" disabled>+</button></div></div>
+    </div>
+  </section>
+  <section class="sq-section" data-mock-state="ventilador-extremos">
+    <h2 class="sq-section__title">Ventilador</h2>
+    <fieldset class="sq-section"><legend class="sq-label">Modo</legend>
+      <div class="sq-list">
+        <label class="sq-opt"><input type="radio" name="ve" checked><span class="sq-item__text"><span class="sq-item__name">Manual</span><span class="sq-caption">Tú eliges la velocidad</span></span></label><label class="sq-opt"><input type="radio" name="ve"><span class="sq-item__text"><span class="sq-item__name">Automático</span><span class="sq-caption">El ventilador sigue tu pulso, con la banda que tiene emparejada</span></span></label>
+      </div>
+    </fieldset>
+    <div class="sq-list">
+      <div class="sq-step"><span class="sq-item__text"><span>Velocidad manual</span><span class="sq-caption">Entre 0 y 100 %, de 10 en 10</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar velocidad del ventilador">−</button><span class="sq-step-val">100<span class="sq-unit"> %</span></span><button type="button" aria-label="Subir velocidad del ventilador" disabled>+</button></div></div>
+    </div>
+    <p class="sq-caption">Pulso desde el que el ventilador entra en cada zona del modo automático; por debajo de la zona 1 está parado. Cada umbral es mayor que el anterior.</p>
+    <div class="sq-list">
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 1</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 1">−</button><span class="sq-step-val">217<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 1" disabled>+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 2</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 2" disabled>−</button><span class="sq-step-val">218<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 2" disabled>+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 3</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 3" disabled>−</button><span class="sq-step-val">219<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 3" disabled>+</button></div></div>
+      <div class="sq-step"><span class="sq-item__text"><span>Zona 4</span><span class="sq-caption">Desde</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar umbral de la zona 4" disabled>−</button><span class="sq-step-val">220<span class="sq-unit"> bpm</span></span><button type="button" aria-label="Subir umbral de la zona 4" disabled>+</button></div></div>
+    </div>
+  </section>
+  <section class="sq-section">
+    <h2 class="sq-section__title">Copia de seguridad</h2>
+    <div class="sq-notice" role="status" data-mock-state="copia-exportada"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-info"/></svg><span>Configuración exportada</span></div>
+    <div class="sq-notice" role="status" data-mock-state="copia-importada"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-info"/></svg><span>Configuración importada</span></div>
+    <div class="sq-notice" role="status" data-mock-state="copia-confirmar"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-info"/></svg><span>Se reemplazarán todos los ajustes por los del archivo. Los dispositivos no cambian.</span></div>
+    <div class="sq-actions" data-mock-state="copia-confirmar"><button type="button" class="sq-btn primary">Importar</button><button type="button" class="sq-btn">Cancelar</button></div>
+    <div class="sq-notice is-danger" role="alert" data-mock-state="copia-error-version"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-error"/></svg><span>El archivo es de una versión más nueva de Smart Bike. Actualiza la app para importarlo.</span></div>
+    <div class="sq-notice is-danger" role="alert" data-mock-state="copia-error-archivo"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-error"/></svg><span>El archivo no es una configuración de Smart Bike. Elige un archivo exportado desde esta app.</span></div>
+    <div class="sq-list">
+      <a class="sq-item" href="#" role="button"><span class="sq-item__text"><span class="sq-item__name">Exportar configuración</span><span class="sq-caption">Guarda los ajustes en un archivo. No incluye los dispositivos</span></span><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-chevron_right"/></svg></a>
+      <a class="sq-item" href="#" role="button"><span class="sq-item__text"><span class="sq-item__name">Importar configuración</span><span class="sq-caption">Sustituye los ajustes por los de un archivo exportado</span></span><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-chevron_right"/></svg></a>
+    </div>
+  </section>
+  <section class="sq-section" data-mock-state="inicio modo-tocando ingles claro vertical horizontal simple tabla fisico copia-confirmar copia-importada copia-exportada copia-error-version copia-error-archivo ventilador-manual ventilador-automatico ventilador-otro-modo ventilador-sin-conexion ventilador-extremos ventilador-sin-configurado depuracion-apagada depuracion-grabando depuracion-detenida">
+    <h2 class="sq-section__title">Depuración</h2>
+    <div class="sq-list">
+      <label class="sq-item"><span class="sq-item__text"><span class="sq-item__name">Grabar sesiones</span><span class="sq-caption">Guarda los sucesos de cada sesión en un archivo, para analizar problemas después</span></span><input class="sq-check" type="checkbox"></label>
+      <div class="sq-step"><span class="sq-item__text"><span>Espacio libre mínimo</span><span class="sq-caption">Si queda menos, la grabación se detiene sola. Entre 5 y 50 %</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar espacio libre mínimo">−</button><span class="sq-step-val">10<span class="sq-unit"> %</span></span><button type="button" aria-label="Subir espacio libre mínimo">+</button></div></div>
+      <a class="sq-item" href="sesiones.html"><span class="sq-item__text"><span class="sq-item__name">Sesiones grabadas</span><span class="sq-caption">3 sesiones · 41 KB</span></span><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-chevron_right"/></svg></a>
+    </div>
+  </section>
+  <section class="sq-section" data-mock-state="depuracion-grabando">
+    <h2 class="sq-section__title">Depuración</h2>
+    <p class="sq-caption"><b>Grabando</b> la sesión actual.</p>
+    <div class="sq-list">
+      <label class="sq-item"><span class="sq-item__text"><span class="sq-item__name">Grabar sesiones</span><span class="sq-caption">Guarda los sucesos de cada sesión en un archivo, para analizar problemas después</span></span><input class="sq-check" type="checkbox" checked></label>
+      <div class="sq-step"><span class="sq-item__text"><span>Espacio libre mínimo</span><span class="sq-caption">Si queda menos, la grabación se detiene sola. Entre 5 y 50 %</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar espacio libre mínimo">−</button><span class="sq-step-val">10<span class="sq-unit"> %</span></span><button type="button" aria-label="Subir espacio libre mínimo">+</button></div></div>
+      <a class="sq-item" href="sesiones.html"><span class="sq-item__text"><span class="sq-item__name">Sesiones grabadas</span><span class="sq-caption">4 sesiones · 53 KB</span></span><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-chevron_right"/></svg></a>
+    </div>
+  </section>
+  <section class="sq-section" data-mock-state="depuracion-detenida">
+    <h2 class="sq-section__title">Depuración</h2>
+    <div class="sq-notice is-danger" role="alert"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-error"/></svg><span>Detenida por poco espacio. Libera espacio o baja el mínimo y vuelve a activar «Grabar sesiones»; también se reanuda en la siguiente sesión.</span></div>
+    <div class="sq-list">
+      <label class="sq-item"><span class="sq-item__text"><span class="sq-item__name">Grabar sesiones</span><span class="sq-caption">Guarda los sucesos de cada sesión en un archivo, para analizar problemas después</span></span><input class="sq-check" type="checkbox" checked></label>
+      <div class="sq-step"><span class="sq-item__text"><span>Espacio libre mínimo</span><span class="sq-caption">Si queda menos, la grabación se detiene sola. Entre 5 y 50 %</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar espacio libre mínimo">−</button><span class="sq-step-val">20<span class="sq-unit"> %</span></span><button type="button" aria-label="Subir espacio libre mínimo">+</button></div></div>
+      <a class="sq-item" href="sesiones.html"><span class="sq-item__text"><span class="sq-item__name">Sesiones grabadas</span><span class="sq-caption">4 sesiones · 49 KB</span></span><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-chevron_right"/></svg></a>
+    </div>
+  </section>
+</div>
+<nav class="sq-nav" aria-label="Secciones">
+  <a href="rodaje.html"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-pedal_bike"/></svg>Rodar</a>
+  <a href="conexion.html"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-sensors"/></svg>Conexión</a>
+  <a href="dispositivos.html"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-bluetooth"/></svg>Dispositivos</a>
+  <a href="ajustes.html" aria-current="page"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-tune"/></svg>Ajustes</a>
+</nav>
+</div>
+</div></div>
+</body>
+</html>

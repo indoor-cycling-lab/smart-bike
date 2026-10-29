@@ -1,0 +1,37 @@
+<!-- @dsCard group="Ajustes" height=700 subtitle="Sección con enlace, opciones, interruptor, control segmentado, filas de dato reordenables (elegida, sin elegir y la única elegida) y fila apilada" -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../../components.css"><title>SettingsList</title></head>
+<body>
+<div class="sq-pad sq-col sq-w-phone sq-gap-6">
+  <section class="sq-section">
+    <h2 class="sq-section__title">Al rodar</h2>
+    <div class="sq-list">
+      <a class="sq-item" href="#"><span class="sq-item__text"><span class="sq-item__name">Datos en pantalla</span><span class="sq-caption">Potencia y cadencia</span></span><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-chevron_right"/></svg></a>
+      <label class="sq-item"><span class="sq-item__text"><span class="sq-item__name">Vibrar</span><span class="sq-caption">Al cambiar y en los topes</span></span><input class="sq-check" type="checkbox" checked></label>
+    </div>
+  </section>
+  <fieldset class="sq-section">
+    <legend class="sq-section__title">Transmisión</legend>
+    <div class="sq-list">
+      <label class="sq-opt"><input type="radio" name="t" checked><span class="sq-item__text"><span class="sq-item__name">Shimano 105 2×12</span><span class="sq-caption">52/36 · 11–36</span></span></label>
+      <label class="sq-opt"><input type="radio" name="t"><span class="sq-item__text"><span class="sq-item__name">Lineal</span><span class="sq-caption">Marchas numeradas</span></span></label>
+    </div>
+  </fieldset>
+  <fieldset class="sq-section">
+    <legend class="sq-label">Tema</legend>
+    <div class="sq-seg"><label><input type="radio" name="th" checked>Rodaje</label><label><input type="radio" name="th">Claro</label><label><input type="radio" name="th">Sistema</label></div>
+  </fieldset>
+  <div class="sq-list">
+    <div class="sq-item"><input class="sq-check" type="checkbox" id="p" checked><label class="sq-item__text" for="p"><span class="sq-item__name">Potencia</span><span class="sq-caption">Media de 3 s</span></label><button class="sq-handle" type="button" aria-label="Reordenar Potencia"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-drag_indicator"/></svg></button></div>
+    <div class="sq-item is-off"><input class="sq-check" type="checkbox" id="t"><label class="sq-item__text" for="t"><span class="sq-item__name">Tiempo</span><span class="sq-caption">Desde que empiezas a pedalear</span></label><button class="sq-handle" type="button" aria-label="Reordenar Tiempo"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-drag_indicator"/></svg></button></div>
+  </div>
+  <div class="sq-list">
+    <div class="sq-item"><input class="sq-check" type="checkbox" id="c" checked disabled><label class="sq-item__text" for="c"><span class="sq-item__name">Cadencia</span><span class="sq-caption">Hace falta al menos un dato</span></label><button class="sq-handle" type="button" aria-label="Reordenar Cadencia"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-drag_indicator"/></svg></button></div>
+  </div>
+  <div class="sq-list">
+    <div class="sq-item sq-item--stack"><div class="sq-row"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-landscape"/></svg><span class="sq-item__text"><span class="sq-item__name">Zwift</span></span><span class="sq-conn off"><span class="dot"></span>Sin conexión</span></div><p>En la pantalla de emparejamiento de Zwift, elige <strong>Smart Bike</strong> como rodillo, potencia y cadencia.</p><p class="sq-caption">El Square puede seguir emparejado en Zwift para girar.</p></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generado por scripts/design-system/generar.py a partir de icons.svg (i-zwift). No editar a mano. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="960"
+    android:viewportHeight="960">
+    <group android:translateY="960">
+        <path
+            android:fillColor="#FF000000"
+            android:pathData="M200-880H760A120 120 0 0 1 880-760V-200A120 120 0 0 1 760-80H200A120 120 0 0 1 80-200V-760A120 120 0 0 1 200-880ZM200-800A40 40 0 0 0 160-760V-200A40 40 0 0 0 200-160H760A40 40 0 0 0 800-200V-760A40 40 0 0 0 760-800ZM280-680H680V-612L400-360H680V-280H280V-348L560-600H280Z" />
+    </group>
+</vector>

@@ -1,0 +1,94 @@
+/* Generado por scripts/sitio/generar.py a partir de design-system/. No editar a mano. */
+@font-face { font-family: "Barlow"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/Barlow-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Barlow"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/Barlow-SemiBold.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/BarlowCondensed-Medium.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/BarlowCondensed-SemiBold.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/BarlowCondensed-Bold.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/JetBrainsMono-Regular.woff2") format("woff2"); }
+/* Generado por scripts/design-system/generar.py a partir de tokens.json. No editar a mano. */
+/* Tema por defecto: rodaje (oscuro). El tema claro se aplica con data-theme="claro" en cualquier contenedor. */
+:root, [data-theme="rodaje"] {
+  --bg: #0f1216;
+  --surface: #181c22;
+  --surface-2: #222831;
+  --line: #2d343e;
+  --line-strong: #5f6976;
+  --ink: #eef2f6;
+  --ink-muted: #9aa5b1;
+  --gear: #ffb21f;
+  --gear-fill: #ffb21f;
+  --on-gear-fill: #0f1216;
+  --gear-soft: #3a2a0c;
+  --climb: #ff7d5c;
+  --descent: #5cb0ff;
+  --sim: #4fd1c5;
+  --erg: #c09bff;
+  --erg-soft: #2f2b40;
+  --ok: #4ade80;
+  --danger: #ff6b6b;
+  --focus: var(--gear);
+  --font-numeric: "Barlow Condensed", "Roboto Condensed", "Arial Narrow", sans-serif;
+  --font-sans: "Barlow", "Roboto", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Roboto Mono", ui-monospace, monospace;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-full: 9999px;
+  --touch-min: 48px;
+  --touch-ride: 72px;
+  --ladder-h: 28px;
+  --focus-width: 3px;
+  color-scheme: dark;
+}
+[data-theme="claro"] {
+  --bg: #f2f3f5;
+  --surface: #ffffff;
+  --surface-2: #e7e9ed;
+  --line: #d5d9df;
+  --line-strong: #7c8591;
+  --ink: #12161b;
+  --ink-muted: #56606b;
+  --gear: #8f5400;
+  --gear-fill: #ffb21f;
+  --on-gear-fill: #0f1216;
+  --gear-soft: #ffefd2;
+  --climb: #b23a1c;
+  --descent: #1f5fae;
+  --sim: #0f766e;
+  --erg: #6a3fc0;
+  --erg-soft: #dad3eb;
+  --ok: #1e7a43;
+  --danger: #c22a2a;
+  color-scheme: light;
+}
+
+/* Tema del sistema cuando la página no fija uno (mismos valores que el tema claro). */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg: #f2f3f5;
+    --surface: #ffffff;
+    --surface-2: #e7e9ed;
+    --line: #d5d9df;
+    --line-strong: #7c8591;
+    --ink: #12161b;
+    --ink-muted: #56606b;
+    --gear: #8f5400;
+    --gear-fill: #ffb21f;
+    --on-gear-fill: #0f1216;
+    --gear-soft: #ffefd2;
+    --climb: #b23a1c;
+    --descent: #1f5fae;
+    --sim: #0f766e;
+    --erg: #6a3fc0;
+    --erg-soft: #dad3eb;
+    --ok: #1e7a43;
+    --danger: #c22a2a;
+    color-scheme: light;
+  }
+}

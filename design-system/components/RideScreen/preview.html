@@ -1,0 +1,66 @@
+<!-- @dsCard group="Patrones" height=1440 width=960 subtitle="Composición de la pantalla de rodaje en horizontal, 960×432 dp, transmisión Shimano 105 2×12, con el acceso a Ajustes tras los chips; debajo, la zona de potencia objetivo en ERG de Zwift y en ERG manual la barra superior en vertical a 360 dp, con el icono en la esquina, y la pantalla baja (360 × 640 dp, `sq-ride--baja`) con 4 datos y los botones − y +" -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../../components.css"><title>RideScreen</title>
+<style>
+  .rs-ride { width: 960px; height: 432px; box-sizing: border-box; padding: var(--space-4) var(--space-6); display: grid; grid-template-rows: auto 1fr auto; gap: var(--space-4); background: var(--bg); }
+  .rs-top { display: flex; justify-content: space-between; align-items: center; }
+  .rs-main { display: grid; grid-template-columns: 1.4fr 0.8fr; gap: var(--space-8); align-items: center; }
+  .rs-left { display: flex; flex-direction: column; gap: var(--space-3); }
+  .rs-gearrow { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--space-4); }
+  .rs-right { display: flex; flex-direction: column; gap: var(--space-6); }
+  .rs-bottom { display: flex; justify-content: center; }
+  .rs-dots { display: flex; gap: var(--space-2); align-items: center; }
+  .rs-erg > .sq-ride__erg { flex: 1; }
+  .rs-v { width: 360px; height: auto; }
+  .rs-baja { width: 360px; height: 640px; margin-top: var(--space-6); }
+  .rs-erg { display: flex; gap: var(--space-8); width: 960px; box-sizing: border-box; padding: var(--space-4) var(--space-6); background: var(--bg); border-top: 1px solid var(--line); }
+</style></head>
+<body>
+<div class="rs-ride">
+  <div class="rs-top">
+    <div class="sq-row"><span class="sq-mode sim">SIM</span><span class="sq-caption">Shimano 105 · automático</span></div>
+    <div class="rs-dots"><div class="sq-ride__conns"><a class="sq-connbar" href="#" aria-label="Conexiones: Neo, conectado; Controlador, conectado"><span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-bolt"/></svg></span><span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg></span></a><a class="sq-ride__settings" href="#" aria-label="Ajustes"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-tune"/></svg></a></div></div>
+  </div>
+  <div class="rs-main">
+    <div class="rs-left">
+      <div class="rs-gearrow">
+        <div class="sq-ratio-hero" aria-label="Plato 52, piñón 17">52<span class="x">×</span>17</div>
+        <div class="sq-ride__rings"><span class="sq-label">Plato</span><span class="sq-rings"><span class="sq-ring">36</span><span class="sq-ring on">52</span></span></div>
+      </div>
+      <div role="img" aria-label="Cassette 11 a 36, piñón 17">
+        <div class="sq-cass">
+          <i class="sq-cog" style="--cog: 100%"></i><i class="sq-cog" style="--cog: 92%"></i><i class="sq-cog" style="--cog: 84%"></i><i class="sq-cog" style="--cog: 76%"></i><i class="sq-cog" style="--cog: 70%"></i><i class="sq-cog" style="--cog: 66%"></i><i class="sq-cog on" style="--cog: 62%"></i><i class="sq-cog" style="--cog: 58%"></i><i class="sq-cog" style="--cog: 56%"></i><i class="sq-cog" style="--cog: 54%"></i><i class="sq-cog" style="--cog: 52%"></i><i class="sq-cog" style="--cog: 50%"></i>
+        </div>
+        <div class="sq-cog-n"><span>36</span><span>32</span><span>28</span><span>24</span><span>21</span><span>19</span><span class="on">17</span><span>15</span><span>14</span><span>13</span><span>12</span><span>11</span></div>
+      </div>
+    </div>
+    <div class="rs-right">
+      <div class="sq-metric"><span class="sq-label">Potencia</span><span class="sq-metric-val xl">247<span class="sq-unit">W</span></span></div>
+      <div class="sq-metric"><span class="sq-label">Cadencia</span><span class="sq-metric-val lg">91<span class="sq-unit">rpm</span></span></div>
+    </div>
+  </div>
+  <div class="rs-bottom"><div class="sq-toast"><span class="act">Plato 52</span></div></div>
+</div>
+<div class="rs-erg">
+  <div class="sq-ride__erg"><span class="sq-label">Objetivo</span><div class="sq-erg-hero" aria-label="Potencia objetivo 240 W"><b>240</b><span class="sq-unit">W</span></div><div class="sq-row"><span class="sq-target">230 W de Zwift</span><span class="sq-badge-erg">+10 W con las palancas</span></div></div>
+  <div class="sq-ride__erg"><span class="sq-label">Objetivo</span><div class="sq-erg-hero" aria-label="Potencia objetivo 200 W"><b>200</b><span class="sq-unit">W</span></div></div>
+</div>
+<div class="sq-ride sq-ride--v rs-v">
+  <div class="sq-ride__statusrow"><div class="sq-ride__platform"><a class="sq-pbadge" href="#"><span class="sq-conn ok"><span class="dot"></span>Conectado</span></a></div><a class="sq-connbar" href="#" aria-label="Conexiones: Neo, esperando; Controlador, sin conexión"><span class="sq-connbar__i is-wait"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-bolt"/></svg></span><span class="sq-connbar__i is-off"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg></span></a></div><div class="sq-ride__modeline"><div class="sq-ride__mode"><span class="sq-mode sim">SIM</span><span class="sq-caption">Lineal · 24 marchas</span></div><a class="sq-ride__settings" href="#" aria-label="Ajustes"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-tune"/></svg></a></div>
+</div>
+<div class="sq-ride sq-ride--v sq-ride--baja rs-baja">
+  <div class="sq-ride__statusrow"><div class="sq-ride__platform"><a class="sq-pbadge" href="#"><span class="sq-conn ok"><span class="dot"></span>Conectado</span></a></div><a class="sq-connbar" href="#" aria-label="Conexiones: Neo, conectado; Controlador, conectado"><span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-bolt"/></svg></span><span class="sq-connbar__i is-ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg></span></a></div>
+  <div class="sq-ride__modeline"><div class="sq-ride__mode"><span class="sq-mode sim">SIM</span><span class="sq-caption">SRAM 2×12 · 48/35 · 10–33</span></div><a class="sq-ride__settings" href="#" aria-label="Ajustes"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-tune"/></svg></a></div>
+  <div class="sq-ride__gear" style="zoom: 0.72"><div class="sq-ratio-hero" aria-label="Plato 48, piñón 19">48<span class="x">×</span>19</div></div>
+  <div role="img" aria-label="Cassette 10 a 33, piñón 19"><div class="sq-cass"><i class="sq-cog" style="--cog: 100%"></i><i class="sq-cog" style="--cog: 89%"></i><i class="sq-cog" style="--cog: 80%"></i><i class="sq-cog" style="--cog: 74%"></i><i class="sq-cog on" style="--cog: 69%"></i><i class="sq-cog" style="--cog: 65%"></i><i class="sq-cog" style="--cog: 61%"></i><i class="sq-cog" style="--cog: 59%"></i></div></div>
+  <div class="sq-mgrid" data-n="4" style="--mg-cols: 2; --mg-rows: 2; --mg-size: 44px; height: 156px">
+    <div class="sq-metric"><span class="sq-label">Potencia</span><span class="sq-metric-val">247<span class="sq-unit">W</span></span></div>
+    <div class="sq-metric"><span class="sq-label">Cadencia</span><span class="sq-metric-val">91<span class="sq-unit">rpm</span></span></div>
+    <div class="sq-metric"><span class="sq-label">Tiempo</span><span class="sq-metric-val">1:12:40</span></div>
+    <div class="sq-metric"><span class="sq-label">W/kg</span><span class="sq-metric-val">3,3</span></div>
+  </div>
+  <div class="sq-ride__buttons"><button type="button" class="sq-btn ride" aria-label="Marcha más ligera">−</button><button type="button" class="sq-btn ride" aria-label="Marcha más dura">+</button></div>
+</div>
+</body>
+</html>

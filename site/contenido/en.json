@@ -1,0 +1,232 @@
+{
+  "lang": "en",
+  "meta": {
+    "titulo": "Smart Bike · Make your trainer a smart bike",
+    "descripcion": "An Android app that brings the trainer, shifters, heart rate monitor, fan and Zwift of an indoor setup together and runs them from one place, without touching the screen."
+  },
+  "ui": {
+    "saltar": "Skip to content",
+    "inicio": "Smart Bike, home",
+    "nav_etiqueta": "Sections",
+    "nav": {
+      "setup": "The setup",
+      "pasos": "How to use it",
+      "funciones": "Features",
+      "pantallas": "Screens",
+      "limites": "Limits"
+    },
+    "idioma_texto": "Español",
+    "idioma_etiqueta": "Leer esta página en español",
+    "tema": "Theme",
+    "tema_oscuro": "Dark",
+    "tema_claro": "Light",
+    "tema_etiqueta": "Switch between light and dark theme",
+    "repo": "Code on GitHub",
+    "pie_captura": "Screenshot of the app's mockup, with illustrative data."
+  },
+  "hero": {
+    "eyebrow": "Personal project · Android",
+    "titulo": "Make your trainer a smart bike",
+    "texto": "With the phone mounted on the bike, the trainer, shifters, heart rate monitor, fan and Zwift are all run from one place, without touching the screen while you ride.",
+    "cta_repo": "See the code",
+    "cta_mas": "What it does",
+    "nota": "It started so a Tacx Neo 1 could use the virtual gears of an Elite Square frame."
+  },
+  "cifras": {
+    "etiqueta": "Smart Bike in numbers",
+    "items": [
+      {
+        "valor": "0",
+        "texto": "taps on the screen while you ride"
+      },
+      {
+        "valor": "1",
+        "texto": "phone for the trainer, shifters, sensors and Zwift"
+      },
+      {
+        "valor": "2×12",
+        "texto": "a real bike's drivetrain, or 24 linear gears"
+      },
+      {
+        "valor": "<100 ms",
+        "texto": "target from lever to trainer resistance"
+      }
+    ]
+  },
+  "setup": {
+    "id": "setup",
+    "titulo": "One place for the whole setup",
+    "intro": "The phone acts as the hub: it talks to each device over Bluetooth and presents itself to Zwift as a smart trainer, over wifi or Bluetooth.",
+    "etiqueta_dispositivos": "Devices",
+    "etiqueta_central": "Android phone",
+    "etiqueta_destino": "PC",
+    "dispositivos": [
+      {
+        "nombre": "Elite Square",
+        "detalle": "Shifters",
+        "via": "Bluetooth"
+      },
+      {
+        "nombre": "Tacx Neo 1",
+        "detalle": "Trainer",
+        "via": "Bluetooth"
+      },
+      {
+        "nombre": "Heart rate monitor",
+        "detalle": "Chest strap",
+        "via": "Bluetooth"
+      },
+      {
+        "nombre": "Wahoo KICKR Headwind",
+        "detalle": "Fan",
+        "via": "Bluetooth"
+      }
+    ],
+    "central": {
+      "nombre": "Smart Bike",
+      "detalle": "The app, on the phone mounted on the bike"
+    },
+    "destino": {
+      "nombre": "Zwift",
+      "detalle": "Smart trainer and controller, with power, cadence and grade",
+      "via": "wifi (DirCon) or Bluetooth"
+    },
+    "resumen": "Elite Square, Tacx Neo 1, heart rate monitor and Wahoo KICKR Headwind fan connect over Bluetooth to the phone running Smart Bike, which connects to Zwift over wifi or Bluetooth."
+  },
+  "pasos": {
+    "id": "pasos",
+    "titulo": "How to use it",
+    "intro": "You set it up once, phone in hand, and the first time a getting started guide walks you through it. After that, opening the app connects everything on its own.",
+    "items": [
+      {
+        "titulo": "Connect your devices",
+        "texto": "In Devices, each one has its own “Search”: the trainer, the controller and, if you use them, the heart rate monitor and the fan."
+      },
+      {
+        "titulo": "Choose how it connects",
+        "texto": "In Connection you see what the app publishes (trainer, controller and heart rate) and whether your training app is using it, and you choose the mode: wifi + Bluetooth, Bluetooth only or wifi only."
+      },
+      {
+        "titulo": "Pair in Zwift and ride",
+        "texto": "In Zwift, pick Smart Bike as trainer, power and cadence. From then on, gears, menus and Ride On are on the Square's buttons. You can also ride without a training app, in Free mode or manual ERG."
+      }
+    ]
+  },
+  "funciones": {
+    "id": "funciones",
+    "titulo": "What it does",
+    "items": [
+      {
+        "id": "marchas",
+        "kicker": "Virtual gears",
+        "titulo": "Gear shifting on a trainer that has none",
+        "texto": "The Square's buttons change gear on the Neo. The app turns each gear into more or less resistance, with a simple model or a physical one.",
+        "puntos": [
+          "A linear 24-gear drivetrain or a real bike's (for now, only mine: Shimano 105 2×12).",
+          "Automatic or manual chainring shifts, with the drivetrain's limits.",
+          "The levers can behave like those of a wireless groupset (tested with Shimano Di2)."
+        ],
+        "imagenes": [
+          "marchas",
+          "rodaje-vertical-plato"
+        ],
+        "disposicion": "alterna"
+      },
+      {
+        "id": "zwift",
+        "kicker": "Zwift and platforms",
+        "titulo": "Trainer and controller for Zwift, without pairing the Square",
+        "texto": "The app publishes a smart trainer with power and cadence, a controller and your heart rate, and your training app connects to them. Tested with Zwift: it receives what the Neo measures and sends back the grade.",
+        "puntos": [
+          "Three modes: wifi + Bluetooth (the trainer over DirCon and the controller separately), Bluetooth only, or wifi only as a single device, like a Zwift Ride.",
+          "Over Bluetooth, Zwift can see “Smart Bike” instead of the phone's name: if you turn it on, the app renames the phone while it publishes and gives its name back when it's done.",
+          "The Square's buttons reach Zwift like those of an official controller: menus, steering, braking and Ride On.",
+          "It speaks the smart trainer standards (FTMS, over Bluetooth and over wifi with DirCon), so other platforms such as Rouvy or MyWhoosh should be able to use it like any trainer. So far it has only been tested with Zwift, and the controller and the wifi only mode are specific to Zwift.",
+          "Gears are always the app's own. It also works without Zwift: in Free mode (flat terrain, your gear sets the effort) or in manual ERG, at the power you set."
+        ],
+        "imagenes": [
+          "conexion",
+          "botones"
+        ],
+        "disposicion": "alterna"
+      },
+      {
+        "id": "sensores",
+        "kicker": "Heart rate and fan",
+        "titulo": "Heart rate to Zwift, and a fan that follows you",
+        "texto": "It forwards the heart rate from a Bluetooth strap to Zwift and controls a Wahoo KICKR Headwind fan, manually or based on your heart rate.",
+        "puntos": [
+          "Fan speed goes up and down in 10 % steps with the Square's buttons, and the heart rate threshold of each zone is set in the app.",
+          "The ride screen's bar shows each device's state at a glance; Zwift's goes apart, in words."
+        ],
+        "imagenes": [
+          "pulso-ventilador"
+        ],
+        "disposicion": "alterna"
+      },
+      {
+        "id": "rodaje",
+        "kicker": "Ride screen",
+        "titulo": "Made to read from a metre away and use without touching it",
+        "texto": "Big numbers, the gear always in view and the Square's buttons for everything. You touch the phone to set things up before or after riding.",
+        "puntos": [
+          "Configurable buttons, gestures and actions, in Settings → Buttons.",
+          "The mode always in view: FREE, SIM with Zwift's gradient, ERG MANUAL or a workout's ERG, with the power the levers adjust in 10 W steps.",
+          "One to six readings of your choice, including the gradient Zwift sends.",
+          "You can ride without the Square too: the − and + buttons appear to shift gears and, if you turn it on, you change mode by tapping its badge.",
+          "Light and dark theme, in landscape or portrait."
+        ],
+        "imagenes": [
+          "rodaje-erg",
+          "rodaje-vertical-datos"
+        ],
+        "disposicion": "ancha"
+      }
+    ]
+  },
+  "pantallas": {
+    "id": "pantallas",
+    "titulo": "Guide, devices, settings and diagnostics",
+    "texto": "What you don't need while riding is one tap away: a getting started guide that explains the steps and the ways to ride the first time, finding and forgetting devices, setting up the drivetrain and buttons, choosing the language (Spanish or English), backing up the configuration, watching each device's traffic when something doesn't add up and recording sessions to text files, keeping the last 20, to review or share later.",
+    "imagenes": [
+      "guia-inicio",
+      "dispositivos",
+      "ajustes",
+      "diagnostico"
+    ]
+  },
+  "limites": {
+    "id": "limites",
+    "titulo": "Good to know",
+    "intro": "Smart Bike is a personal project, published in case it helps someone as a reference or a starting point. It is not a finished product.",
+    "items": [
+      {
+        "titulo": "Made for my gear",
+        "texto": "Tacx Neo 1, Elite Square, Zwift on a PC and an Android 13 phone. With other trainers, controllers or Android versions it may not work."
+      },
+      {
+        "titulo": "Partly tested",
+        "texto": "Some parts are validated with the real equipment and others are listed as “to be validated” in the project plan. Other platforms, such as Rouvy or MyWhoosh, have not been tested yet."
+      },
+      {
+        "titulo": "Android only",
+        "texto": "Android 9 or later. There is no iOS version or app store release: you download the signed APK from GitHub Releases, or build it from the source code."
+      },
+      {
+        "titulo": "No warranty",
+        "texto": "Some protocols, such as DirCon and Zwift's controller, are unofficial and were rebuilt by observation: Zwift may change its behaviour at any time."
+      }
+    ],
+    "peticion": "Using a different trainer, controller or platform? Smart Bike is a personal project, but if you open an issue on GitHub describing your setup, adding support for it can be considered. Issues in English are welcome.",
+    "cta_issue": "Request support",
+    "cta": "See the plan and the state of each part (in Spanish)"
+  },
+  "pie": {
+    "cafe": "Find Smart Bike useful, or just like the project?",
+    "cafe_enlace": "Buy me a coffee",
+    "marcas": "Tacx, Elite, Zwift, Wahoo and the other brands mentioned belong to their owners. This project is independent and is not affiliated with or endorsed by any of them.",
+    "licencia": "Free software under the GPL-3.0 license.",
+    "licencia_enlace": "Read the license",
+    "repo": "Source code on GitHub"
+  }
+}

@@ -1,0 +1,29 @@
+<!-- @dsCard group="Rodaje" height=260 subtitle="Conectado, conectando, desconectado, desactivado, tocable y con el icono del enlace" -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../../components.css"><title>ConnectionChip</title></head>
+<body>
+<div class="sq-pad sq-row">
+  <span class="sq-conn ok"><span class="dot"></span>Neo</span>
+  <span class="sq-conn ok"><span class="dot"></span>Square</span>
+  <span class="sq-conn wait"><span class="dot"></span>Zwift <span class="st">esperando</span></span>
+  <span class="sq-conn off"><span class="dot"></span>Controlador Zwift <span class="st">sin conexión</span></span>
+</div>
+<!-- Con el icono del enlace delante del nombre (Dispositivos, Diagnóstico) -->
+<div class="sq-pad sq-row">
+  <span class="sq-conn ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-bolt"/></svg><span class="dot"></span>Neo</span>
+  <span class="sq-conn ok"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-manillar"/></svg><span class="dot"></span>Square</span>
+  <span class="sq-conn wait"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-zwift"/></svg><span class="dot"></span>Zwift <span class="st">esperando</span></span>
+  <span class="sq-conn off"><svg class="sq-icon" aria-hidden="true"><use href="../../icons.svg#i-zwift"/></svg><span class="dot"></span>Controlador Zwift <span class="st">sin conexión</span></span>
+</div>
+<!-- Fuera de Rodaje: desactivado o no disponible, ni espera ni alerta -->
+<div class="sq-pad sq-row">
+  <span class="sq-conn idle"><span class="dot"></span>Desactivado</span>
+  <span class="sq-conn idle"><span class="dot"></span>No disponible</span>
+</div>
+<div class="sq-pad sq-row">
+  <a class="sq-conn ok" href="#"><span class="dot"></span>Neo</a>
+  <a class="sq-conn off" href="#"><span class="dot"></span>Square <span class="st">sin conexión</span></a>
+</div>
+</body>
+</html>

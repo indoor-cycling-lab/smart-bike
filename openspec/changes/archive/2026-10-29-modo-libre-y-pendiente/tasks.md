@@ -1,0 +1,35 @@
+# Tasks
+
+## 1. Maqueta
+
+- [x] 1.1 Añadir a `ModeBadge` en `design-system/` la variante «LIBRE» (distinta de «SIM» por la palabra y por el color, con contraste en los dos temas) en `components.css`, su `README.md` y `preview.html`; corregir el README de `GradeReadout` («No ponerla en la pantalla de rodaje» pasa a decir que la pendiente base y la efectiva no, y que la pendiente de la simulación solo como dato opcional); regenerar con `python3 scripts/design-system/generar.py`; verificar que el generador termina sin error y que la guía muestra «LIBRE», «SIM» y «ERG» en los dos temas
+- [x] 1.2 Añadir a `MetricTile`/`MetricGrid` el dato «Pendiente» (signo y un decimal con coma, plantilla para medir la cifra, «—» en ERG) con su color de subida y de bajada si la maqueta lo propone, en `components.css`, sus `README.md` y `preview.html`; regenerar la guía; verificar que el generador termina sin error y que el contraste pasa en los dos temas
+- [x] 1.3 Actualizar `maquetas/rodaje.html` y `maquetas/rodaje-vertical.html` (y su `rodaje.js` si hace falta) con los estados: Libre, SIM con app (ruta de Zwift), «Pendiente» en subida, en bajada, en Libre y en ERG, Square desconectado con los botones − y + visibles (ajuste desactivado) y Square conectado sin ellos, y el Square desconectado en 360 × 640 con los 4 primeros datos; cambiar a «LIBRE» los estados que decían «SIM» sin Zwift; verificar que cada estado se abre por su `#estado=…` y que el modo, Ajustes y la barra de conexiones no se solapan a 360 dp ni a la anchura mínima en horizontal
+- [x] 1.4 Actualizar `maquetas/ajustes.html` con la ayuda de la casilla de los botones − y + y `maquetas/datos.html` con «Pendiente» entre sus nueve datos, y añadir los estados nuevos a `maquetas/index.html`; verificar que los enlaces del índice abren los estados
+- [x] 1.5 Validación de la maqueta por el usuario: dar los enlaces exactos (`maquetas/rodaje.html#estado=…`, `maquetas/rodaje-vertical.html#estado=…`, `maquetas/ajustes.html`, `maquetas/datos.html` y las secciones de `ModeBadge` y `MetricGrid` en la guía) y esperar su aprobación explícita; si pide cambios, ajustar la maqueta, `design.md` y los specs, y volver a pedir validación
+
+## 2. App
+
+- [x] 2.0 Antes de tocar código, comprobar con `git status` que no hay trabajo sin confirmar de otros changes en `Rodaje.kt`, `RodajeUiState.kt` y los `strings.xml` (`guia-inicio` ya está archivado y confirmado); verificar que `./gradlew :app:testDebugUnitTest` pasa antes de empezar
+- [x] 2.1 Calcular la etiqueta del modo en `RodajeUiState` a partir de `Simulacion.modo` («LIBRE» para `SimLibre`, «SIM» para `SimPlataforma`, ERG sin cambio) con sus recursos de texto en español y en inglés, incluido el aviso «Modo Libre» / «Modo SIM» al volver del ERG manual; verificar con tests unitarios los escenarios de «Modo y transmisión» (sin Zwift, ruta, Zwift se va con 30 s de espera, Zwift conectado sin pendiente todavía, ERG) y `TextosInglesTest`
+- [x] 2.2 Hacer que `ModeBadge` pinte «LIBRE» según la maqueta aprobada y mostrarlo en horizontal y en vertical; verificar con un test de instrumentación que la barra superior dice «LIBRE» sin Zwift y «SIM» en una ruta, sin solaparse con Ajustes a 360 dp
+- [x] 2.3 Calcular `RodajeUiState.botones` como «ajuste activado o Square no conectado», con la regla de pantalla baja que sigue a los botones visibles, y conectarlo en `Rodaje.kt` y `PantallaBaja.kt`; verificar con tests unitarios que los botones aparecen y desaparecen con el estado del Square (conectado, sin conexión, buscando, reconectando, sin Square configurado) sin cambiar la marcha, y con un test de instrumentación que a 360 × 640 se muestran 4 datos con los botones visibles y 6 al conectarse el Square
+- [x] 2.4 Actualizar la ayuda de la casilla «Botones − y + en pantalla» en `Ajustes.kt` y en sus recursos (español e inglés); verificar que el test de instrumentación de Ajustes la lee con su ayuda nueva y que `TextosInglesTest` pasa
+- [x] 2.5 Añadir el dato «Pendiente» a `DatosUiState`, a la pantalla «Datos en pantalla» (límite de seis, ayuda) y a `MetricGrid`, y exponer `pendientePct` desde `Sesion` (el terreno de `SimPlataforma`, 0 en Libre, nulo en ERG) sin cambiar la lógica de resistencia; verificar con tests unitarios los escenarios de «Pendiente en Rodaje» (ruta, bajada con «Bajadas», Libre, ERG, Zwift se va, máximo de seis) y que una configuración guardada antes sigue cargando con los mismos datos
+- [x] 2.6 Cambiar «SIM» por «Libre» en la sección Simulación de Diagnóstico para `SimLibre` (`sim_modo_sim`) y revisar las demás pantallas y recursos que digan «SIM» sin app; verificar con el test de instrumentación de Diagnóstico los escenarios «Marcha dura» y «Zwift desconectado» de `diagnostics`
+- [x] 2.7 Ejecutar `./gradlew :app:testDebugUnitTest ktlintCheck` y corregir lo que falle con `./gradlew ktlintFormat` o a mano; verificar que ambos terminan sin errores
+- [x] 2.8 Probar con el equipo real en el OnePlus 8 con el Neo, el Square y Zwift (guion de la sección «Migration Plan» de `design.md`); verificar «LIBRE» y «SIM», el dato «Pendiente» en subida y en bajada, el paso a «LIBRE» a los 30 s de cerrar Zwift y la aparición y desaparición de los botones al apagar y reconectar el Square
+
+## 3. Changes en curso
+
+- [x] 3.1 Reescribir los deltas y los textos de `modo-tactil-rodaje` (proposal, design, specs y tasks) para que el indicador tocable diga «LIBRE» o «SIM» según el modo, el aviso del pie sea «Modo Libre» o «Modo SIM», su casilla conserve la ayuda de que solo manda con el Square conectado, y su texto parta de la regla de este change para los botones − y +; verificar con `openspec validate modo-tactil-rodaje --strict`
+- [x] 3.2 Ajustar la guía de inicio ya implementada: sus cadenas (español e inglés), `GuideSheet` y su maqueta donde digan «se rueda en SIM o ERG manual» para que usen «Libre», con un delta de `getting-started-guide` en este change (la spec ya está en `openspec/specs/`); verificar con `GuiaInicioTest`, `TextosInglesTest` y que las páginas de la maqueta dicen lo mismo
+
+## 4. Documentación
+
+- [x] 4.1 Actualizar la línea de `AGENTS.md` sobre lo que Rodaje no muestra del modelo de resistencia y revisar `README.md` y la web pública (`site/contenido/es.json` y `en.json`, y capturas con `python3 scripts/sitio/capturas.py`) por el nombre del modo; verificar con una búsqueda de «SIM» que no queda ningún «SIM» sin app
+- [x] 4.2 Actualizar la documentación: revisar `docs/funcional.md` (F6, F11.3, F11.5, F11.8, F12.7), `docs/arquitectura.md`, `docs/planificacion.md` (la fila de este change, «En curso» al crearlo y «Archivado» al cerrarlo, y las filas de `modo-tactil-rodaje` y `guia-inicio`, que pasan a depender de este) y `docs/desarrollo.md`, y actualizar lo que el change haya cambiado; verificar que la fila de planificación dice «En curso» o «Archivado» según corresponda
+
+## Workflow follow-up
+
+- Archivar con `/openspec-archive-change` después de `guia-inicio` y antes de `modo-tactil-rodaje`, con las specs sincronizadas en `openspec/specs/`.

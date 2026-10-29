@@ -1,0 +1,36 @@
+# Publica la web (site/) en GitHub Pages. Solo se sube esa carpeta, no el resto del repositorio.
+name: Publicar la web
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - name: Comprobar la web
+        run: python3 -m unittest scripts/sitio/test_sitio.py
+      - uses: actions/configure-pages@v5.0.0
+      - uses: actions/upload-pages-artifact@v3.0.1
+        with:
+          path: site
+      - id: despliegue
+        uses: actions/deploy-pages@v4.0.5

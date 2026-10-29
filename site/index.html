@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Bike</title>
+<meta name="description" content="Smart Bike · Español / English">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://indoor-cycling-lab.github.io/smart-bike/">
+<link rel="alternate" hreflang="es" href="https://indoor-cycling-lab.github.io/smart-bike/es/">
+<link rel="alternate" hreflang="en" href="https://indoor-cycling-lab.github.io/smart-bike/en/">
+<link rel="alternate" hreflang="x-default" href="https://indoor-cycling-lab.github.io/smart-bike/">
+<link rel="icon" href="assets/icono.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="sitio.css">
+<script>
+(function () {
+  var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "es"];
+  for (var i = 0; i < langs.length; i++) {
+    var l = String(langs[i]).toLowerCase().slice(0, 2);
+    if (l === "es" || l === "en") { location.replace(l + "/" + location.hash); return; }
+  }
+  location.replace("es/" + location.hash);
+})();
+</script>
+</head>
+<body class="raiz">
+<main class="raiz__caja">
+  <h1>Smart Bike</h1>
+  <p class="raiz__enlaces"><a class="boton boton--principal" href="es/" hreflang="es" lang="es">Español</a><a class="boton boton--principal" href="en/" hreflang="en" lang="en">English</a></p>
+</main>
+</body>
+</html>

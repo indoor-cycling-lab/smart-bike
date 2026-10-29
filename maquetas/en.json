@@ -1,0 +1,49 @@
+{
+  "textos": {
+    "Pendiente": "Grade",
+    "24 marchas numeradas, sin platos ni piñones": "24 numbered gears, no chainrings or cogs",
+    "Calcula la potencia con tu cadencia, la relación, los pesos y el terreno.": "Calculates power from your cadence, the ratio, the weights and the terrain.",
+    "Cada marcha suma o resta pendiente a la de Zwift.": "Each gear adds or subtracts grade from Zwift's.",
+    "Cada trama del rodillo, el Square y Zwift según llega": "Every frame from the trainer, the Square and Zwift as it arrives",
+    "Cómo se convierte la marcha en resistencia": "How the gear becomes resistance",
+    "Crr 0,0040 · Cw 0,51 kg/m · viento 0,0 m/s": "Crr 0.0040 · Cw 0.51 kg/m · wind 0.0 m/s",
+    "Desde 192.168.0.10": "From 192.168.0.10",
+    "Ignora Zwift y las marchas mientras esté activo.": "Ignores Zwift and the gears while active.",
+    "Lineal · 24 marchas": "Linear · 24 gears",
+    "Mientras la app publica por Bluetooth, el móvil se llama «Smart Bike» para todos los dispositivos (coche, auriculares, otros móviles). Al terminar recupera «OnePlus 8».": "While the app publishes over Bluetooth, the phone is called “Smart Bike” to all devices (car, headphones, other phones). When it ends, it gets “OnePlus 8” back.",
+    "Opcional. Si ruedas con un ventilador Wahoo KICKR Headwind, enchúfalo y toca «Buscar» para manejarlo desde los botones.": "Optional. If you ride with a Wahoo KICKR Headwind fan, plug it in and tap “Search” to control it from the buttons.",
+    "Pendiente Zwift": "Zwift grade",
+    "Pendiente por marcha": "Grade per gear",
+    "Plato 52": "Chainring 52",
+    "Potencia y cadencia": "Power and cadence",
+    "Potencia, cadencia y resistencia · por wifi": "Power, cadence and resistance · over Wi-Fi",
+    "Referencia: 36×17": "Reference: 36×17",
+    "Sensación": "Feel",
+    "Shimano 105 · automático": "Shimano 105 · automatic",
+    "Simulación · 12:04:32": "Simulation · 12:04:32",
+    "Simulación avanzada": "Advanced simulation",
+    "Terreno de Zwift": "Zwift terrain",
+    "Último de Zwift": "Last from Zwift",
+    "Ventilador: 50 %": "Fan: 50 %",
+    "Más alta, cada marcha pesa más": "Higher, each gear weighs more",
+    "230 W de la app": "230 W from the app",
+    "+10 W con las palancas": "+10 W with the shifters",
+    "+1 marcha": "+1 gear",
+    "−1 marcha": "−1 gear",
+    "+3 marchas": "+3 gears",
+    "−3 marchas": "−3 gears",
+    "3 de 4": "3 of 4",
+    "de 24": "of 24",
+    "3 sesiones · 41 KB": "3 sessions · 41 KB"
+  },
+  "contextos": {
+    "sq-gstep__state": {
+      "Pendiente": "Pending"
+    }
+  },
+  "=": [
+    "×", "W", "kg", "ZWIFT", "KICKR BIKE PRO", "Tacx Neo 12345", "0x80020000", "Zwift:",
+    "36×17", "Shimano 105 2×12", "SIM · Zwift", "200 W · 12:04:31",
+    "Idioma · Language", "Español", "English"
+  ]
+}

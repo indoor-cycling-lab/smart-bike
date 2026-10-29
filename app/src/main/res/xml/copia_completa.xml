@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copia de seguridad de Android 9 a 11: la misma regla que reglas_copia.xml (change preparar-release, decisión 5). -->
+<full-backup-content>
+    <include domain="file" path="datastore/configuracion.json" />
+</full-backup-content>

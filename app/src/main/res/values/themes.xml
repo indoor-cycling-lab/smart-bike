@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Solo la ventana antes de que Compose pinte; los colores de las pantallas salen de SqTema. -->
+    <style name="Theme.SmartBike" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/ventana_bg</item>
+    </style>
+
+    <!-- Arranque (androidx.core:splashscreen): siempre oscuro, también con el tema «Claro», porque es la ventana anterior a que
+         se lea la configuración. Los recursos identidad_* se generan de design-system/identidad. Al abrir Rodaje, la
+         actividad pasa a Theme.SmartBike. -->
+    <style name="Theme.SmartBike.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/ventana_bg</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/identidad_splash</item>
+        <item name="windowSplashScreenAnimationDuration">900</item>
+        <item name="postSplashScreenTheme">@style/Theme.SmartBike</item>
+    </style>
+</resources>

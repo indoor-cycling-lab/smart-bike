@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marchas · Maquetas · Smart Bike</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="../design-system/components.css">
+<link rel="stylesheet" href="revision.css">
+<script src="revision.js"></script>
+</head>
+<body data-mock-states="lineal:Transmisión lineal (por defecto), shimano:Shimano 105 · automático, shimano-manual:Shimano 105 · manual, avanzada:Simulación avanzada abierta">
+  <div class="rv-stage"><div class="rv-device rv-device--v">
+    <div class="sq-screen">
+      <div class="sq-screen__body">
+        <div class="sq-appbar"><a class="sq-appbar__back" href="ajustes.html" aria-label="Volver a Ajustes"><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-arrow_back"/></svg></a><h1 class="sq-title">Marchas</h1></div>
+        <fieldset class="sq-section" data-mock-state="shimano shimano-manual avanzada">
+          <legend class="sq-section__title">Transmisión</legend>
+          <div class="sq-list">
+            <label class="sq-opt"><input type="radio" name="t" value="lineal"><span class="sq-item__text"><span class="sq-item__name">Lineal</span><span class="sq-caption">24 marchas numeradas, sin platos ni piñones</span></span></label>
+            <label class="sq-opt"><input type="radio" name="t" value="shimano" checked><span class="sq-item__text"><span class="sq-item__name">Shimano 105 2×12</span><span class="sq-caption">52/36 · 11–36</span></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="sq-section" data-mock-state="lineal">
+          <legend class="sq-section__title">Transmisión</legend>
+          <div class="sq-list">
+            <label class="sq-opt"><input type="radio" name="t2" value="lineal" checked><span class="sq-item__text"><span class="sq-item__name">Lineal</span><span class="sq-caption">24 marchas numeradas, sin platos ni piñones</span></span></label>
+            <label class="sq-opt"><input type="radio" name="t2" value="shimano"><span class="sq-item__text"><span class="sq-item__name">Shimano 105 2×12</span><span class="sq-caption">52/36 · 11–36</span></span></label>
+          </div>
+        </fieldset>
+        <div class="sq-list" data-mock-state="shimano shimano-manual avanzada"><div class="sq-item sq-item--stack"><div class="sq-row sq-row--between"><span class="sq-label">Platos</span><span class="sq-rings" aria-label="Plato 36"><span class="sq-ring on">36</span><span class="sq-ring">52</span></span></div><span class="sq-label">Cassette</span>
+          <div role="img" aria-label="Cassette 11 a 36, piñón 17">
+            <div class="sq-cass"><i class="sq-cog" style="--cog: 100%"></i><i class="sq-cog" style="--cog: 92%"></i><i class="sq-cog" style="--cog: 84%"></i><i class="sq-cog" style="--cog: 76%"></i><i class="sq-cog" style="--cog: 70%"></i><i class="sq-cog" style="--cog: 66%"></i><i class="sq-cog on" style="--cog: 62%"></i><i class="sq-cog" style="--cog: 58%"></i><i class="sq-cog" style="--cog: 56%"></i><i class="sq-cog" style="--cog: 54%"></i><i class="sq-cog" style="--cog: 52%"></i><i class="sq-cog" style="--cog: 50%"></i></div>
+            <div class="sq-cog-n"><span>36</span><span>32</span><span>28</span><span>24</span><span>21</span><span>19</span><span class="on">17</span><span>15</span><span>14</span><span>13</span><span>12</span><span>11</span></div>
+          </div>
+          <span class="sq-caption">Referencia: 36×17</span></div></div>
+        <div class="sq-list" data-mock-state="lineal"><div class="sq-item sq-item--stack sq-gap-2"><div class="sq-ladder"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on ref"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="sq-ladder-ends"><span class="sq-caption">1</span><span class="sq-caption">Referencia: 12</span><span class="sq-caption">24</span></div></div><div class="sq-step"><span class="sq-item__text"><span>Número de marchas</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar número de marchas">−</button><span class="sq-step-val">24</span><button type="button" aria-label="Subir número de marchas">+</button></div></div></div>
+        <p class="sq-caption" data-mock-state="lineal">Palancas D más dura, palancas I más ligera.</p>
+        <fieldset class="sq-section" data-mock-state="shimano avanzada">
+          <legend class="sq-section__title">Cómo se cambia</legend>
+          <div class="sq-list">
+            <label class="sq-opt"><input type="radio" name="c" value="automatico" checked><span class="sq-item__text"><span class="sq-item__name">Automático</span><span class="sq-caption">Palancas D más dura y más ligera; el plato cambia solo, como el Di2 en Synchro Shift</span></span></label>
+            <label class="sq-opt"><input type="radio" name="c" value="manual"><span class="sq-item__text"><span class="sq-item__name">Manual</span><span class="sq-caption">Palancas D cambian el piñón y palancas I el plato, como tus mandos</span></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="sq-section" data-mock-state="shimano-manual">
+          <legend class="sq-section__title">Cómo se cambia</legend>
+          <div class="sq-list">
+            <label class="sq-opt"><input type="radio" name="c2" value="automatico"><span class="sq-item__text"><span class="sq-item__name">Automático</span><span class="sq-caption">Palancas D más dura y más ligera; el plato cambia solo, como el Di2 en Synchro Shift</span></span></label>
+            <label class="sq-opt"><input type="radio" name="c2" value="manual" checked><span class="sq-item__text"><span class="sq-item__name">Manual</span><span class="sq-caption">Palancas D cambian el piñón y palancas I el plato, como tus mandos</span></span></label>
+          </div>
+        </fieldset>
+        <section class="sq-section">
+          <h2 class="sq-section__title">Al empezar</h2>
+          <div class="sq-list">
+            <div class="sq-step"><span class="sq-item__text"><span>Marcha de referencia</span><span class="sq-caption">□ corta vuelve a ella</span></span><div class="sq-step-ctl"><button type="button" aria-label="Más ligera">−</button><span class="sq-step-val"><span data-mock-state="shimano shimano-manual avanzada">36×17</span><span data-mock-state="lineal">12</span></span><button type="button" aria-label="Más dura">+</button></div></div>
+            <label class="sq-item"><span class="sq-item__text"><span class="sq-item__name">Recordar la última marcha</span><span class="sq-caption">Si no, empieza en la de referencia</span></span><input class="sq-check" type="checkbox" checked></label>
+          </div>
+        </section>
+        <section class="sq-section">
+          <h2 class="sq-section__title">Sensación</h2>
+          <div class="sq-list">
+            <div class="sq-step"><span class="sq-item__text"><span>Dificultad</span><span class="sq-caption">Más alta, cada marcha pesa más</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar dificultad">−</button><span class="sq-step-val">100<span class="sq-unit"> %</span></span><button type="button" aria-label="Subir dificultad">+</button></div></div>
+          </div>
+        </section>
+        <details class="sq-list" data-mock-attr="avanzada:open=open"><summary class="sq-item"><span class="sq-item__text"><span class="sq-item__name">Simulación avanzada</span><span class="sq-caption">Cómo se convierte la marcha en resistencia</span></span><svg class="sq-icon" aria-hidden="true"><use href="../design-system/icons.svg#i-expand_more"/></svg></summary>
+          <label class="sq-opt"><input type="radio" name="m" value="simple" checked><span class="sq-item__text"><span class="sq-item__name">Simple</span><span class="sq-caption">Cada marcha suma o resta pendiente a la de Zwift.</span></span></label>
+          <label class="sq-opt"><input type="radio" name="m" value="fisico"><span class="sq-item__text"><span class="sq-item__name">Físico</span><span class="sq-caption">Calcula la potencia con tu cadencia, la relación, los pesos y el terreno.</span></span></label>
+          <div class="sq-step"><span class="sq-item__text"><span>Pendiente por marcha</span></span><div class="sq-step-ctl"><button type="button" aria-label="Bajar pendiente por marcha">−</button><span class="sq-step-val">0,75<span class="sq-unit"> %</span></span><button type="button" aria-label="Subir pendiente por marcha">+</button></div></div>
+        </details>
+      </div>
+    </div>
+  </div></div>
+</body>
+</html>
